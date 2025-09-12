@@ -5,135 +5,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Naada Raja Yoga</title>
   <style>
-    /* ===== RESET ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { line-height: 1.6; color: #333; background: #fefefe; }
 
-    body {
-      line-height: 1.6;
-      color: #333;
-      background: #fefefe;
-    }
-
-    /* ===== HERO ===== */
     header {
       background: linear-gradient(135deg, #a8edea, #fed6e3);
-      text-align: center;
-      padding: 100px 20px;
+      text-align: center; padding: 100px 20px;
     }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      color: #222;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
+    header h1 { font-size: 3rem; margin-bottom: 10px; color: #222; }
+    header p { font-size: 1.2rem; margin-bottom: 20px; }
     .btn {
-      background: #ff7eb9;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
+      background: #ff7eb9; color: white; padding: 12px 25px; border-radius: 25px;
+      text-decoration: none; font-weight: bold; transition: 0.3s;
     }
     .btn:hover { background: #e567a3; }
 
-    /* ===== SECTION GENERAL ===== */
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    section h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #444;
-      font-size: 2rem;
-    }
+    section { padding: 60px 20px; max-width: 1000px; margin: auto; }
+    section h2 { text-align: center; margin-bottom: 20px; color: #444; font-size: 2rem; }
     section p { text-align: center; max-width: 700px; margin: auto; }
 
-    /* ===== HIGHLIGHTS ===== */
     .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px; margin-top: 30px;
     }
     .card {
-      background: white;
-      border-radius: 12px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: 0.3s;
+      background: white; border-radius: 12px; padding: 20px;
+      text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0.3s;
     }
     .card:hover { transform: translateY(-5px); }
 
-    /* ===== GALLERY ===== */
     #gallery {
       text-align: center;
+      margin-top: 40px;
     }
-    #gallery h2 {
-      margin-bottom: 30px;
-    }
+    #gallery h2 { margin-bottom: 30px; }
     .insta-embed img {
-      max-width: 100%;
-      border-radius: 12px;
+      max-width: 100%; border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
       transition: transform 0.3s;
     }
-    .insta-embed img:hover {
-      transform: scale(1.02);
+    .insta-embed img:hover { transform: scale(1.02); }
+
+    #shorts {
+      text-align: center;
+      margin-top: 60px;
+    }
+    #shorts h2 { margin-bottom: 30px; }
+    .carousel {
+      display: flex; overflow-x: auto; gap: 20px;
+      scroll-behavior: smooth; padding: 10px;
+    }
+    .carousel::-webkit-scrollbar { display: none; }
+    .carousel iframe {
+      flex: 0 0 auto; width: 250px; height: 444px;
+      border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
-    /* ===== CONTACT ===== */
-    .contact {
-      text-align: center;
-    }
+    .contact { text-align: center; margin-top: 60px; }
     .contact p { margin-bottom: 10px; }
     .social-links a {
-      margin: 0 15px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      color: #ff7eb9;
-      text-decoration: none;
-      transition: 0.3s;
+      margin: 0 15px; font-size: 1.1rem; font-weight: bold;
+      color: #ff7eb9; text-decoration: none; transition: 0.3s;
     }
     .social-links a:hover { color: #e567a3; }
 
     form {
-      margin-top: 20px;
-      display: grid;
-      gap: 10px;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-top: 20px; display: grid; gap: 10px;
+      max-width: 400px; margin-left: auto; margin-right: auto;
     }
     input, textarea {
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      padding: 12px; border: 1px solid #ccc; border-radius: 8px;
     }
     button {
-      padding: 12px;
-      background: #ff7eb9;
-      border: none;
-      color: white;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: bold;
+      padding: 12px; background: #ff7eb9;
+      border: none; color: white; border-radius: 25px;
+      cursor: pointer; font-weight: bold;
     }
     button:hover { background: #e567a3; }
 
-    /* ===== FOOTER ===== */
     footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      background: #333; color: white; text-align: center;
+      padding: 20px; margin-top: 40px;
     }
   </style>
 </head>
@@ -149,8 +101,7 @@
   <!-- ABOUT -->
   <section>
     <h2>About Me</h2>
-    <p>With over 10 years of experience, I guide students in flexibility, strength, and inner balance. 
-       Personalized one-on-one online sessions with daily monitoring ensure steady improvement.</p>
+    <p>With over 10 years of experience, I guide students in flexibility, strength, and inner balance. Personalized one-on-one online sessions with daily monitoring ensure steady improvement.</p>
   </section>
 
   <!-- HIGHLIGHTS -->
@@ -164,14 +115,23 @@
     </div>
   </section>
 
-  <!-- GALLERY -->
+  <!-- INSTAGRAM GALLERY -->
   <section id="gallery">
     <h2>Instagram Highlight</h2>
     <div class="insta-embed">
       <a href="https://www.instagram.com/p/DN2-fzPQh7W/" target="_blank">
-        <img src="https://www.instagram.com/p/DN2-fzPQh7W/media/?size=l" 
-             alt="Yoga Instagram Post">
+        <img src="https://www.instagram.com/p/DN2-fzPQh7W/media/?size=l" alt="Yoga Instagram Post">
       </a>
+    </div>
+  </section>
+
+  <!-- YOUTUBE SHORTS CAROUSEL -->
+  <section id="shorts">
+    <h2>YouTube Shorts</h2>
+    <div class="carousel">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </section>
 
