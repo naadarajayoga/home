@@ -72,31 +72,25 @@
     .card:hover { transform: translateY(-5px); }
 
     /* ===== GALLERY ===== */
-    #gallery {
-      text-align: center;
-    }
-    #gallery h2 {
-      margin-bottom: 30px;
-    }
+    #gallery { text-align: center; }
+    #gallery h2 { margin-bottom: 30px; }
     .insta-embed img {
       max-width: 100%;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
       transition: transform 0.3s;
     }
-    .insta-embed img:hover {
-      transform: scale(1.02);
-    }
+    .insta-embed img:hover { transform: scale(1.02); }
 
     /* ===== SHORTS CAROUSEL ===== */
-    #shorts {
-      padding: 60px 20px;
-      text-align: center;
-    }
+    #shorts { text-align: center; position: relative; }
     #shorts h2 {
       margin-bottom: 20px;
       font-size: 2rem;
       color: #444;
+    }
+    .shorts-wrapper {
+      position: relative;
     }
     .shorts-carousel {
       display: flex;
@@ -105,9 +99,7 @@
       gap: 20px;
       padding: 10px;
     }
-    .shorts-carousel::-webkit-scrollbar {
-      display: none; /* Hide scrollbar */
-    }
+    .shorts-carousel::-webkit-scrollbar { display: none; }
     .short {
       flex: 0 0 auto;
       border-radius: 12px;
@@ -115,14 +107,29 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
       transition: transform 0.3s;
     }
-    .short:hover {
-      transform: scale(1.05);
+    .short:hover { transform: scale(1.05); }
+
+    /* ARROWS */
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 10;
+      transition: 0.3s;
     }
+    .arrow:hover { background: rgba(0,0,0,0.8); }
+    .arrow.left { left: -10px; }
+    .arrow.right { right: -10px; }
 
     /* ===== CONTACT ===== */
-    .contact {
-      text-align: center;
-    }
+    .contact { text-align: center; }
     .contact p { margin-bottom: 10px; }
     .social-links a {
       margin: 0 15px;
@@ -209,37 +216,17 @@
   <!-- SHORTS CAROUSEL -->
   <section id="shorts">
     <h2>YouTube Shorts</h2>
-    <div class="shorts-carousel">
-      <div class="short">
-        <iframe width="250" height="450" src="https://www.youtube.com/embed/4JhofpR7DEY" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
+    <div class="shorts-wrapper">
+      <button class="arrow left" onclick="scrollShorts(-1)">‹</button>
+      <div class="shorts-carousel" id="shortsCarousel">
+        <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/4JhofpR7DEY" frameborder="0" allowfullscreen></iframe></div>
+        <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/SYvQXu5onF0" frameborder="0" allowfullscreen></iframe></div>
+        <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/niu5uo0cnfg" frameborder="0" allowfullscreen></iframe></div>
+        <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/gO_dfy0N-sM" frameborder="0" allowfullscreen></iframe></div>
+        <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/KwHA5qyFzXY" frameborder="0" allowfullscreen></iframe></div>
+        <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/R5niWehGQD8" frameborder="0" allowfullscreen></iframe></div>
       </div>
-      <div class="short">
-        <iframe width="250" height="450" src="https://www.youtube.com/embed/SYvQXu5onF0" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
-      <div class="short">
-        <iframe width="250" height="450" src="https://www.youtube.com/embed/niu5uo0cnfg" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
-      <div class="short">
-        <iframe width="250" height="450" src="https://www.youtube.com/embed/gO_dfy0N-sM" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
-      <div class="short">
-        <iframe width="250" height="450" src="https://www.youtube.com/embed/KwHA5qyFzXY" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
-      <div class="short">
-        <iframe width="250" height="450" src="https://www.youtube.com/embed/R5niWehGQD8" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
+      <button class="arrow right" onclick="scrollShorts(1)">›</button>
     </div>
   </section>
 
@@ -267,5 +254,12 @@
     © 2025 Naada Raja Yoga | Designed with 💙
   </footer>
 
+  <script>
+    function scrollShorts(direction) {
+      const carousel = document.getElementById('shortsCarousel');
+      const scrollAmount = 270; // one video width + gap
+      carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
