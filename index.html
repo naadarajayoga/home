@@ -12,6 +12,7 @@
       line-height: 1.6;
       color: #333;
       background: #fefefe;
+      padding-bottom: 70px; /* space for fixed buttons */
     }
 
     /* ===== HERO ===== */
@@ -106,6 +107,7 @@
     /* ===== CONTACT ===== */
     .contact {
       text-align: center;
+      margin-bottom: 50px; /* space for fixed buttons */
     }
     .contact p { margin-bottom: 15px; }
 
@@ -113,7 +115,6 @@
       display: flex;
       justify-content: center;
       gap: 15px;
-      margin-bottom: 20px;
     }
     .social-links a {
       background: #ff7eb9;
@@ -125,6 +126,29 @@
       transition: 0.3s;
     }
     .social-links a:hover { background: #e567a3; }
+
+    /* ===== FIXED CONTACT BUTTONS ===== */
+    .fixed-contact {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+    .fixed-contact a {
+      background: #ff7eb9;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .fixed-contact a:hover { background: #e567a3; }
 
     /* ===== FOOTER ===== */
     footer {
@@ -217,6 +241,12 @@
       </div>
     </div>
   </section>
+
+  <!-- FIXED CONTACT BUTTONS -->
+  <div class="fixed-contact">
+    <a href="http://wa.me/+919539342026" target="_blank">WhatsApp</a>
+    <a href="https://www.instagram.com/naada.raja.yoga/" target="_blank">Instagram</a>
+  </div>
 
   <!-- FOOTER -->
   <footer>
