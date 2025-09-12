@@ -78,9 +78,14 @@
     #gallery h2 {
       margin-bottom: 30px;
     }
-    .insta-embed {
-      display: flex;
-      justify-content: center;
+    .insta-embed img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.3s;
+    }
+    .insta-embed img:hover {
+      transform: scale(1.02);
     }
 
     /* ===== CONTACT ===== */
@@ -163,16 +168,11 @@
   <section id="gallery">
     <h2>Instagram Highlight</h2>
     <div class="insta-embed">
-      <blockquote class="instagram-media"
-        data-instgrm-captioned 
-        data-instgrm-permalink="https://www.instagram.com/p/DN2-fzPQh7W/?utm_source=ig_embed&amp;utm_campaign=loading"
-        data-instgrm-version="14"
-        style="background:#FFF; border:0; border-radius:8px; 
-               box-shadow:0 4px 10px rgba(0,0,0,0.15); 
-               margin: 1px; max-width:540px; min-width:326px; width:100%;">
-      </blockquote>
+      <a href="https://www.instagram.com/p/DN2-fzPQh7W/" target="_blank">
+        <img src="https://www.instagram.com/p/DN2-fzPQh7W/media/?size=l" 
+             alt="Yoga Instagram Post">
+      </a>
     </div>
-    <script async src="//www.instagram.com/embed.js"></script>
   </section>
 
   <!-- CONTACT -->
