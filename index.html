@@ -40,7 +40,7 @@
     }
     .btn:hover { background: #e567a3; }
 
-    /* ===== ABOUT ===== */
+    /* ===== SECTION GENERAL ===== */
     section {
       padding: 60px 20px;
       max-width: 1000px;
@@ -50,6 +50,7 @@
       text-align: center;
       margin-bottom: 20px;
       color: #444;
+      font-size: 2rem;
     }
     section p { text-align: center; max-width: 700px; margin: auto; }
 
@@ -69,6 +70,18 @@
       transition: 0.3s;
     }
     .card:hover { transform: translateY(-5px); }
+
+    /* ===== GALLERY ===== */
+    #gallery {
+      text-align: center;
+    }
+    #gallery h2 {
+      margin-bottom: 30px;
+    }
+    .insta-embed {
+      display: flex;
+      justify-content: center;
+    }
 
     /* ===== CONTACT ===== */
     .contact {
@@ -144,6 +157,22 @@
       <div class="card">Daily Performance Monitoring</div>
       <div class="card">Yoga Graduate with 10+ Years Experience</div>
     </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <h2>Instagram Highlight</h2>
+    <div class="insta-embed">
+      <blockquote class="instagram-media"
+        data-instgrm-captioned 
+        data-instgrm-permalink="https://www.instagram.com/p/DN2-fzPQh7W/?utm_source=ig_embed&amp;utm_campaign=loading"
+        data-instgrm-version="14"
+        style="background:#FFF; border:0; border-radius:8px; 
+               box-shadow:0 4px 10px rgba(0,0,0,0.15); 
+               margin: 1px; max-width:540px; min-width:326px; width:100%;">
+      </blockquote>
+    </div>
+    <script async src="//www.instagram.com/embed.js"></script>
   </section>
 
   <!-- CONTACT -->
