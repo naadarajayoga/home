@@ -12,7 +12,6 @@
       line-height: 1.6;
       color: #333;
       background: #fefefe;
-      padding-bottom: 90px; /* space for fixed buttons */
     }
 
     /* ===== HERO ===== */
@@ -103,7 +102,7 @@
     /* ===== CONTACT ===== */
     .contact {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 30px;
     }
     .contact p { margin-bottom: 15px; }
 
@@ -130,7 +129,7 @@
 
     .fixed-contact {
       position: fixed;
-      bottom: 15px;
+      bottom: 15px; /* close to bottom, but not overlap footer */
       right: 15px;
       display: flex;
       flex-direction: column;
@@ -157,13 +156,9 @@
     }
 
     /* WhatsApp Button */
-    .whatsapp {
-      background: #25D366;
-    }
+    .whatsapp { background: #25D366; }
     /* Instagram Button */
-    .instagram {
-      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    }
+    .instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
 
     /* ===== FOOTER ===== */
     footer {
@@ -171,7 +166,6 @@
       color: white;
       text-align: center;
       padding: 20px;
-      margin-top: 40px;
     }
 
     /* Icon styles */
@@ -214,36 +208,12 @@
   <section id="shorts">
     <h2>YouTube Shorts</h2>
     <div class="shorts-carousel">
-      <div class="short">
-        <iframe width="250" height="450" src="https://www.youtube.com/embed/SYvQXu5onF0" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
-      <div class="short">
-        <iframe width="250" height="450" src="https://www.youtube.com/embed/KwHA5qyFzXY" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
-      <div class="short">
-        <iframe width="250" height="450" src="https://www.youtube.com/embed/4JhofpR7DEY" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
-      <div class="short">
-        <iframe width="250" height="450" src="https://www.youtube.com/embed/niu5uo0cnfg" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
-      <div class="short">
-        <iframe width="250" height="450" src="https://www.youtube.com/embed/gO_dfy0N-sM" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
-      <div class="short">
-        <iframe width="250" height="450" src="https://www.youtube.com/embed/R5niWehGQD8" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
+      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/SYvQXu5onF0" frameborder="0" allowfullscreen></iframe></div>
+      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/KwHA5qyFzXY" frameborder="0" allowfullscreen></iframe></div>
+      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/4JhofpR7DEY" frameborder="0" allowfullscreen></iframe></div>
+      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/niu5uo0cnfg" frameborder="0" allowfullscreen></iframe></div>
+      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/gO_dfy0N-sM" frameborder="0" allowfullscreen></iframe></div>
+      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/R5niWehGQD8" frameborder="0" allowfullscreen></iframe></div>
     </div>
   </section>
 
@@ -261,18 +231,8 @@
 
   <!-- FIXED CONTACT BUTTONS -->
   <div class="fixed-contact">
-    <a href="http://wa.me/+919539342026" target="_blank" class="whatsapp">
-      <span class="icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.2 283.1 32 224.6 32 100.3 32 0 132.3 0 256c0 45.6 12.4 88.3 35.8 125.6L0 480l99.5-33.4c36.9 20.4 78.6 31.4 125 31.4 124.3 0 224.6-100.3 224.6-224.6 0-58.5-23.2-114.4-65.2-156.4zm-156 307.6c-38.1 0-75.4-10.3-107.9-29.8l-7.7-4.6-59.1 19.9 19.9-57.7-5-8c-23.7-37.8-36.1-81.3-36.1-125.1 0-116.9 95.3-212.2 212.2-212.2 56.7 0 109.9 22.1 150.1 62.3 40.2 40.2 62.3 93.4 62.3 150.1 0 116.9-95.3 212.2-212.2 212.2zm121.5-164.2c-6.6-3.3-39.2-19.2-45.3-21.4-6.1-2.2-10.5-3.3-14.9 3.3-4.4 6.6-17.1 21.4-20.9 25.8-3.8 4.4-7.7 4.9-14.3 1.6-6.6-3.3-27.8-10.3-53-32.7-19.6-17.4-32.8-38.9-36.6-45.5-3.8-6.6-.4-10.2 2.9-13.5 3-3-6.6-15.4 0-32.1 6.6-16.6 14.7-16.9 20.9-17.1 5.4-.2 11-0.2 16.8 0 5.4.2 15.8-2.1 24-10.2 8.2-8.2 32-31.4 34.9-34.8 2.9-3.3 5.8-6.6 11.7-6.6s10.5 0 16 0c5.4 0 14.9 2 22.7 9.8 7.7 7.7 30.1 29.4 30.1 71.6 0 42.3-30.7 82.7-34.9 88.4-4.2 5.7-7.6 9.5-14 14.1z"/></svg>
-      </span>
-      WhatsApp
-    </a>
-    <a href="https://www.instagram.com/naada.raja.yoga/" target="_blank" class="instagram">
-      <span class="icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-115 51.4-115 115s51.4 115 115 115 115-51.4 115-115-51.5-115-115-115zm0 190c-41.3 0-75-33.7-75-75s33.7-75 75-75 75 33.7 75 75-33.7 75-75 75zm146.4-194.3c0 14.9-12 27-26.9 27-14.9 0-26.9-12.1-26.9-27s12-27 26.9-27 26.9 12.1 26.9 27zm76.1 27.2c-1.7-35.7-9.9-67.3-36.3-93.7s-58-34.6-93.7-36.3c-37-2.1-147.9-2.1-184.9 0-35.7 1.7-67.3 9.9-93.7 36.3S9.4 130.5 7.7 166.2c-2.1 37-2.1 147.9 0 184.9 1.7 35.7 9.9 67.3 36.3 93.7s58 34.6 93.7 36.3c37 2.1 147.9 2.1 184.9 0 35.7-1.7 67.3-9.9 93.7-36.3s34.6-58 36.3-93.7c2.1-37 2.1-147.9 0-184.9zm-48.1 222.2c-7.8 19.5-22.9 34.6-42.4 42.4-29.3 11.7-98.9 9-132.1 9s-102.7 2.6-132.1-9c-19.5-7.8-34.6-22.9-42.4-42.4-11.7-29.3-9-98.9-9-132.1s-2.6-102.7 9-132.1c7.8-19.5 22.9-34.6 42.4-42.4 29.3-11.7 98.9-9 132.1-9s102.7-2.6 132.1 9c19.5 7.8 34.6 22.9 42.4 42.4 11.7 29.3 9 98.9 9 132.1s2.6 102.7-9 132.1z"/></svg>
-      </span>
-      Instagram
-    </a>
+    <a href="http://wa.me/+919539342026" target="_blank" class="whatsapp">WhatsApp</a>
+    <a href="https://www.instagram.com/naada.raja.yoga/" target="_blank" class="instagram">Instagram</a>
   </div>
 
   <!-- FOOTER -->
