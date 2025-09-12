@@ -22,7 +22,7 @@
 
     /* Header (cover + profile) */
     .cover {
-      background: linear-gradient(to right, #e0f7fa, #fce4ec);
+      background: url('https://www.instagram.com/p/DN2-fzPQh7W/media/?size=l') no-repeat center/cover;
       height: 220px;
       position: relative;
     }
@@ -34,7 +34,7 @@
       position: absolute;
       bottom: -60px;
       left: 20px;
-      background: url('https://via.placeholder.com/120') no-repeat center/cover;
+      background: url('https://photos.app.goo.gl/TPfmBCK6vhGW78887') no-repeat center/cover;
     }
     .brand-name {
       margin-left: 160px;
@@ -59,6 +59,7 @@
       border-radius: 8px;
       font-weight: bold;
       transition: background 0.3s;
+      text-decoration: none;
     }
     .actions a:hover {
       background: #e73370;
@@ -78,10 +79,6 @@
     }
 
     /* Shorts Carousel */
-    .carousel-container {
-      position: relative;
-      overflow: hidden;
-    }
     .shorts-carousel {
       display: flex;
       overflow-x: auto;
@@ -102,20 +99,6 @@
     .short:hover {
       transform: scale(1.05);
     }
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.5);
-      color: #fff;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 50%;
-      font-size: 18px;
-    }
-    .arrow.left { left: 5px; }
-    .arrow.right { right: 5px; }
 
     /* Footer */
     footer {
@@ -150,17 +133,13 @@
   <!-- Shorts Section -->
   <div class="card">
     <h2>YouTube Shorts</h2>
-    <div class="carousel-container">
-      <button class="arrow left" onclick="scrollCarousel(-1)">&#10094;</button>
-      <div class="shorts-carousel" id="shortsCarousel">
-        <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/4JhofpR7DEY" frameborder="0" allowfullscreen></iframe></div>
-        <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/SYvQXu5onF0" frameborder="0" allowfullscreen></iframe></div>
-        <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/niu5uo0cnfg" frameborder="0" allowfullscreen></iframe></div>
-        <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/gO_dfy0N-sM" frameborder="0" allowfullscreen></iframe></div>
-        <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/KwHA5qyFzXY" frameborder="0" allowfullscreen></iframe></div>
-        <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/R5niWehGQD8" frameborder="0" allowfullscreen></iframe></div>
-      </div>
-      <button class="arrow right" onclick="scrollCarousel(1)">&#10095;</button>
+    <div class="shorts-carousel">
+      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/4JhofpR7DEY" frameborder="0" allowfullscreen></iframe></div>
+      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/SYvQXu5onF0" frameborder="0" allowfullscreen></iframe></div>
+      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/niu5uo0cnfg" frameborder="0" allowfullscreen></iframe></div>
+      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/gO_dfy0N-sM" frameborder="0" allowfullscreen></iframe></div>
+      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/KwHA5qyFzXY" frameborder="0" allowfullscreen></iframe></div>
+      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/R5niWehGQD8" frameborder="0" allowfullscreen></iframe></div>
     </div>
   </div>
 
@@ -168,13 +147,5 @@
   <footer>
     <p>&copy; 2025 Naada Raja Yoga | All Rights Reserved</p>
   </footer>
-
-  <script>
-    function scrollCarousel(direction) {
-      const carousel = document.getElementById("shortsCarousel");
-      const scrollAmount = 300; 
-      carousel.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
-    }
-  </script>
 </body>
 </html>
