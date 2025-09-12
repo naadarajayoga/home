@@ -5,108 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Naada Raja Yoga</title>
   <style>
-    /* ===== RESET ===== */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
     body {
-      line-height: 1.6;
+      background: #f8f9fa;
       color: #333;
-      background: #fefefe;
     }
-
-    /* ===== HERO ===== */
-    header {
-      background: linear-gradient(135deg, #a8edea, #fed6e3);
-      text-align: center;
-      padding: 100px 20px;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+    h1, h2 {
+      font-weight: 600;
       color: #222;
     }
-    header p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-    .btn {
-      background: #ff7eb9;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    .btn:hover { background: #e567a3; }
 
-    /* ===== SECTION GENERAL ===== */
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
+    /* Header (cover + profile) */
+    .cover {
+      background: linear-gradient(to right, #e0f7fa, #fce4ec);
+      height: 220px;
+      position: relative;
     }
-    section h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #444;
-      font-size: 2rem;
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      position: absolute;
+      bottom: -60px;
+      left: 20px;
+      background: url('https://via.placeholder.com/120') no-repeat center/cover;
     }
-    section p { text-align: center; max-width: 700px; margin: auto; }
-
-    /* ===== HIGHLIGHTS ===== */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-    .card {
-      background: white;
-      border-radius: 12px;
+    .brand-name {
+      margin-left: 160px;
       padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
-    .card:hover { transform: translateY(-5px); }
-
-    /* ===== GALLERY ===== */
-    #gallery {
-      text-align: center;
-    }
-    #gallery h2 {
-      margin-bottom: 30px;
-    }
-    .insta-embed img {
-      max-width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      transition: transform 0.3s;
-    }
-    .insta-embed img:hover {
-      transform: scale(1.02);
-    }
-
-    /* ===== SHORTS CAROUSEL ===== */
-    #shorts {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    #shorts h2 {
-      margin-bottom: 20px;
       font-size: 2rem;
-      color: #444;
     }
+
+    /* Action Buttons */
+    .actions {
+      display: flex;
+      gap: 15px;
+      padding: 10px 20px;
+      flex-wrap: wrap;
+    }
+    .actions a {
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
+      padding: 12px;
+      background: #ff4081;
+      color: #fff;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+    .actions a:hover {
+      background: #e73370;
+    }
+
+    /* Card sections */
+    .card {
+      background: #fff;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .card h2 {
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    /* Shorts Carousel */
     .shorts-carousel {
       display: flex;
       overflow-x: auto;
       scroll-behavior: smooth;
       gap: 20px;
-      padding: 10px;
+      padding: 10px 0;
     }
     .shorts-carousel::-webkit-scrollbar {
-      display: none; /* Hide scrollbar */
+      display: none;
     }
     .short {
       flex: 0 0 auto;
@@ -119,49 +100,10 @@
       transform: scale(1.05);
     }
 
-    /* ===== CONTACT ===== */
-    .contact {
-      text-align: center;
-    }
-    .contact p { margin-bottom: 10px; }
-    .social-links a {
-      margin: 0 15px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      color: #ff7eb9;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    .social-links a:hover { color: #e567a3; }
-
-    form {
-      margin-top: 20px;
-      display: grid;
-      gap: 10px;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    input, textarea {
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-    button {
-      padding: 12px;
-      background: #ff7eb9;
-      border: none;
-      color: white;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    button:hover { background: #e567a3; }
-
-    /* ===== FOOTER ===== */
+    /* Footer */
     footer {
       background: #333;
-      color: white;
+      color: #fff;
       text-align: center;
       padding: 20px;
       margin-top: 40px;
@@ -170,103 +112,40 @@
 </head>
 <body>
 
-  <!-- HERO -->
-  <header>
-    <h1>Naada Raja Yoga</h1>
-    <p>Elevate your body & mind with personalized yoga practice</p>
-    <a href="#contact" class="btn">Book a Session</a>
-  </header>
+  <!-- Header -->
+  <div class="cover"></div>
+  <div class="profile-pic"></div>
+  <h1 class="brand-name">Naada Raja Yoga</h1>
 
-  <!-- ABOUT -->
-  <section>
-    <h2>About Me</h2>
-    <p>With over 10 years of experience, I guide students in flexibility, strength, and inner balance. 
-       Personalized one-on-one online sessions with daily monitoring ensure steady improvement.</p>
-  </section>
+  <!-- Quick Action Buttons -->
+  <div class="actions">
+    <a href="https://www.instagram.com/naada.raja.yoga/" target="_blank">Instagram</a>
+    <a href="http://wa.me/+919539342026" target="_blank">WhatsApp</a>
+    <a href="https://www.youtube.com/@NaadaRajaYoga" target="_blank">YouTube</a>
+  </div>
 
-  <!-- HIGHLIGHTS -->
-  <section>
-    <h2>Highlights</h2>
-    <div class="grid">
-      <div class="card">Improve Flexibility & Strength</div>
-      <div class="card">Personalized One-on-One Online Sessions</div>
-      <div class="card">Daily Performance Monitoring</div>
-      <div class="card">Yoga Graduate with 10+ Years Experience</div>
-    </div>
-  </section>
+  <!-- About Section -->
+  <div class="card">
+    <h2>About</h2>
+    <p>With over 10 years of offline teaching experience and a Yoga graduate background, Naada Raja Yoga offers personalized one-on-one online sessions, daily performance monitoring, and a holistic approach to flexibility, strength, and overall well-being.</p>
+  </div>
 
-  <!-- GALLERY -->
-  <section id="gallery">
-    <h2>Instagram Highlight</h2>
-    <div class="insta-embed">
-      <a href="https://www.instagram.com/p/DN2-fzPQh7W/" target="_blank">
-        <img src="https://www.instagram.com/p/DN2-fzPQh7W/media/?size=l" 
-             alt="Yoga Instagram Post">
-      </a>
-    </div>
-  </section>
-
-  <!-- SHORTS CAROUSEL -->
-  <section id="shorts">
+  <!-- Shorts Section -->
+  <div class="card">
     <h2>YouTube Shorts</h2>
     <div class="shorts-carousel">
-      <div class="short">
-        <iframe width="250" height="450" src="https://www.youtube.com/embed/4JhofpR7DEY" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
-      <div class="short">
-        <iframe width="250" height="450" src="https://www.youtube.com/embed/SYvQXu5onF0" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
-      <div class="short">
-        <iframe width="250" height="450" src="https://www.youtube.com/embed/niu5uo0cnfg" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
-      <div class="short">
-        <iframe width="250" height="450" src="https://www.youtube.com/embed/gO_dfy0N-sM" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
-      <div class="short">
-        <iframe width="250" height="450" src="https://www.youtube.com/embed/KwHA5qyFzXY" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
-      <div class="short">
-        <iframe width="250" height="450" src="https://www.youtube.com/embed/R5niWehGQD8" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
+      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/4JhofpR7DEY" frameborder="0" allowfullscreen></iframe></div>
+      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/SYvQXu5onF0" frameborder="0" allowfullscreen></iframe></div>
+      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/niu5uo0cnfg" frameborder="0" allowfullscreen></iframe></div>
+      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/gO_dfy0N-sM" frameborder="0" allowfullscreen></iframe></div>
+      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/KwHA5qyFzXY" frameborder="0" allowfullscreen></iframe></div>
+      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/R5niWehGQD8" frameborder="0" allowfullscreen></iframe></div>
     </div>
-  </section>
+  </div>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Schedule & Contact</h2>
-    <div class="contact">
-      <p>🕙 10:30 AM – 2:00 PM IST</p>
-      <div class="social-links">
-        <a href="http://wa.me/+919539342026" target="_blank">WhatsApp</a>
-        <a href="https://www.instagram.com/naada.raja.yoga/" target="_blank">Instagram</a>
-        <a href="https://www.youtube.com/@NaadaRajaYoga" target="_blank">YouTube</a>
-      </div>
-    </div>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="4" placeholder="Your Message"></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer>
-    © 2025 Naada Raja Yoga
+    <p>&copy; 2025 Naada Raja Yoga | All Rights Reserved</p>
   </footer>
-
 </body>
 </html>
-
