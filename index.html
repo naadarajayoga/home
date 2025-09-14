@@ -8,199 +8,144 @@
   <!-- Favicon -->
   <link rel="icon" href="favicon.png" type="image/png">
 
+  <!-- PayPal SDK -->
+  <script 
+    src="https://www.paypal.com/sdk/js?client-id=BAApzcZuTe3ypLit4fxNQwdx62PVgNgfdaFeYbSHBcb1Eeip0AEk7DgtyJoQE7wzzljrbt94NSBUXEigdU&components=hosted-buttons&disable-funding=venmo&currency=USD">
+  </script>
+
   <style>
-    /* ===== RESET ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
 
-    body {
-      line-height: 1.6;
-      color: #333;
-      background: #fefefe;
-    }
+    body { line-height: 1.6; color: #333; background: #fefefe; }
 
-    /* ===== HERO ===== */
     header {
       background: linear-gradient(135deg, #a8edea, #fed6e3);
-      text-align: center;
-      padding: 120px 20px 80px; /* extra top padding, moderate bottom padding */
+      padding: 50px 20px;
     }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 15px;
-      color: #222;
+    .branding {
+      display: flex; align-items: center; justify-content: center; gap: 15px;
+      max-width: 1000px; margin: auto; text-align: center;
     }
-    header p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: auto;
+    .branding img { width: 70px; height: auto; }
+    .branding h1 {
+      font-size: 2rem; font-weight: bold;
+      background: linear-gradient(135deg, #008080, #800080);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
+    header p { font-size: 1.1rem; max-width: 600px; margin: 10px auto 0; text-align: center; }
 
-    /* ===== SECTION GENERAL ===== */
-    section {
-      padding: 80px 20px; /* increased padding for breathing space */
-      max-width: 1000px;
-      margin: auto;
-    }
-    section h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #444;
-      font-size: 2rem;
-    }
-    section p {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.8;
-    }
+    section { padding: 60px 20px; max-width: 1000px; margin: auto; }
+    section h2 { text-align: center; margin-bottom: 25px; color: #444; font-size: 1.9rem; }
+    section p { line-height: 1.8; }
 
-    /* ===== HIGHLIGHTS ===== */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-      margin-top: 40px;
+    .about-container { display: flex; flex-wrap: wrap; align-items: center; gap: 30px; max-width: 900px; margin: auto; }
+    .about-container img {
+      width: 260px; max-width: 100%; border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     }
+    .about-container .grid { flex: 1; min-width: 250px; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 30px; }
     .card {
-      background: white;
-      border-radius: 12px;
-      padding: 25px;
-      text-align: center;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-      transition: 0.3s;
-      font-size: 1.1rem;
+      background: white; border-radius: 12px; padding: 20px; text-align: center;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: 0.3s; font-size: 1rem;
     }
     .card:hover { transform: translateY(-5px); }
 
-    /* ===== SHORTS CAROUSEL ===== */
-    #shorts {
-      padding: 80px 20px;
-      text-align: center;
+    .offer-single {
+      background: white; border-radius: 12px; padding: 30px; max-width: 500px;
+      margin: 30px auto 0; text-align: center; box-shadow: 0 6px 20px rgba(0,0,0,0.12);
     }
+    .offer-single h3 { font-size: 1.5rem; margin-bottom: 12px; color: #333; }
+    .offer-single p { margin-bottom: 15px; font-size: 1.05rem; color: #555; }
+
+    #shorts { padding: 60px 20px; text-align: center; }
     .shorts-carousel {
-      display: flex;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      gap: 20px;
-      padding: 10px;
+      display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 15px; padding: 10px;
     }
     .shorts-carousel::-webkit-scrollbar { display: none; }
     .short {
-      flex: 0 0 auto;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      transition: transform 0.3s;
+      flex: 0 0 auto; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform 0.3s;
     }
     .short:hover { transform: scale(1.05); }
 
-    /* ===== CONTACT ===== */
-    .contact {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-    .contact p { margin-bottom: 15px; font-size: 1.1rem; }
+    .contact { text-align: center; margin-bottom: 30px; }
+    .contact p { margin-bottom: 12px; font-size: 1.05rem; }
 
     .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
+      display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;
     }
     .social-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 10px 20px;
-      border-radius: 25px;
-      font-weight: bold;
-      text-decoration: none;
-      text-align: center;
-      transition: 0.3s;
-      color: white;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 18px; border-radius: 25px; font-weight: bold;
+      text-decoration: none; color: white; transition: 0.3s;
     }
 
-    /* WhatsApp Button */
     .whatsapp { background: #25D366; }
-    /* Instagram Button */
-    .instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+    .instagram {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    }
 
-    /* ===== FIXED CONTACT BUTTONS ===== */
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-6px); }
     }
     .fixed-contact {
-      position: fixed;
-      bottom: 15px;
-      right: 15px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 1000;
+      position: fixed; bottom: 15px; right: 15px;
+      display: flex; flex-direction: column; gap: 10px; z-index: 1000;
     }
     .fixed-contact a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 18px;
-      border-radius: 50px;
-      font-weight: bold;
-      text-decoration: none;
-      color: white;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 18px; border-radius: 50px; font-weight: bold;
+      text-decoration: none; color: white;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       animation: float 2s ease-in-out infinite;
       transition: transform 0.3s, box-shadow 0.3s;
     }
-    .fixed-contact a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.25);
-    }
+    .fixed-contact a:hover { transform: translateY(-3px); box-shadow: 0 6px 14px rgba(0,0,0,0.25); }
 
-    /* ===== ICON STYLING ===== */
-    .icon {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-    }
-    .icon svg { width: 100%; height: 100%; fill: white; }
+    .icon { display: inline-block; width: 22px; height: 22px; }
+    .icon svg { width: 100%; height: 100%; }
 
-    /* ===== FOOTER ===== */
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
+    footer { background: #333; color: white; text-align: center; padding: 15px; font-size: 0.9rem; }
+
+    /* ✅ Fix: Center image in About section on mobile */
+    @media (max-width: 768px) {
+      .about-container {
+        justify-content: center;
+        text-align: center;
+      }
+      .about-container img {
+        margin: 0 auto;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
   <header>
-    <h1>Naada Raja Yoga</h1>
-    <p>Elevate your body & mind with personalized yoga practice</p>
+    <div class="branding">
+      <img src="Naada Raja Yoga Logo.png" alt="Naada Raja Yoga Logo">
+      <h1>Naada Raja Yoga</h1>
+    </div>
+    <p>Personalized Yoga Journey</p>
   </header>
 
-  <!-- ABOUT -->
   <section>
     <h2>About Me</h2>
-    <p>With over 10 years of experience, I guide students in flexibility, strength, and inner balance. 
-       Personalized one-on-one online sessions with daily monitoring ensure steady improvement.</p>
-  </section>
-
-  <!-- HIGHLIGHTS -->
-  <section>
-    <h2>Highlights</h2>
-    <div class="grid">
-      <div class="card">Improve Flexibility & Strength</div>
-      <div class="card">Personalized One-on-One Online Sessions</div>
-      <div class="card">Daily Performance Monitoring</div>
-      <div class="card">Yoga Graduate with 10+ Years Experience</div>
+    <div class="about-container">
+      <img src="me.jpg" alt="Yoga Teacher">
+      <div class="grid">
+        <div class="card">Over 10 Years of Teaching Experience</div>
+        <div class="card">Guiding Students in Flexibility, Strength & Inner Balance</div>
+        <div class="card">Personalized One-on-One Online Sessions</div>
+        <div class="card">Daily Monitoring to Ensure Steady Improvement</div>
+      </div>
     </div>
   </section>
 
-  <!-- SHORTS CAROUSEL -->
   <section id="shorts">
     <h2>YouTube Shorts</h2>
     <div class="shorts-carousel">
@@ -213,49 +158,106 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
-    <h2>Schedule a Session or Join a Program</h2>
+    <h2>Contact Me Before Joining</h2>
     <div class="contact">
-      <p>🕙 10:30 AM – 2:00 PM IST</p>
       <div class="social-links">
         <a href="http://wa.me/+919539342026" target="_blank" class="whatsapp">
           <span class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.2 283.1 32 224.6 32 100.3 32 0 132.3 0 256c0 45.6 12.4 88.3 35.8 125.6L0 480l99.5-33.4c36.9 20.4 78.6 31.4 125 31.4 124.3 0 224.6-100.3 224.6-224.6 0-58.5-23.2-114.4-65.2-156.4zm-156 307.6c-38.1 0-75.4-10.3-107.9-29.8l-7.7-4.6-59.1 19.9 19.9-57.7-5-8c-23.7-37.8-36.1-81.3-36.1-125.1 0-116.9 95.3-212.2 212.2-212.2 56.7 0 109.9 22.1 150.1 62.3 40.2 40.2 62.3 93.4 62.3 150.1 0 116.9-95.3 212.2-212.2 212.2z"/></svg>
+            <!-- Official WhatsApp Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path fill="#FFF" d="M380.9 97.1C339-3.1 256.5-8.1 
+              186.5 31.9 116.5 71.9 53 168.7 94.9 268.9c21.5 52.5 
+              61.5 99.3 113.6 125.5l-15.3 53.4c-2.9 10.1 7.1 
+              18.8 16.5 13.9l58.7-31.5c60.4 8.4 119.4-14.3 
+              162.3-59.9 67.1-70.8 70.5-182.1 
+              8.2-253.2z"/>
+            </svg>
           </span>
           WhatsApp
         </a>
         <a href="https://www.instagram.com/naada.raja.yoga/" target="_blank" class="instagram">
           <span class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-115 51.4-115 115s51.4 115 115 115 115-51.4 115-115-51.5-115-115-115zm0 190c-41.3 0-75-33.7-75-75s33.7-75 75-75 75 33.7 75 75-33.7 75-75 75zm146.4-194.3c0 14.9-12 27-26.9 27-14.9 0-26.9-12.1-26.9-27s12-27 26.9-27 26.9 12.1 26.9 27zm76.1 27.2c-1.7-35.7-9.9-67.3-36.3-93.7s-58-34.6-93.7-36.3c-37-2.1-147.9-2.1-184.9 0-35.7 1.7-67.3 9.9-93.7 36.3S9.4 130.5 7.7 166.2c-2.1 37-2.1 147.9 0 184.9 1.7 35.7 9.9 67.3 36.3 93.7s58 34.6 93.7 36.3c37 2.1 147.9 2.1 184.9 0 35.7-1.7 67.3-9.9 93.7-36.3s34.6-58 36.3-93.7c2.1-37 2.1-147.9 0-184.9z"/></svg>
+            <!-- Instagram Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path fill="#FFF" d="M224 202.7c-31.6 0-57.3 
+              25.7-57.3 57.3s25.7 57.3 57.3 57.3 
+              57.3-25.7 57.3-57.3-25.7-57.3-57.3-57.3zm124.7-41c0 
+              16.5-13.5 30-30 30s-30-13.5-30-30 
+              13.5-30 30-30 30 13.5 30 
+              30zm71.3 41c-.1-36.2-9.8-68.2-35.8-94.2-26-26-58-35.7-94.2-35.8-37.2-.1-148.8-.1-186 
+              0-36.2.1-68.2 9.8-94.2 
+              35.8-26 26-35.7 58-35.8 
+              94.2-.1 37.2-.1 148.8 0 186 0 36.2 
+              9.8 68.2 35.8 94.2 26 26 58 
+              35.7 94.2 35.8 37.2.1 148.8.1 
+              186 0 36.2-.1 68.2-9.8 
+              94.2-35.8 26-26 35.7-58 
+              35.8-94.2.1-37.2.1-148.8 
+              0-186z"/>
+            </svg>
           </span>
           Instagram
         </a>
       </div>
     </div>
+
+    <h2>Join a Program</h2>
+    <div class="offer-single">
+      <div id="paypal-container-UTBAB8G3VA98N"></div>
+      <script>
+        paypal.HostedButtons({
+          hostedButtonId: "UTBAB8G3VA98N",
+        }).render("#paypal-container-UTBAB8G3VA98N")
+      </script>
+    </div>
   </section>
 
-  <!-- FIXED CONTACT BUTTONS -->
   <div class="fixed-contact">
     <a href="http://wa.me/+919539342026" target="_blank" class="whatsapp">
       <span class="icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.2 283.1 32 224.6 32 100.3 32 0 132.3 0 256c0 45.6 12.4 88.3 35.8 125.6L0 480l99.5-33.4c36.9 20.4 78.6 31.4 125 31.4 124.3 0 224.6-100.3 224.6-224.6 0-58.5-23.2-114.4-65.2-156.4zm-156 307.6c-38.1 0-75.4-10.3-107.9-29.8l-7.7-4.6-59.1 19.9 19.9-57.7-5-8c-23.7-37.8-36.1-81.3-36.1-125.1 0-116.9 95.3-212.2 212.2-212.2 56.7 0 109.9 22.1 150.1 62.3 40.2 40.2 62.3 93.4 62.3 150.1 0 116.9-95.3 212.2-212.2 212.2z"/></svg>
+        <!-- Official WhatsApp Floating Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path fill="#FFF" d="M380.9 97.1C339-3.1 256.5-8.1 
+          186.5 31.9 116.5 71.9 53 168.7 
+          94.9 268.9c21.5 52.5 61.5 99.3 
+          113.6 125.5l-15.3 53.4c-2.9 
+          10.1 7.1 18.8 16.5 13.9l58.7-31.5c60.4 
+          8.4 119.4-14.3 162.3-59.9 
+          67.1-70.8 70.5-182.1 
+          8.2-253.2z"/>
+        </svg>
       </span>
       WhatsApp
     </a>
     <a href="https://www.instagram.com/naada.raja.yoga/" target="_blank" class="instagram">
       <span class="icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-115 51.4-115 115s51.4 115 115 115 115-51.4 115-115-51.5-115-115-115zm0 190c-41.3 0-75-33.7-75-75s33.7-75 75-75 75 33.7 75 75-33.7 75-75 75zm146.4-194.3c0 14.9-12 27-26.9 27-14.9 0-26.9-12.1-26.9-27s12-27 26.9-27 26.9 12.1 26.9 27zm76.1 27.2c-1.7-35.7-9.9-67.3-36.3-93.7s-58-34.6-93.7-36.3c-37-2.1-147.9-2.1-184.9 0-35.7 1.7-67.3 9.9-93.7 36.3S9.4 130.5 7.7 166.2c-2.1 37-2.1 147.9 0 184.9 1.7 35.7 9.9 67.3 36.3 93.7s58 34.6 93.7 36.3c37 2.1 147.9 2.1 184.9 0 35.7-1.7 67.3-9.9 93.7-36.3s34.6-58 36.3-93.7c2.1-37 2.1-147.9 0-184.9z"/></svg>
+        <!-- Instagram Floating Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path fill="#FFF" d="M224 202.7c-31.6 0-57.3 
+          25.7-57.3 57.3s25.7 57.3 57.3 
+          57.3 57.3-25.7 57.3-57.3-25.7-57.3-57.3-57.3zm124.7-41c0 
+          16.5-13.5 30-30 30s-30-13.5-30-30 
+          13.5-30 30-30 30 13.5 30 
+          30zm71.3 41c-.1-36.2-9.8-68.2-35.8-94.2-26-26-58-35.7-94.2-35.8-37.2-.1-148.8-.1-186 
+          0-36.2.1-68.2 9.8-94.2 
+          35.8-26 26-35.7 58-35.8 
+          94.2-.1 37.2-.1 148.8 0 186 0 36.2 
+          9.8 68.2 35.8 94.2 26 26 58 
+          35.7 94.2 35.8 37.2.1 148.8.1 
+          186 0 36.2-.1 68.2-9.8 
+          94.2-35.8 26-26 35.7-58 
+          35.8-94.2.1-37.2.1-148.8 
+          0-186z"/>
+        </svg>
       </span>
       Instagram
     </a>
   </div>
 
-  <!-- FOOTER -->
   <footer>
-    © 2025 Naada Raja Yoga
+    <p>&copy; 2025 Naada Raja Yoga. All rights reserved.</p>
   </footer>
 
 </body>
 </html>
-
