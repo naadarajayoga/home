@@ -125,8 +125,10 @@
       50% { transform: translateY(-6px); }
     }
     .fixed-contact {
-      position: fixed; bottom: 15px; right: 15px;
+      position: fixed; bottom: 15px; left: 15px; right: auto;
       display: flex; flex-direction: column; gap: 10px; z-index: 1000;
+      transform: scale(0.8); /* reduce size to 80% */
+      transform-origin: bottom left;
     }
     .fixed-contact a {
       display: flex; align-items: center; justify-content: center; gap: 8px;
@@ -242,7 +244,7 @@
           36.2-25.4 4.5-12.5 4.5-23.2 3.1-25.4-1.3-2.3-4.9-3.6-10.3-6.3z"/>
         </svg>
       </span>
-      WhatsApp
+      +919539342026
     </a>
     <a href="https://www.instagram.com/naada.raja.yoga/" target="_blank" class="instagram">
       <span class="icon">
