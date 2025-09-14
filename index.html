@@ -81,6 +81,18 @@
     }
     .short:hover { transform: scale(1.05); }
 
+    /* ✅ Only show horizontal scrollbar on PC */
+    @media (min-width: 769px) {
+      .shorts-carousel::-webkit-scrollbar { height: 8px; display: block; }
+      .shorts-carousel::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+      }
+      .shorts-carousel::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+    }
+
     .contact { text-align: center; margin-bottom: 30px; }
     .contact p { margin-bottom: 12px; font-size: 1.05rem; }
 
@@ -201,70 +213,6 @@
   </section>
 
   <section id="contact">
-    <h2>Contact Me Before Joining</h2>
-    <div class="contact">
-      <div class="social-links">
-        <a href="http://wa.me/+919539342026" target="_blank" class="whatsapp">
-          <span class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-              <path fill="#25D366" d="M224 0C100.3 0 0 100.3 0 224c0 39.5 10.3 77.5 
-              29.9 111.2L16 496l164.1-43.1C205.6 466.4 
-              214.7 468 224 468c123.7 0 224-100.3 
-              224-224S347.7 0 224 0z"/>
-              <path fill="#FFF" d="M324.6 297.1c-5.4-2.7-31.7-15.6-36.6-17.4-4.9-1.8-8.5-2.7-12.1 
-              2.7s-13.9 17.4-17 21c-3.1 3.6-6.3 4.1-11.7 
-              1.4-31.7-15.9-52.4-28.3-73.1-64-5.5-9.5 
-              5.5-8.8 15.9-29.4 1.8-3.6.9-6.8-.5-9.5-1.4-2.7-12.1-29.2-16.6-40.1-4.4-10.6-8.9-9.1-12.1-9.3-3.1-.2-6.8-.2-10.4-.2s-9.5 
-              1.4-14.5 6.8c-5 5.4-19 18.5-19 45s19.5 
-              52.3 22.2 55.9c2.7 3.6 37.4 57.1 90.6 
-              80 12.7 5.5 22.6 8.8 30.4 11.3 12.8 
-              4.1 24.5 3.5 33.7 2.1 10.3-1.5 31.7-12.9 
-              36.2-25.4 4.5-12.5 4.5-23.2 3.1-25.4-1.3-2.3-4.9-3.6-10.3-6.3z"/>
-            </svg>
-          </span>
-          WhatsApp
-        </a>
-        <a href="https://www.instagram.com/naada.raja.yoga/" target="_blank" class="instagram">
-          <span class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-              <path fill="#FFF" d="M224 202.7c-31.6 0-57.3 
-              25.7-57.3 57.3s25.7 57.3 57.3 57.3 
-              57.3-25.7 57.3-57.3-25.7-57.3-57.3-57.3zm124.7-41c0 
-              16.5-13.5 30-30 30s-30-13.5-30-30 
-              13.5-30 30-30 30 13.5 30 
-              30zm71.3 41c-.1-36.2-9.8-68.2-35.8-94.2-26-26-58-35.7-94.2-35.8-37.2-.1-148.8-.1-186 
-              0-36.2.1-68.2 9.8-94.2 
-              35.8-26 26-35.7 58-35.8 
-              94.2-.1 37.2-.1 148.8 0 186 0 36.2 
-              9.8 68.2 35.8 94.2 26 26 58 
-              35.7 94.2 35.8 37.2.1 148.8.1 
-              186 0 36.2-.1 68.2-9.8 
-              94.2-35.8 26-26 35.7-58 
-              35.8-94.2.1-37.2.1-148.8 
-              0-186z"/>
-            </svg>
-          </span>
-          Instagram
-        </a>
-        <a href="mailto:yoga@naadaraja.com" target="_blank" class="email">
-          <span class="icon">
-            <!-- Email Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-              <path fill="#fff" d="M502.3 190.8L327.4 338c-15.9 13.1-39.1 13.1-55 
-              0L9.7 190.8C3.9 186.5 0 179.3 0 
-              171.6V400c0 26.5 21.5 48 48 
-              48h416c26.5 0 48-21.5 
-              48-48V171.6c0-7.7-3.9-14.9-9.7-18.8zM464 
-              64H48C21.5 64 0 85.5 0 
-              112v25.6l224 184c15.9 13.1 39.1 
-              13.1 55 0l224-184V112c0-26.5-21.5-48-48-48z"/>
-            </svg>
-          </span>
-          Email
-        </a>
-      </div>
-    </div>
-
     <div class="offer-single">
       <div id="paypal-container-UTBAB8G3VA98N"></div>
       <script>
