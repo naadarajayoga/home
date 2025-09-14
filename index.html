@@ -20,20 +20,23 @@
 
     header {
       background: linear-gradient(135deg, #a8edea, #fed6e3);
-      padding: 50px 20px;
+      padding: 25px 20px; /* reduced vertical padding */
     }
     .branding {
       display: flex; align-items: center; justify-content: center; gap: 15px;
-      max-width: 1000px; margin: auto; text-align: center;
+      max-width: 1000px; margin: auto; text-align: left;
     }
-    .branding img { width: 70px; height: auto; }
+    .branding img { width: 90px; height: auto; } /* ✅ Increased logo size */
+    .branding-text { display: flex; flex-direction: column; align-items: flex-start; }
     .branding h1 {
       font-size: 2rem; font-weight: bold;
       background: linear-gradient(135deg, #008080, #800080);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    header p { font-size: 1.1rem; max-width: 600px; margin: 10px auto 0; text-align: center; }
+    .branding p {
+      font-size: 1.1rem; color: #333;
+    }
 
     section { padding: 60px 20px; max-width: 1000px; margin: auto; }
     section h2 { text-align: center; margin-bottom: 25px; color: #444; font-size: 1.9rem; }
@@ -128,9 +131,11 @@
   <header>
     <div class="branding">
       <img src="Naada Raja Yoga Logo.png" alt="Naada Raja Yoga Logo">
-      <h1>Naada Raja Yoga</h1>
+      <div class="branding-text">
+        <h1>Naada Raja Yoga</h1>
+        <p>Personalized Yoga Journey</p>
+      </div>
     </div>
-    <p>Personalized Yoga Journey</p>
   </header>
 
   <section>
@@ -165,14 +170,7 @@
         <a href="http://wa.me/+919539342026" target="_blank" class="whatsapp">
           <span class="icon">
             <!-- Official WhatsApp Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-              <path fill="#FFF" d="M380.9 97.1C339-3.1 256.5-8.1 
-              186.5 31.9 116.5 71.9 53 168.7 94.9 268.9c21.5 52.5 
-              61.5 99.3 113.6 125.5l-15.3 53.4c-2.9 10.1 7.1 
-              18.8 16.5 13.9l58.7-31.5c60.4 8.4 119.4-14.3 
-              162.3-59.9 67.1-70.8 70.5-182.1 
-              8.2-253.2z"/>
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-115 51.4-115 115s51.4 115 115 115 115-51.4 115-115-51.5-115-115-115zm0 190c-41.3 0-75-33.7-75-75s33.7-75 75-75 75 33.7 75 75-33.7 75-75 75zm146.4-194.3c0 14.9-12 27-26.9 27-14.9 0-26.9-12.1-26.9-27s12-27 26.9-27 26.9 12.1 26.9 27zm76.1 27.2c-1.7-35.7-9.9-67.3-36.3-93.7s-58-34.6-93.7-36.3c-37-2.1-147.9-2.1-184.9 0-35.7 1.7-67.3 9.9-93.7 36.3S9.4 130.5 7.7 166.2c-2.1 37-2.1 147.9 0 184.9 1.7 35.7 9.9 67.3 36.3 93.7s58 34.6 93.7 36.3c37 2.1 147.9 2.1 184.9 0 35.7-1.7 67.3-9.9 93.7-36.3s34.6-58 36.3-93.7c2.1-37 2.1-147.9 0-184.9z"/></svg>
           </span>
           WhatsApp
         </a>
