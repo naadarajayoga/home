@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Naada Raja Yoga</title>
 
   <!-- Favicon -->
@@ -13,119 +13,19 @@
     src="https://www.paypal.com/sdk/js?client-id=BAApzcZuTe3ypLit4fxNQwdx62PVgNgfdaFeYbSHBcb1Eeip0AEk7DgtyJoQE7wzzljrbt94NSBUXEigdU&components=hosted-buttons&disable-funding=venmo&currency=USD">
   </script>
 
+  <!-- Global Reset -->
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-
+    html, body { height: 100%; }
     body { line-height: 1.6; color: #333; background: #fefefe; }
-
-    header {
-      background: linear-gradient(135deg, #a8edea, #fed6e3);
-      padding: 25px 20px;
-    }
-    .branding {
-      display: flex; align-items: center; justify-content: center; gap: 15px;
-      max-width: 1000px; margin: auto; text-align: left;
-    }
-    .branding img { width: 90px; height: auto; }
-    .branding-text { display: flex; flex-direction: column; align-items: flex-start; }
-    .branding h1 {
-      font-size: 2rem; font-weight: bold;
-      background: linear-gradient(135deg, #008080, #800080);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .branding p { font-size: 1.1rem; color: #333; }
-
-    section { padding: 20px 20px; max-width: 1000px; margin: auto; }
-    section h2 { text-align: center; margin-bottom: 25px; color: #444; font-size: 1.9rem; }
-
-    .about-container { 
-      display: flex; flex-wrap: wrap; align-items: center; gap: 30px; max-width: 900px; margin: auto; 
-    }
-    .about-container img {
-      width: 200px; border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    }
-    .about-container .about-text { flex: 1; min-width: 250px; }
-    .about-text p { margin-bottom: 18px; font-size: 1.05rem; color: #444; line-height: 1.8; }
-
-    .offer-single {
-      background: white; border-radius: 12px; padding: 30px; max-width: 500px;
-      margin: 30px auto 0; text-align: center; box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-    }
-
-    .shorts-carousel { display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 15px; padding: 10px; }
-    .shorts-carousel::-webkit-scrollbar { display: none; }
-    .short { flex: 0 0 auto; border-radius: 12px; overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform 0.3s; }
-    .short:hover { transform: scale(1.05); }
-
-    @media (min-width: 769px) {
-      .shorts-carousel::-webkit-scrollbar { height: 8px; display: block; }
-      .shorts-carousel::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
-      .shorts-carousel::-webkit-scrollbar-thumb:hover { background: #555; }
-    }
-
-    .contact { text-align: center; margin-bottom: 30px; }
-
-    .whatsapp { background: #25D366; }
-    .instagram {
-      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    }
-    .email { background: #D44638; }
-
-    .youtube-btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: #FF0000; color: #fff; text-decoration: none;
-      padding: 10px 20px; border-radius: 30px; font-weight: bold;
-      font-size: 1.2rem; transition: 0.3s;
-    }
-    .youtube-btn:hover { background: #cc0000; }
-    .youtube-btn svg { width: 24px; height: 24px; }
-
-    @keyframes float { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-6px);} }
-    .fixed-contact {
-      position: fixed; bottom: 15px; left: 15px;
-      display: flex; flex-direction: column; gap: 10px; z-index: 1000;
-      transform-origin: bottom left;
-      transition: transform 0.4s ease, opacity 0.4s ease;
-    }
-    .fixed-contact.hide { transform: translateY(200px); opacity: 0.9; }
-
-    .fixed-contact a {
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 12px 18px; border-radius: 50px; font-weight: bold;
-      text-decoration: none; color: white;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      animation: float 2s ease-in-out infinite;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .toggle-contact {
-      display: flex; align-items: center; justify-content: center;
-      width: 40px; height: 40px; background: rgb(200,201,197); border-radius: 50%;
-      cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: background 0.3s;
-      margin-bottom: 5px;
-    }
-    .toggle-contact:hover { background: rgb(180,181,177); }
-    /* ⬇️ Arrow is now white */
-    .toggle-contact svg { width: 20px; height: 20px; fill: white; transition: transform 0.3s ease; }
-    .toggle-contact.up svg { transform: rotate(180deg); }
-
-    .icon { display: inline-block; width: 22px; height: 22px; }
-
-    footer { background: #333; color: white; text-align: center; padding: 15px; font-size: 0.9rem; }
-
-    @media (max-width: 768px) {
-      .about-container { flex-direction: column; text-align: center; }
-      .about-container img { margin: 0 auto; }
-      .about-text { text-align: center; }
-    }
+    img { max-width: 100%; display: block; }
   </style>
 </head>
 <body>
 
+  <!-- ======================
+       HEADER
+       ====================== -->
   <header>
     <div class="branding">
       <img src="Naada Raja Yoga Logo.png" alt="Naada Raja Yoga Logo">
@@ -136,160 +36,297 @@
     </div>
   </header>
 
+  <style>
+    /* HEADER CSS */
+    header {
+      background: linear-gradient(135deg, #a8edea, #fed6e3);
+      padding: 25px 20px;
+    }
+    .branding {
+      display: flex; align-items: center; justify-content: center; gap: 15px;
+      max-width: 1000px; margin: 0 auto;
+    }
+    .branding img { width: 90px; height: auto; }
+    .branding-text { display: flex; flex-direction: column; align-items: flex-start; }
+    .branding h1 {
+      font-size: 2rem; font-weight: 700;
+      background: linear-gradient(135deg, #008080, #800080);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .branding p { font-size: 1.05rem; color: #333; }
+  </style>
+  <!-- No JS needed for header -->
+
+  <!-- ======================
+       ABOUT
+       ====================== -->
   <section class="about-section">
     <div class="about-container">
       <img src="me.jpg" alt="Yoga Teacher">
       <div class="about-text">
-        <p>
-          I have been teaching yoga for over a decade, helping students across the world
-          discover flexibility, strength, and inner balance. My sessions are fully
-          personalized, adapting to each individual’s needs and progress.
-        </p>
-        <p>
-          Through daily guidance and monitoring, I ensure steady improvement and a
-          holistic approach to well-being. My goal is to make yoga a sustainable and
-          transformative practice in your life.
-        </p>
+        <p>I have been teaching yoga for over a decade, helping students across the world
+           discover flexibility, strength, and inner balance. My sessions are fully
+           personalized, adapting to each individual’s needs and progress.</p>
+        <p>Through daily guidance and monitoring, I ensure steady improvement and a
+           holistic approach to well-being. My goal is to make yoga a sustainable and
+           transformative practice in your life.</p>
       </div>
     </div>
   </section>
 
+  <style>
+    /* ABOUT CSS */
+    .about-section { padding: 20px; }
+    .about-container { display: flex; flex-wrap: wrap; align-items: center; gap: 30px; max-width: 900px; margin: 0 auto; }
+    .about-container img {
+      width: 200px; border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+    .about-text { flex: 1; min-width: 250px; }
+    .about-text p { margin-bottom: 18px; font-size: 1.05rem; color: #444; line-height: 1.8; }
+    @media (max-width: 768px) {
+      .about-container { flex-direction: column; text-align: center; }
+      .about-container img { margin: 0 auto; }
+      .about-text { text-align: center; }
+    }
+  </style>
+  <!-- No JS needed for about -->
+
+  <!-- ======================
+       SHORTS / YOUTUBE
+       ====================== -->
   <section id="shorts">
-    <div style="text-align:center; margin-bottom:20px;">
+    <div style="text-align:center; margin-bottom:14px;">
       <a href="https://www.youtube.com/@NaadaRajaYoga" target="_blank" class="youtube-btn">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-  <defs>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="2" dy="2" stdDeviation="4" flood-color="black" flood-opacity="0.4"/>
-    </filter>
-  </defs>
-
-  <g filter="url(#shadow)">
-    <!-- Red rounded rectangle with white border -->
-    <rect x="32" y="64" width="192" height="128" rx="28" ry="28"
-          fill="#FF0000" stroke="#FFFFFF" stroke-width="12"/>
-    <!-- White play button -->
-    <polygon points="108,96 172,128 108,160" fill="#FFFFFF"/>
-  </g>
-</svg>
-
+          <rect x="32" y="64" width="192" height="128" rx="28" fill="#FF0000" stroke="#fff" stroke-width="12"/>
+          <polygon points="108,96 172,128 108,160" fill="#fff"/>
+        </svg>
         YouTube
       </a>
     </div>
     <div class="shorts-carousel">
-      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/SYvQXu5onF0" frameborder="0" allowfullscreen></iframe></div>
-      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/KwHA5qyFzXY" frameborder="0" allowfullscreen></iframe></div>
-      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/4JhofpR7DEY" frameborder="0" allowfullscreen></iframe></div>
-      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/niu5uo0cnfg" frameborder="0" allowfullscreen></iframe></div>
-      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/gO_dfy0N-sM" frameborder="0" allowfullscreen></iframe></div>
-      <div class="short"><iframe width="250" height="450" src="https://www.youtube.com/embed/R5niWehGQD8" frameborder="0" allowfullscreen></iframe></div>
+      <div class="short"><iframe src="https://www.youtube.com/embed/SYvQXu5onF0" allowfullscreen></iframe></div>
+      <div class="short"><iframe src="https://www.youtube.com/embed/KwHA5qyFzXY" allowfullscreen></iframe></div>
+      <div class="short"><iframe src="https://www.youtube.com/embed/4JhofpR7DEY" allowfullscreen></iframe></div>
+      <div class="short"><iframe src="https://www.youtube.com/embed/niu5uo0cnfg" allowfullscreen></iframe></div>
+      <div class="short"><iframe src="https://www.youtube.com/embed/gO_dfy0N-sM" allowfullscreen></iframe></div>
+      <div class="short"><iframe src="https://www.youtube.com/embed/R5niWehGQD8" allowfullscreen></iframe></div>
     </div>
   </section>
 
+  <style>
+    /* SHORTS CSS */
+    #shorts { padding: 20px; max-width: 1000px; margin: 0 auto; }
+    .shorts-carousel { display: flex; overflow-x: auto; gap: 15px; }
+    .short { flex: 0 0 auto; width: 200px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+    .short iframe { width: 100%; aspect-ratio: 9 / 16; border: 0; }
+    
+    .youtube-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #FF0000; color: #fff; padding: 10px 18px;
+      border-radius: 30px; font-weight: 700; font-size: 1.05rem;
+      text-decoration: none;
+    }
+    .youtube-btn:hover { background: #cc0000; }
+    .youtube-btn svg { width: 22px; height: 22px; }
+    
+  </style>
+  <!-- No JS needed for shorts -->
+
+  <!-- ======================
+       CONTACT / PAYPAL
+       ====================== -->
   <section id="contact">
     <div class="offer-single">
       <div id="paypal-container-UTBAB8G3VA98N"></div>
-      <script>
-        paypal.HostedButtons({
-          hostedButtonId: "UTBAB8G3VA98N",
-        }).render("#paypal-container-UTBAB8G3VA98N")
-      </script>
     </div>
   </section>
 
-  <div class="fixed-contact" id="contactButtons">
-    <!-- Toggle Button above WhatsApp -->
-    <div class="toggle-contact" id="toggleBtn" onclick="toggleContacts()">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M12 15.5l-7-7h14l-7 7z"/>
-      </svg>
+  <style>
+    /* CONTACT / PAYPAL CSS */
+    .offer-single {
+      background: white; border-radius: 12px; padding: 28px; max-width: 520px;
+      margin: 30px auto; text-align: center; box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+  </style>
+
+  <script>
+    // CONTACT / PAYPAL JS
+    paypal.HostedButtons({ hostedButtonId: "UTBAB8G3VA98N" })
+      .render("#paypal-container-UTBAB8G3VA98N");
+  </script>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Floating Contact Buttons</title>
+</head>
+<body>
+
+<!-- ======================
+     FLOATING CONTACT BUTTONS
+     ====================== -->
+<div class="floating-wrapper" id="floatingWrapper">
+  <div class="floating-inner">
+    <div class="floating-group" id="floatingGroup">
+      <!-- Toggle Button -->
+      <div class="toggle-contact" id="toggleBtn" onclick="toggleContacts()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 15.5l-7-7h14l-7 7z"/>
+        </svg>
+      </div>
+
+      <!-- Contact Buttons -->
+      <div class="fixed-contact" id="contactButtons">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/919539342026" target="_blank" class="whatsapp">
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <g>
+                <path
+                  d="M128 16
+                    a112 112 0 0 1 0 224
+                    c-21 0-40-5-57-14l-38 10 10-37
+                    c-11-18-17-39-17-61
+                    a112 112 0 0 1 112-122z"
+                  fill="#25D366" stroke="#FFFFFF" stroke-width="12" stroke-linejoin="round"/>
+                <path fill="#FFF" d="M190.6 161.2c-3.1-1.5-18.4-9.1-21.3-10.2-2.9-1.1-5-1.5-7.1 1.6-2.1 3.1-8.1 10.2-9.9 12.3-1.8 2.1-3.6 2.3-6.7.8-3.1-1.5-13.1-4.8-25-15.1-9.2-8.2-15.4-18.3-17.2-21.4-1.8-3.1-.2-4.8 1.4-6.3 1.5-1.5 3.1-3.6 4.6-5.4 1.5-1.8 2-3.1 3.1-5.2 1-2.1.5-4-0.3-5.5-.8-1.5-7.1-17.1-9.7-23.5-2.6-6.2-5.2-5.4-7.1-5.5-1.8-.1-3.9-.1-6-.1s-5.5.8-8.4 4c-2.9 3.1-11 10.8-11 26.3s11.3 30.5 12.9 32.6c1.5 2.1 22.1 33.7 53.6 47.3 31.5 13.6 31.5 9.1 37.2 8.6 5.7-.5 18.4-7.5 21-14.7 2.6-7.2 2.6-13.4 1.8-14.7-.7-1.2-2.7-2-5.8-3.5z"/>
+              </g>
+            </svg>
+          </span>
+          +91 95393 42026
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/naada.raja.yoga/" target="_blank" class="instagram">
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <defs>
+                <linearGradient id="instaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f58529"/>
+                  <stop offset="30%" stop-color="#dd2a7b"/>
+                  <stop offset="60%" stop-color="#8134af"/>
+                  <stop offset="100%" stop-color="#515bd4"/>
+                </linearGradient>
+              </defs>
+              <g>
+                <rect x="20" y="20" width="216" height="216" rx="48" fill="url(#instaGradient)" stroke="#fff" stroke-width="8"/>
+                <circle cx="128" cy="128" r="48" fill="none" stroke="#fff" stroke-width="12"/>
+                <circle cx="176" cy="80" r="10" fill="#fff"/>
+              </g>
+            </svg>
+          </span>
+          @naada.raja.yoga
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:yoga@naadaraja.com" target="_blank" class="email">
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path fill="#fff" d="M502.3 190.8L327.4 338c-15.9 13.1-39.1 13.1-55 0L9.7 190.8C3.9 186.5 0 179.3 0 171.6V400c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V171.6c0-7.7-3.9-14.9-9.7-18.8zM464 64H48C21.5 64 0 85.5 0 112v25.6l224 184c15.9 13.1 39.1 13.1 55 0l224-184V112c0-26.5-21.5-48-48-48z"/>
+            </svg>
+          </span>
+          yoga@naadaraja.com
+        </a>
+      </div>
     </div>
-
-    <a href="http://wa.me/+919539342026" target="_blank" class="whatsapp">
-      <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-  <defs>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="2" dy="2" stdDeviation="4" flood-color="black" flood-opacity="0.4"/>
-    </filter>
-  </defs>
-
-  <g filter="url(#shadow)">
-    <!-- Bubble with integrated rounded tail -->
-    <path
-      d="M128 16
-         a112 112 0 0 1 0 224
-         c-21 0-40-5-57-14l-38 10 10-37
-         c-11-18-17-39-17-61
-         a112 112 0 0 1 112-122z"
-      fill="#25D366"
-      stroke="#FFFFFF"
-      stroke-width="12"
-      stroke-linejoin="round"
-    />
-
-    <!-- White handset -->
-    <path fill="#FFF" d="M190.6 161.2c-3.1-1.5-18.4-9.1-21.3-10.2-2.9-1.1-5-1.5-7.1 1.6-2.1 3.1-8.1 10.2-9.9 12.3-1.8 2.1-3.6 2.3-6.7.8-3.1-1.5-13.1-4.8-25-15.1-9.2-8.2-15.4-18.3-17.2-21.4-1.8-3.1-.2-4.8 1.4-6.3 1.5-1.5 3.1-3.6 4.6-5.4 1.5-1.8 2-3.1 3.1-5.2 1-2.1.5-4-0.3-5.5-.8-1.5-7.1-17.1-9.7-23.5-2.6-6.2-5.2-5.4-7.1-5.5-1.8-.1-3.9-.1-6-.1s-5.5.8-8.4 4c-2.9 3.1-11 10.8-11 26.3s11.3 30.5 12.9 32.6c1.5 2.1 22.1 33.7 53.6 47.3 31.5 13.6 31.5 9.1 37.2 8.6 5.7-.5 18.4-7.5 21-14.7 2.6-7.2 2.6-13.4 1.8-14.7-.7-1.2-2.7-2-5.8-3.5z"/>
-  </g>
-</svg>
-
-</span>
-      +919539342026
-    </a>
-
-    <a href="https://www.instagram.com/naada.raja.yoga/" target="_blank" class="instagram">
-      <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-  <defs>
-    <!-- Instagram gradient -->
-    <linearGradient id="instaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f58529"/>
-      <stop offset="30%" stop-color="#dd2a7b"/>
-      <stop offset="60%" stop-color="#8134af"/>
-      <stop offset="100%" stop-color="#515bd4"/>
-    </linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="2" dy="2" stdDeviation="4" flood-color="black" flood-opacity="0.4"/>
-    </filter>
-  </defs>
-  <g filter="url(#shadow)">
-    <!-- Rounded square background -->
-    <rect x="20" y="20" width="216" height="216" rx="48" ry="48" fill="url(#instaGradient)" stroke="#fff" stroke-width="10"/>
-    <!-- Camera circle -->
-    <circle cx="128" cy="128" r="48" fill="none" stroke="#fff" stroke-width="14"/>
-    <!-- Small top-right dot -->
-    <circle cx="176" cy="80" r="12" fill="#fff"/>
-  </g>
-</svg>
-</span>
-      @naada.raja.yoga
-    </a>
-
-    <a href="mailto:yoga@naadaraja.com" target="_blank" class="email">
-      <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-          <path fill="#fff" d="M502.3 190.8L327.4 338c-15.9 13.1-39.1 13.1-55 
-          0L9.7 190.8C3.9 186.5 0 179.3 0 
-          171.6V400c0 26.5 21.5 48 48 
-          48h416c26.5 0 48-21.5 
-          48-48V171.6c0-7.7-3.9-14.9-9.7-18.8zM464 
-          64H48C21.5 64 0 85.5 0 
-          112v25.6l224 184c15.9 13.1 39.1 
-          13.1 55 0l224-184V112c0-26.5-21.5-48-48-48z"/>
-        </svg></span>
-      yoga@naadaraja.com
-    </a>
   </div>
+</div>
 
+<style>
+  /* Wrapper handles slide up/down */
+  .floating-wrapper {
+    position: fixed;
+    bottom: 15px; left: 15px;
+    transition: transform 0.5s ease;
+  }
+  .floating-wrapper.collapsed {
+    transform: translateY(calc(100% - 35px));
+  }
+
+  /* Inner wrapper handles floating animation */
+  .floating-inner {
+    animation: floatGroup 4s ease-in-out infinite;
+  }
+
+  @keyframes floatGroup {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); } /* stronger motion */
+  }
+
+  /* Group structure */
+  .floating-group {
+    display: flex; flex-direction: column;
+    gap: 10px;
+  }
+
+  /* CONTACT BUTTONS */
+  .fixed-contact {
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .fixed-contact a {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 14px; border-radius: 999px; font-weight: 700;
+    text-decoration: none; color: #fff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  }
+  .whatsapp { background: #25D366; }
+  .instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  }
+  .email { background: #D44638; }
+  .icon { width: 22px; height: 22px; display:inline-block; }
+
+  /* TOGGLE BUTTON */
+  .toggle-contact {
+    width: 40px; height: 40px; 
+    background: rgb(55,148,161);
+    border-radius: 50%; 
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; 
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .toggle-contact:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  }
+  .toggle-contact svg {
+    width: 28px; height: 28px;  
+    fill: #FFFFFF;
+    transition: transform 0.3s;
+  }
+  .toggle-contact.up svg { transform: rotate(180deg); }
+</style>
+
+<script>
+  function toggleContacts() {
+    const wrapper = document.getElementById('floatingWrapper');
+    const toggleBtn = document.getElementById('toggleBtn');
+    
+    wrapper.classList.toggle('collapsed');
+    toggleBtn.classList.toggle('up');
+  }
+</script>
+
+</body>
+</html>
+
+
+  <!-- ======================
+       FOOTER
+       ====================== -->
   <footer>
     <p>&copy; 2025 Naada Raja Yoga. All rights reserved.</p>
   </footer>
 
-  <script>
-    function toggleContacts() {
-      const contacts = document.getElementById('contactButtons');
-      const toggleBtn = document.getElementById('toggleBtn');
-      contacts.classList.toggle('hide');
-      toggleBtn.classList.toggle('up');
-    }
-  </script>
+  <style>
+    /* FOOTER CSS */
+    footer { background: #333; color: #fff; text-align: center; padding: 15px; font-size: 0.9rem; }
+  </style>
+  <!-- No JS needed for footer -->
 
 </body>
 </html>
