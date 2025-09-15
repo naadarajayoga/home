@@ -20,7 +20,7 @@
 
     header {
       background: linear-gradient(135deg, #a8edea, #fed6e3);
-      padding: 25px 20px; /* reduced vertical padding */
+      padding: 25px 20px;
     }
     .branding {
       display: flex; align-items: center; justify-content: center; gap: 15px;
@@ -34,76 +34,39 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .branding p {
-      font-size: 1.1rem; color: #333;
-    }
+    .branding p { font-size: 1.1rem; color: #333; }
 
     section { padding: 20px 20px; max-width: 1000px; margin: auto; }
     section h2 { text-align: center; margin-bottom: 25px; color: #444; font-size: 1.9rem; }
-    section p { line-height: 1.8; }
 
     .about-container { 
-      display: flex; 
-      flex-wrap: wrap;
-      align-items: center; 
-      gap: 30px; 
-      max-width: 900px; 
-      margin: auto; 
+      display: flex; flex-wrap: wrap; align-items: center; gap: 30px; max-width: 900px; margin: auto; 
     }
     .about-container img {
-      width: 200px;
-      max-width: 100%; 
-      border-radius: 12px;
+      width: 200px; border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     }
     .about-container .about-text { flex: 1; min-width: 250px; }
-    .about-text p {
-      margin-bottom: 18px;
-      font-size: 1.05rem;
-      color: #444;
-      line-height: 1.8;
-    }
+    .about-text p { margin-bottom: 18px; font-size: 1.05rem; color: #444; line-height: 1.8; }
 
     .offer-single {
       background: white; border-radius: 12px; padding: 30px; max-width: 500px;
       margin: 30px auto 0; text-align: center; box-shadow: 0 6px 20px rgba(0,0,0,0.12);
     }
-    .offer-single h3 { font-size: 1.5rem; margin-bottom: 12px; color: #333; }
-    .offer-single p { margin-bottom: 15px; font-size: 1.05rem; color: #555; }
 
-    .shorts-carousel {
-      display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 15px; padding: 10px;
-    }
+    .shorts-carousel { display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 15px; padding: 10px; }
     .shorts-carousel::-webkit-scrollbar { display: none; }
-    .short {
-      flex: 0 0 auto; border-radius: 12px; overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform 0.3s;
-    }
+    .short { flex: 0 0 auto; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform 0.3s; }
     .short:hover { transform: scale(1.05); }
 
-    /* ✅ Only show horizontal scrollbar on PC */
     @media (min-width: 769px) {
       .shorts-carousel::-webkit-scrollbar { height: 8px; display: block; }
-      .shorts-carousel::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 4px;
-      }
-      .shorts-carousel::-webkit-scrollbar-thumb:hover {
-        background: #555;
-      }
+      .shorts-carousel::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
+      .shorts-carousel::-webkit-scrollbar-thumb:hover { background: #555; }
     }
 
     .contact { text-align: center; margin-bottom: 30px; }
-    .contact p { margin-bottom: 12px; font-size: 1.05rem; }
-
-    .social-links {
-      display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;
-    }
-    .social-links a {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 10px 18px; border-radius: 25px; font-weight: bold;
-      text-decoration: none; color: white; transition: 0.3s;
-    }
 
     .whatsapp { background: #25D366; }
     .instagram {
@@ -120,16 +83,15 @@
     .youtube-btn:hover { background: #cc0000; }
     .youtube-btn svg { width: 24px; height: 24px; }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
+    @keyframes float { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-6px);} }
     .fixed-contact {
-      position: fixed; bottom: 15px; left: 15px; right: auto;
+      position: fixed; bottom: 15px; left: 15px;
       display: flex; flex-direction: column; gap: 10px; z-index: 1000;
-      transform: scale(0.8); /* reduce size to 80% */
       transform-origin: bottom left;
+      transition: transform 0.4s ease, opacity 0.4s ease;
     }
+    .fixed-contact.hide { transform: translateY(200px); opacity: 0.9; }
+
     .fixed-contact a {
       display: flex; align-items: center; justify-content: center; gap: 8px;
       padding: 12px 18px; border-radius: 50px; font-weight: bold;
@@ -138,24 +100,26 @@
       animation: float 2s ease-in-out infinite;
       transition: transform 0.3s, box-shadow 0.3s;
     }
-    .fixed-contact a:hover { transform: translateY(-3px); box-shadow: 0 6px 14px rgba(0,0,0,0.25); }
+
+    .toggle-contact {
+      display: flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; background: rgb(200,201,197); border-radius: 50%;
+      cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+      margin-bottom: 5px;
+    }
+    .toggle-contact:hover { background: rgb(180,181,177); }
+    /* ⬇️ Arrow is now white */
+    .toggle-contact svg { width: 20px; height: 20px; fill: white; transition: transform 0.3s ease; }
+    .toggle-contact.up svg { transform: rotate(180deg); }
 
     .icon { display: inline-block; width: 22px; height: 22px; }
-    .icon svg { width: 100%; height: 100%; }
 
     footer { background: #333; color: white; text-align: center; padding: 15px; font-size: 0.9rem; }
-    .footer-links { margin-top: 10px; display: flex; justify-content: center; gap: 15px; }
-    .footer-links a { color: white; display: inline-block; width: 20px; height: 20px; }
 
-    /* ✅ Mobile fix */
     @media (max-width: 768px) {
-      .about-container {
-        flex-direction: column;
-        text-align: center;
-      }
-      .about-container img {
-        margin: 0 auto;
-      }
+      .about-container { flex-direction: column; text-align: center; }
+      .about-container img { margin: 0 auto; }
       .about-text { text-align: center; }
     }
   </style>
@@ -193,14 +157,7 @@
   <section id="shorts">
     <div style="text-align:center; margin-bottom:20px;">
       <a href="https://www.youtube.com/@NaadaRajaYoga" target="_blank" class="youtube-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-          <path fill="#fff" d="M549.7 124.1c-6.3-23.7-24.9-42.3-48.6-48.6C465.6 64 288 64 288 64s-177.6 0-213.1 11.5c-23.7 6.3-42.3 
-          24.9-48.6 48.6C15 159.6 15 256 15 256s0 96.4 11.3 
-          131.9c6.3 23.7 24.9 42.3 48.6 48.6C110.4 448 288 
-          448 288 448s177.6 0 213.1-11.5c23.7-6.3 42.3-24.9 
-          48.6-48.6C561 352.4 561 256 561 256s0-96.4-11.3-131.9zM232 
-          334V178l142 78-142 78z"/>
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="#fff" d="M549.7..."/></svg>
         YouTube
       </a>
     </div>
@@ -225,62 +182,26 @@
     </div>
   </section>
 
-  <div class="fixed-contact">
+  <div class="fixed-contact" id="contactButtons">
+    <!-- Toggle Button above WhatsApp -->
+    <div class="toggle-contact" id="toggleBtn" onclick="toggleContacts()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 15.5l-7-7h14l-7 7z"/>
+      </svg>
+    </div>
+
     <a href="http://wa.me/+919539342026" target="_blank" class="whatsapp">
-      <span class="icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-          <path fill="#25D366" d="M224 0C100.3 0 0 100.3 0 224c0 39.5 10.3 77.5 
-          29.9 111.2L16 496l164.1-43.1C205.6 466.4 
-          214.7 468 224 468c123.7 0 224-100.3 
-          224-224S347.7 0 224 0z"/>
-          <path fill="#FFF" d="M324.6 297.1c-5.4-2.7-31.7-15.6-36.6-17.4-4.9-1.8-8.5-2.7-12.1 
-          2.7s-13.9 17.4-17 21c-3.1 3.6-6.3 4.1-11.7 
-          1.4-31.7-15.9-52.4-28.3-73.1-64-5.5-9.5 
-          5.5-8.8 15.9-29.4 1.8-3.6.9-6.8-.5-9.5-1.4-2.7-12.1-29.2-16.6-40.1-4.4-10.6-8.9-9.1-12.1-9.3-3.1-.2-6.8-.2-10.4-.2s-9.5 
-          1.4-14.5 6.8c-5 5.4-19 18.5-19 45s19.5 
-          52.3 22.2 55.9c2.7 3.6 37.4 57.1 90.6 
-          80 12.7 5.5 22.6 8.8 30.4 11.3 12.8 
-          4.1 24.5 3.5 33.7 2.1 10.3-1.5 31.7-12.9 
-          36.2-25.4 4.5-12.5 4.5-23.2 3.1-25.4-1.3-2.3-4.9-3.6-10.3-6.3z"/>
-        </svg>
-      </span>
+      <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#25D366" d="M224 0..."/></svg></span>
       +919539342026
     </a>
+
     <a href="https://www.instagram.com/naada.raja.yoga/" target="_blank" class="instagram">
-      <span class="icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-          <path fill="#FFF" d="M224 202.7c-31.6 0-57.3 
-          25.7-57.3 57.3s25.7 57.3 57.3 
-          57.3 57.3-25.7 57.3-57.3-25.7-57.3-57.3-57.3zm124.7-41c0 
-          16.5-13.5 30-30 30s-30-13.5-30-30 
-          13.5-30 30-30 30 13.5 30 
-          30zm71.3 41c-.1-36.2-9.8-68.2-35.8-94.2-26-26-58-35.7-94.2-35.8-37.2-.1-148.8-.1-186 
-          0-36.2.1-68.2 9.8-94.2 
-          35.8-26 26-35.7 58-35.8 
-          94.2-.1 37.2-.1 148.8 0 186 0 36.2 
-          9.8 68.2 35.8 94.2 26 26 58 
-          35.7 94.2 35.8 37.2.1 148.8.1 
-          186 0 36.2-.1 68.2-9.8 
-          94.2-35.8 26-26 35.7-58 
-          35.8-94.2.1-37.2.1-148.8 
-          0-186z"/>
-        </svg>
-      </span>
+      <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#FFF" d="M224 202.7..."/></svg></span>
       @naada.raja.yoga
     </a>
+
     <a href="mailto:yoga@naadaraja.com" target="_blank" class="email">
-      <span class="icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-          <path fill="#fff" d="M502.3 190.8L327.4 338c-15.9 13.1-39.1 13.1-55 
-          0L9.7 190.8C3.9 186.5 0 179.3 0 
-          171.6V400c0 26.5 21.5 48 48 
-          48h416c26.5 0 48-21.5 
-          48-48V171.6c0-7.7-3.9-14.9-9.7-18.8zM464 
-          64H48C21.5 64 0 85.5 0 
-          112v25.6l224 184c15.9 13.1 39.1 
-          13.1 55 0l224-184V112c0-26.5-21.5-48-48-48z"/>
-        </svg>
-      </span>
+      <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#fff" d="M502.3..."/></svg></span>
       yoga@naadaraja.com
     </a>
   </div>
@@ -288,6 +209,15 @@
   <footer>
     <p>&copy; 2025 Naada Raja Yoga. All rights reserved.</p>
   </footer>
+
+  <script>
+    function toggleContacts() {
+      const contacts = document.getElementById('contactButtons');
+      const toggleBtn = document.getElementById('toggleBtn');
+      contacts.classList.toggle('hide');
+      toggleBtn.classList.toggle('up');
+    }
+  </script>
 
 </body>
 </html>
