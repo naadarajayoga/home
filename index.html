@@ -93,6 +93,61 @@
   </style>
   <!-- No JS needed for about -->
 
+
+    <!-- ======================
+       REVIEWS
+       ====================== -->
+  <section class="reviews-section">
+    <h2>Reviews</h2>
+    <div class="reviews-container">
+      <div class="embedsocial-widget" data-ref="a68d0c38cb80391e874b9698b897ece3">
+        <a href="https://embedsocial.com/google-reviews-widget/" 
+           title="Add Google reviews on a website" 
+           target="_blank" 
+           class="powered-by-es es-slider">
+          <img src="https://embedsocial.com/cdn/icon/embedsocial-logo.webp" alt="EmbedSocial">
+          <span> Google reviews widget </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* REVIEWS CSS */
+    .reviews-section {
+      padding: 30px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .reviews-section h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #444;
+    }
+    .reviews-container {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+      background: #fff;
+      padding: 10px;
+    }
+  </style>
+
+  <script>
+    (function(d, s, id) {
+      var js;
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://embedsocial.com/cdn/aht.js";
+      d.getElementsByTagName("head")[0].appendChild(js);
+    }(document, "script", "EmbedSocialWidgetScript"));
+  </script>
+
+
+
   <!-- ======================
        SHORTS / YOUTUBE
        ====================== -->
@@ -255,7 +310,7 @@
 
   @keyframes floatGroup {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); } /* stronger motion */
+    50% { transform: translateY(-4px); } /* stronger motion */
   }
 
   /* Group structure */
@@ -317,16 +372,96 @@
 
   <!-- ======================
        FOOTER
-       ====================== -->
-  <footer>
-    <p>&copy; 2025 Naada Raja Yoga. All rights reserved.</p>
-  </footer>
+====================== -->
+<footer>
+  <div class="footer-links">
+    <a href="https://naadaraja.com" title="Home" class="active">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+        <path d="M541 229.16l-61-52.06V56c0-13.25-10.75-24-24-24h-72c-13.25 
+        0-24 10.75-24 24v24L314.4 43c-15.9-13.6-39.3-13.6-55.2 
+        0L35 229.2c-9.9 8.4-11.1 23.3-2.7 33.2s23.3 11.1 33.2 
+        2.7L96 232.1V456c0 30.9 25.1 56 56 56h96V360h80v152h96c30.9 
+        0 56-25.1 56-56V232l30.6 26c9.9 8.4 24.8 7.1 33.2-2.7 
+        8.4-9.9 7.1-24.8-2.7-33.2z"/>
+      </svg>
+      <span>Home</span>
+    </a>
 
-  <style>
-    /* FOOTER CSS */
-    footer { background: #333; color: #fff; text-align: center; padding: 15px; font-size: 0.9rem; }
-  </style>
-  <!-- No JS needed for footer -->
+    <a href="https://contact.naadaraja.com/" title="Contact">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path d="M502.3 190.8L327.4 338c-15.9 13.1-39.1 13.1-55 
+        0L9.7 190.8C3.9 186.5 0 179.3 0 
+        171.6V400c0 26.5 21.5 48 48 
+        48h416c26.5 0 48-21.5 
+        48-48V171.6c0-7.7-3.9-14.9-9.7-18.8zM464 
+        64H48C21.5 64 0 85.5 0 
+        112v25.6l224 184c15.9 13.1 39.1 
+        13.1 55 0l224-184V112c0-26.5-21.5-48-48-48z"/>
+      </svg>
+      <span>Contact</span>
+    </a>
 
-</body>
-</html>
+    <a href="https://programs.naadaraja.com" title="Programs">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+        <path d="M320 96a64 64 0 1 0 0-128 64 64 0 1 0 0 128zM528 352h-56l-41-82c-6-12-19-18-32-14s-21 16-19 29l20 99H240l20-99c2-13-5-25-19-29s-26 2-32 14l-41 82H112c-27 0-48 21-48 48s21 48 48 48h416c27 0 48-21 48-48s-21-48-48-48z"/>
+      </svg>
+      <span>Programs</span>
+    </a>
+  </div>
+
+  <p>&copy; 2025 Naada Raja Yoga</p>
+</footer>
+
+<style>
+/* FOOTER CSS */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 15px;
+  font-size: 0.9rem;
+}
+
+footer .footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 10px;
+}
+
+footer .footer-links a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #bbb;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .footer-links a svg {
+  width: 22px;
+  height: 22px;
+  fill: #bbb;
+  margin-bottom: 5px;
+  transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+footer .footer-links a:hover {
+  color: #fff;
+}
+
+footer .footer-links a:hover svg {
+  fill: #fff;
+  transform: scale(1.1);
+}
+
+footer .footer-links a.active {
+  color: gold;
+  font-weight: bold;
+}
+
+footer .footer-links a.active svg {
+  fill: gold;
+}
+</style>
