@@ -3,151 +3,353 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Privacy Policy - Naada Raja Yoga</title>
-  <link rel="icon" href="favicon.png" type="image/png">
-  <link rel="stylesheet" href="style.css" />
+  <title>Naada Raja Yoga</title>
+
+
+
+  <!-- Global Reset -->
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    html, body { height: 100%; }
+    body { line-height: 1.6; color: #333; background: #fefefe; }
+    img { max-width: 100%; display: block; }
+  </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- ======================
+       HEADER
+       ====================== -->
   <header>
-    <div class="header-container">
-      <div class="logo">
-        <a href="index.html">Naada Raja Yoga</a>
+    <div class="branding">
+      <img src="Naada Raja Yoga Logo.png" alt="Naada Raja Yoga Logo">
+      <div class="branding-text">
+        <h1>Naada Raja Yoga</h1>
+        <p>Personalized Yoga Journey</p>
       </div>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="contact.html">Contact</a>
-      </nav>
     </div>
   </header>
 
-  <!-- Main Privacy Policy Section -->
-  <main style="max-width:900px; margin:40px auto; padding:20px;">
-    <h1>Privacy Policy</h1>
-    <p>At Naada Raja Yoga, we value your privacy and are committed to protecting your personal information. This Privacy Policy outlines how we collect, use, and safeguard your data.</p>
+  <style>
+    /* HEADER CSS */
+    header {
+      background: linear-gradient(135deg, #a8edea, #fed6e3);
+      padding: 25px 20px;
+    }
+    .branding {
+      display: flex; align-items: center; justify-content: center; gap: 15px;
+      max-width: 1000px; margin: 0 auto;
+    }
+    .branding img { width: 90px; height: auto; }
+    .branding-text { display: flex; flex-direction: column; align-items: flex-start; }
+    .branding h1 {
+      font-size: 2rem; font-weight: 700;
+      background: linear-gradient(135deg, #008080, #800080);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .branding p { font-size: 1.05rem; color: #333; }
+  </style>
+  <!-- No JS needed for header -->
 
-    <h2>Information We Collect</h2>
-    <p>We only collect minimal information necessary for providing our services, such as:</p>
-    <ul>
-      <li>Contact details you choose to share with us (e.g., via email, contact form, or messaging platforms).</li>
-      <li>Information about how you reach us (e.g., through Facebook, email, or other platforms).</li>
-      <li>Payment details are securely processed by third-party providers such as PayPal and are never stored by us.</li>
-    </ul>
+  
+<!-- ======================
+     FLOATING CONTACT BUTTONS
+     ====================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Floating Contact Buttons</title>
+  <style>
+    /* Wrapper handles slide up/down */
+    .floating-wrapper {
+      position: fixed;
+      bottom: 15px; left: 15px;
+      transition: transform 0.5s ease;
+    }
+    .floating-wrapper.collapsed {
+      transform: translateY(calc(100% - 35px));
+    }
 
-    <h2>How We Use Information</h2>
-    <p>The information collected is used solely for:</p>
-    <ul>
-      <li>Providing and improving our yoga classes and services.</li>
-      <li>Communicating with you regarding classes, updates, or support.</li>
-      <li>Maintaining transaction records where applicable.</li>
-    </ul>
+    /* Inner wrapper handles floating animation */
+    .floating-inner {
+      animation: floatGroup 4s ease-in-out infinite;
+    }
 
-    <h2>Data Sharing</h2>
-    <p>We do not sell, rent, or trade your personal data. Information may only be shared when legally required or with trusted third-party services (e.g., payment processors) to complete transactions.</p>
+    @keyframes floatGroup {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); } /* stronger motion */
+    }
 
-    <h2>Security</h2>
-    <p>We take reasonable measures to protect your information. However, no online method of transmission is 100% secure, and we cannot guarantee absolute security.</p>
+    /* Group structure */
+    .floating-group {
+      display: flex; flex-direction: column;
+      gap: 10px;
+    }
 
-    <h2>Your Rights</h2>
-    <p>You may contact us at any time to:</p>
-    <ul>
-      <li>Request access to the information we hold about you.</li>
-      <li>Request corrections or deletion of your data.</li>
-      <li>Withdraw consent for future communications.</li>
-    </ul>
+    /* CONTACT BUTTONS */
+    .fixed-contact {
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .fixed-contact a {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 14px; border-radius: 999px; font-weight: 700;
+      text-decoration: none; color: #fff;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    }
+    .whatsapp { background: #25D366; }
+    .instagram {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    }
+    .email { background: #D44638; }
+    .icon { width: 22px; height: 22px; display:inline-block; }
 
-    <h2>Changes to this Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Updates will be posted on this page with a revised effective date.</p>
+    /* TOGGLE BUTTON */
+    .toggle-contact {
+      width: 40px; height: 40px; 
+      background: rgb(55,148,161);
+      border-radius: 50%; 
+      display:flex; align-items:center; justify-content:center;
+      cursor:pointer; 
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .toggle-contact:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+    .toggle-contact svg {
+      width: 28px; height: 28px;  
+      fill: #FFFFFF;
+      transition: transform 0.3s;
+    }
+    .toggle-contact.up svg { transform: rotate(180deg); }
+  </style>
+</head>
+<body>
 
-    <h2>Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy, please reach out via our <a href="contact.html">Contact Page</a>.</p>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-links">
-      <!-- Home -->
-      <a href="https://naadaraja.com" title="Home">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-          <path d="M541 229.16l-61-52.06V56c0-13.25-10.75-24-24-24h-72c-13.25
-          0-24 10.75-24 24v24.66L314.58 43.17c-11.74-10.02-29.42-10.02-41.16
-          0L35 229.16c-15.32 13.07-17.16 36.2-4.09 51.51 13.08
-          15.32 36.19 17.16 51.52 4.1L96 262.59V456c0 30.93
-          25.07 56 56 56h272c30.93 0 56-25.07
-          56-56V262.59l13.58 11.68c6.75 5.76
-          14.94 8.6 23.09 8.6 10.41 0 20.74-4.35
-          28.43-12.7 13.06-15.31 11.22-38.44-4.1-51.51z"/>
+<div class="floating-wrapper collapsed" id="floatingWrapper">
+  <div class="floating-inner">
+    <div class="floating-group" id="floatingGroup">
+      <!-- Toggle Button -->
+      <div class="toggle-contact up" id="toggleBtn" onclick="toggleContacts()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 15.5l-7-7h14l-7 7z"/>
         </svg>
-      </a>
+      </div>
 
-      <!-- Products -->
-      <a href="products.html" title="Products">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-          <path d="M528 224H352V64h176v160zm0 64v160H352V288h176zM320 64v160H48V64h272zm0
-          224v160H48V288h272z"/>
-        </svg>
-      </a>
+      <!-- Contact Buttons -->
+      <div class="fixed-contact" id="contactButtons">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/919539342026" target="_blank" class="whatsapp">
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <g>
+                <path
+                  d="M128 16
+                    a112 112 0 0 1 0 224
+                    c-21 0-40-5-57-14l-38 10 10-37
+                    c-11-18-17-39-17-61
+                    a112 112 0 0 1 112-122z"
+                  fill="#25D366" stroke="#FFFFFF" stroke-width="12" stroke-linejoin="round"/>
+                <path fill="#FFF" d="M190.6 161.2c-3.1-1.5-18.4-9.1-21.3-10.2-2.9-1.1-5-1.5-7.1 1.6-2.1 3.1-8.1 10.2-9.9 12.3-1.8 2.1-3.6 2.3-6.7.8-3.1-1.5-13.1-4.8-25-15.1-9.2-8.2-15.4-18.3-17.2-21.4-1.8-3.1-.2-4.8 1.4-6.3 1.5-1.5 3.1-3.6 4.6-5.4 1.5-1.8 2-3.1 3.1-5.2 1-2.1.5-4-0.3-5.5-.8-1.5-7.1-17.1-9.7-23.5-2.6-6.2-5.2-5.4-7.1-5.5-1.8-.1-3.9-.1-6-.1s-5.5.8-8.4 4c-2.9 3.1-11 10.8-11 26.3s11.3 30.5 12.9 32.6c1.5 2.1 22.1 33.7 53.6 47.3 31.5 13.6 31.5 9.1 37.2 8.6 5.7-.5 18.4-7.5 21-14.7 2.6-7.2 2.6-13.4 1.8-14.7-.7-1.2-2.7-2-5.8-3.5z"/>
+              </g>
+            </svg>
+          </span>
+          +91 95393 42026
+        </a>
 
-      <!-- Contact -->
-      <a href="contact.html" title="Contact">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-          <path d="M502.3 190.8l-192-160c-21.4-17.8-53.1-17.8-74.5
-          0l-192 160C30.9 199.4 24 214.1 24
-          229.3V448c0 35.3 28.7 64 64
-          64h336c35.3 0 64-28.7
-          64-64V229.3c0-15.2-6.9-29.9-18.7-38.5z"/>
-        </svg>
-      </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/naada.raja.yoga/" target="_blank" class="instagram">
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <defs>
+                <linearGradient id="instaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f58529"/>
+                  <stop offset="30%" stop-color="#dd2a7b"/>
+                  <stop offset="60%" stop-color="#8134af"/>
+                  <stop offset="100%" stop-color="#515bd4"/>
+                </linearGradient>
+              </defs>
+              <g>
+                <rect x="20" y="20" width="216" height="216" rx="48" fill="url(#instaGradient)" stroke="#fff" stroke-width="8"/>
+                <circle cx="128" cy="128" r="48" fill="none" stroke="#fff" stroke-width="12"/>
+                <circle cx="176" cy="80" r="10" fill="#fff"/>
+              </g>
+            </svg>
+          </span>
+          @naada.raja.yoga
+        </a>
 
-      <!-- Terms -->
-      <a href="terms.html" title="Terms and Conditions">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-          <path d="M224 136V0H24C10.7 0 0 10.7
-          0 24v464c0 13.3 10.7 24 24
-          24h336c13.3 0 24-10.7
-          24-24V160H248c-13.2 0-24-10.8-24-24zm-64
-          136c0 13.3-10.7 24-24 24s-24-10.7-24-24
-          10.7-24 24-24 24 10.7 24 24zm0
-          96c0 13.3-10.7 24-24
-          24s-24-10.7-24-24 10.7-24
-          24-24 24 10.7 24 24z"/>
-        </svg>
-      </a>
-
-      <!-- Refunds -->
-      <a href="refunds.html" title="Cancellations and Refunds">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-          <path d="M256 8C119 8 8 119 8 256s111 248 248
-          248 248-111 248-248S393 8 256 8zm0
-          448c-110.5 0-200-89.5-200-200S145.5
-          56 256 56s200 89.5 200 200-89.5
-          200-200 200zm0-344c-79.5 0-144
-          64.5-144 144h48c0-53 43-96
-          96-96s96 43 96 96-43 96-96
-          96c-26.5 0-50.6-10.7-68-28l-34
-          34c27.6 27.6 65.1 44 106
-          44 79.5 0 144-64.5
-          144-144S335.5 112 256 112z"/>
-        </svg>
-      </a>
-
-      <!-- Privacy -->
-      <a href="privacy.html" title="Privacy Policy">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-          <path d="M400 64h-48V24c0-13.3-10.7-24-24-24H120c-13.3 0-24
-          10.7-24 24v40H48C21.5 64 0 85.5 0
-          112v352c0 26.5 21.5 48 48
-          48h352c26.5 0 48-21.5
-          48-48V112c0-26.5-21.5-48-48-48zM224
-          416c-70.7 0-128-57.3-128-128s57.3-128
-          128-128 128 57.3 128 128-57.3
-          128-128 128z"/>
-        </svg>
-      </a>
+        <!-- Email -->
+        <a href="mailto:yoga@naadaraja.com" target="_blank" class="email">
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path fill="#fff" d="M502.3 190.8L327.4 338c-15.9 13.1-39.1 13.1-55 0L9.7 190.8C3.9 186.5 0 179.3 0 171.6V400c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V171.6c0-7.7-3.9-14.9-9.7-18.8zM464 64H48C21.5 64 0 85.5 0 112v25.6l224 184c15.9 13.1 39.1 13.1 55 0l224-184V112c0-26.5-21.5-48-48-48z"/>
+            </svg>
+          </span>
+          yoga@naadaraja.com
+        </a>
+      </div>
     </div>
-  </footer>
+  </div>
+</div>
+
+<script>
+  function toggleContacts() {
+    const wrapper = document.getElementById('floatingWrapper');
+    const toggleBtn = document.getElementById('toggleBtn');
+    
+    wrapper.classList.toggle('collapsed');
+    toggleBtn.classList.toggle('up');
+  }
+</script>
 
 </body>
 </html>
+
+
+  <!-- ======================
+       FOOTER
+====================== -->
+<footer>
+  <div class="footer-links">
+    <!-- Home -->
+    <a href="https://naadaraja.com" title="Home">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+        <path d="M541 229.16l-61-52.06V56c0-13.25-10.75-24-24-24h-72c-13.25 
+        0-24 10.75-24 24v24l-103.64-88.39c-12.28-10.48-30.32-10.48-42.6 
+        0L35 229.16c-10.3 8.8-11.4 24.1-2.6 34.4l10.6 12.4c8.8 
+        10.3 24.1 11.4 34.4 2.6L96 234.6V456c0 13.3 10.7 24 
+        24 24h112c13.3 0 24-10.7 
+        24-24V344h64v112c0 13.3 10.7 24 24 
+        24h112c13.3 0 24-10.7 
+        24-24V234.6l18.6 16.56c10.3 8.8 
+        25.6 7.7 34.4-2.6l10.6-12.4c8.8-10.3 
+        7.7-25.6-2.6-34.4z"/>
+      </svg>
+      Home
+    </a>
+
+    <!-- Programs -->
+    <a href="https://naadaraja.com/programs" title="Programs">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+        <path d="M128 0c-17.7 0-32 14.3-32 32V480c0 17.7 
+        14.3 32 32 32H512c17.7 0 32-14.3 
+        32-32V32c0-17.7-14.3-32-32-32H128zm80 
+        96h224c8.8 0 16 7.2 
+        16 16s-7.2 16-16 16H208c-8.8 0-16-7.2-16-16s7.2-16 
+        16-16zm0 96h224c8.8 0 16 7.2 
+        16 16s-7.2 16-16 16H208c-8.8 0-16-7.2-16-16s7.2-16 
+        16-16zm0 96h224c8.8 0 16 7.2 
+        16 16s-7.2 16-16 16H208c-8.8 0-16-7.2-16-16s7.2-16 
+        16-16z"/>
+      </svg>
+      Programs
+    </a>
+
+    <!-- Contact -->
+    <a href="https://naadaraja.com/contact" title="Contact">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path d="M502.3 190.8c3.9-12.4-3.1-25.8-15.5-29.7L327.4 
+        94.5c-12.4-3.9-25.8 3.1-29.7 15.5l-19.7 
+        62.4c-3.9 12.4 3.1 25.8 15.5 
+        29.7l71.6 22.4c-16.3 46.7-52.6 83-99.3 
+        99.3l-22.4-71.6c-3.9-12.4-17.3-19.4-29.7-15.5l-62.4 
+        19.7c-12.4 3.9-19.4 17.3-15.5 
+        29.7l66.7 212.1c3.9 12.4 17.3 19.4 
+        29.7 15.5l212.1-66.7c12.4-3.9 
+        19.4-17.3 15.5-29.7l-19.7-62.4c-3.9-12.4-17.3-19.4-29.7-15.5l-71.6 
+        22.4c-10.1-29-10.1-61 0-90l71.6 
+        22.4c12.4 3.9 25.8-3.1 29.7-15.5l19.7-62.4z"/>
+      </svg>
+      Contacts
+    </a>
+
+    <!-- Terms and Conditions -->
+    <a href="https://naadaraja.com/terms" title="Terms and Conditions">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path d="M64 0C28.7 0 0 28.7 0 64V448c0 
+        35.3 28.7 64 64 64H384c35.3 0 
+        64-28.7 64-64V128L320 0H64zM256 
+        64v96h96v288H96V64H256z"/>
+      </svg>
+      Terms and Conditions
+    </a>
+
+    <!-- Cancellations and Refunds -->
+    <a href="https://naadaraja.com/refunds" title="Cancellations and Refunds">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path d="M256 8C119 8 8 119 8 256s111 248 
+        248 248 248-111 248-248S393 8 256 
+        8zm0 48c110.5 0 200 89.5 200 
+        200s-89.5 200-200 
+        200S56 366.5 56 256 
+        145.5 56 256 56zm93.1 
+        128.9c-12.5-12.5-32.8-12.5-45.3 
+        0L224 264.7V176c0-17.7-14.3-32-32-32s-32 
+        14.3-32 32v160c0 17.7 14.3 32 
+        32 32h160c17.7 0 32-14.3 
+        32-32s-14.3-32-32-32H247.3l79.8-79.8c12.5-12.5 
+        12.5-32.8 0-45.3z"/>
+      </svg>
+      Cancellations and Refunds
+    </a>
+
+    <!-- Privacy Policy -->
+    <a href="https://naadaraja.com/privacy" title="Privacy Policy">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path d="M224 0C100.3 0 0 100.3 0 
+        224c0 97.2 69.6 178.6 160 198.4V512h128v-89.6c90.4-19.8 
+        160-101.2 160-198.4C448 100.3 347.7 
+        0 224 0zm0 128a64 64 0 110 128 
+        64 64 0 010-128z"/>
+      </svg>
+      Privacy Policy
+    </a>
+  </div>
+</footer>
+
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;         /* full viewport height */
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer {
+    margin-top: auto;          /* push to bottom */
+    background: #111;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s ease;
+  }
+
+  .footer-links a:hover {
+    color: #f39c12;
+  }
+
+  .footer-links svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+  }
+</style>
+
