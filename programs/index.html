@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Naada Raja Yoga</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.png" type="image/png">
+
+  <!-- PayPal SDK -->
+  <script 
+    src="https://www.paypal.com/sdk/js?client-id=BAApzcZuTe3ypLit4fxNQwdx62PVgNgfdaFeYbSHBcb1Eeip0AEk7DgtyJoQE7wzzljrbt94NSBUXEigdU&components=hosted-buttons&disable-funding=venmo&currency=USD">
+  </script>
+
+  <!-- Global Reset -->
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    html, body { height: 100%; }
+    body { line-height: 1.6; color: #333; background: #fefefe; }
+    img { max-width: 100%; display: block; }
+  </style>
+</head>
+<body>
+
+  <!-- ======================
+       HEADER
+       ====================== -->
+  <header>
+    <div class="branding">
+      <img src="Naada Raja Yoga Logo.png" alt="Naada Raja Yoga Logo">
+      <div class="branding-text">
+        <h1>Naada Raja Yoga</h1>
+        <p>Personalized Yoga Journey</p>
+      </div>
+    </div>
+  </header>
+
+  <style>
+    /* HEADER CSS */
+    header {
+      background: linear-gradient(135deg, #a8edea, #fed6e3);
+      padding: 25px 20px;
+    }
+    .branding {
+      display: flex; align-items: center; justify-content: center; gap: 15px;
+      max-width: 1000px; margin: 0 auto;
+    }
+    .branding img { width: 90px; height: auto; }
+    .branding-text { display: flex; flex-direction: column; align-items: flex-start; }
+    .branding h1 {
+      font-size: 2rem; font-weight: 700;
+      background: linear-gradient(135deg, #008080, #800080);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .branding p { font-size: 1.05rem; color: #333; }
+  </style>
+  <!-- No JS needed for header -->
+
+
+  <!-- ======================
+       CONTACT / PAYPAL
+       ====================== -->
+  <section id="contact">
+    <div class="offer-single">
+      <div id="paypal-container-UTBAB8G3VA98N"></div>
+    </div>
+  </section>
+
+  <style>
+    /* CONTACT / PAYPAL CSS */
+    .offer-single {
+      background: white; border-radius: 12px; padding: 28px; max-width: 520px;
+      margin: 30px auto; text-align: center; box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+  </style>
+
+  <script>
+    // CONTACT / PAYPAL JS
+    paypal.HostedButtons({ hostedButtonId: "UTBAB8G3VA98N" })
+      .render("#paypal-container-UTBAB8G3VA98N");
+  </script>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Floating Contact Buttons</title>
+</head>
+<body>
+
+<!-- ======================
+     FLOATING CONTACT BUTTONS
+     ====================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Floating Contact Buttons</title>
+  <style>
+    /* Wrapper handles slide up/down */
+    .floating-wrapper {
+      position: fixed;
+      bottom: 15px; left: 15px;
+      transition: transform 0.5s ease;
+    }
+    .floating-wrapper.collapsed {
+      transform: translateY(calc(100% - 35px));
+    }
+
+    /* Inner wrapper handles floating animation */
+    .floating-inner {
+      animation: floatGroup 4s ease-in-out infinite;
+    }
+
+    @keyframes floatGroup {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); } /* stronger motion */
+    }
+
+    /* Group structure */
+    .floating-group {
+      display: flex; flex-direction: column;
+      gap: 10px;
+    }
+
+    /* CONTACT BUTTONS */
+    .fixed-contact {
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .fixed-contact a {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 14px; border-radius: 999px; font-weight: 700;
+      text-decoration: none; color: #fff;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    }
+    .whatsapp { background: #25D366; }
+    .instagram {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    }
+    .email { background: #D44638; }
+    .icon { width: 22px; height: 22px; display:inline-block; }
+
+    /* TOGGLE BUTTON */
+    .toggle-contact {
+      width: 40px; height: 40px; 
+      background: rgb(55,148,161);
+      border-radius: 50%; 
+      display:flex; align-items:center; justify-content:center;
+      cursor:pointer; 
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .toggle-contact:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+    .toggle-contact svg {
+      width: 28px; height: 28px;  
+      fill: #FFFFFF;
+      transition: transform 0.3s;
+    }
+    .toggle-contact.up svg { transform: rotate(180deg); }
+  </style>
+</head>
+<body>
+
+<div class="floating-wrapper collapsed" id="floatingWrapper">
+  <div class="floating-inner">
+    <div class="floating-group" id="floatingGroup">
+      <!-- Toggle Button -->
+      <div class="toggle-contact up" id="toggleBtn" onclick="toggleContacts()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 15.5l-7-7h14l-7 7z"/>
+        </svg>
+      </div>
+
+      <!-- Contact Buttons -->
+      <div class="fixed-contact" id="contactButtons">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/919539342026" target="_blank" class="whatsapp">
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <g>
+                <path
+                  d="M128 16
+                    a112 112 0 0 1 0 224
+                    c-21 0-40-5-57-14l-38 10 10-37
+                    c-11-18-17-39-17-61
+                    a112 112 0 0 1 112-122z"
+                  fill="#25D366" stroke="#FFFFFF" stroke-width="12" stroke-linejoin="round"/>
+                <path fill="#FFF" d="M190.6 161.2c-3.1-1.5-18.4-9.1-21.3-10.2-2.9-1.1-5-1.5-7.1 1.6-2.1 3.1-8.1 10.2-9.9 12.3-1.8 2.1-3.6 2.3-6.7.8-3.1-1.5-13.1-4.8-25-15.1-9.2-8.2-15.4-18.3-17.2-21.4-1.8-3.1-.2-4.8 1.4-6.3 1.5-1.5 3.1-3.6 4.6-5.4 1.5-1.8 2-3.1 3.1-5.2 1-2.1.5-4-0.3-5.5-.8-1.5-7.1-17.1-9.7-23.5-2.6-6.2-5.2-5.4-7.1-5.5-1.8-.1-3.9-.1-6-.1s-5.5.8-8.4 4c-2.9 3.1-11 10.8-11 26.3s11.3 30.5 12.9 32.6c1.5 2.1 22.1 33.7 53.6 47.3 31.5 13.6 31.5 9.1 37.2 8.6 5.7-.5 18.4-7.5 21-14.7 2.6-7.2 2.6-13.4 1.8-14.7-.7-1.2-2.7-2-5.8-3.5z"/>
+              </g>
+            </svg>
+          </span>
+          +91 95393 42026
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/naada.raja.yoga/" target="_blank" class="instagram">
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <defs>
+                <linearGradient id="instaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f58529"/>
+                  <stop offset="30%" stop-color="#dd2a7b"/>
+                  <stop offset="60%" stop-color="#8134af"/>
+                  <stop offset="100%" stop-color="#515bd4"/>
+                </linearGradient>
+              </defs>
+              <g>
+                <rect x="20" y="20" width="216" height="216" rx="48" fill="url(#instaGradient)" stroke="#fff" stroke-width="8"/>
+                <circle cx="128" cy="128" r="48" fill="none" stroke="#fff" stroke-width="12"/>
+                <circle cx="176" cy="80" r="10" fill="#fff"/>
+              </g>
+            </svg>
+          </span>
+          @naada.raja.yoga
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:yoga@naadaraja.com" target="_blank" class="email">
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path fill="#fff" d="M502.3 190.8L327.4 338c-15.9 13.1-39.1 13.1-55 0L9.7 190.8C3.9 186.5 0 179.3 0 171.6V400c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V171.6c0-7.7-3.9-14.9-9.7-18.8zM464 64H48C21.5 64 0 85.5 0 112v25.6l224 184c15.9 13.1 39.1 13.1 55 0l224-184V112c0-26.5-21.5-48-48-48z"/>
+            </svg>
+          </span>
+          yoga@naadaraja.com
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleContacts() {
+    const wrapper = document.getElementById('floatingWrapper');
+    const toggleBtn = document.getElementById('toggleBtn');
+    
+    wrapper.classList.toggle('collapsed');
+    toggleBtn.classList.toggle('up');
+  }
+</script>
+
+</body>
+</html>
+
+
+  <!-- ======================
+       FOOTER
+====================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footer Section</title>
+  <style>
+    /* Make body full height and flex container */
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Placeholder for main content */
+    main {
+      flex: 1;
+    }
+
+    /* FOOTER CSS */
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 15px;
+      font-size: 0.9rem;
+      margin-top: auto; /* pushes footer to bottom */
+    }
+
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 10px;
+    }
+
+    footer .footer-links a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #bbb;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    footer .footer-links a svg {
+      width: 22px;
+      height: 22px;
+      fill: #bbb;
+      margin-bottom: 5px;
+      transition: fill 0.3s ease, transform 0.3s ease;
+    }
+
+    footer .footer-links a:hover {
+      color: #fff;
+    }
+
+    footer .footer-links a:hover svg {
+      fill: #fff;
+      transform: scale(1.1);
+    }
+
+    footer .footer-links a.active {
+      color: gold;
+      font-weight: bold;
+    }
+
+    footer .footer-links a.active svg {
+      fill: gold;
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <!-- Your page content goes here -->
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://naadaraja.com" title="Home">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+          <path d="M541 229.16l-61-52.06V56c0-13.25-10.75-24-24-24h-72c-13.25 
+          0-24 10.75-24 24v24L314.4 43c-15.9-13.6-39.3-13.6-55.2 
+          0L35 229.2c-9.9 8.4-11.1 23.3-2.7 33.2s23.3 11.1 33.2 
+          2.7L96 232.1V456c0 30.9 25.1 56 56 56h96V360h80v152h96c30.9 
+          0 56-25.1 56-56V232l30.6 26c9.9 8.4 24.8 7.1 33.2-2.7 
+          8.4-9.9 7.1-24.8-2.7-33.2z"/>
+        </svg>
+        <span>Home</span>
+      </a>
+
+      <a href="https://contact.naadaraja.com/" title="Contact">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path d="M502.3 190.8L327.4 338c-15.9 13.1-39.1 13.1-55 
+          0L9.7 190.8C3.9 186.5 0 179.3 0 
+          171.6V400c0 26.5 21.5 48 48 
+          48h416c26.5 0 48-21.5 
+          48-48V171.6c0-7.7-3.9-14.9-9.7-18.8zM464 
+          64H48C21.5 64 0 85.5 0 
+          112v25.6l224 184c15.9 13.1 39.1 
+          13.1 55 0l224-184V112c0-26.5-21.5-48-48-48z"/>
+        </svg>
+        <span>Contact</span>
+      </a>
+
+      <a href="https://programs.naadaraja.com" title="Programs" class="active">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+          <path d="M320 96a64 64 0 1 0 0-128 64 64 0 1 0 0 128zM528 352h-56l-41-82c-6-12-19-18-32-14s-21 16-19 29l20 99H240l20-99c2-13-5-25-19-29s-26 2-32 14l-41 82H112c-27 0-48 21-48 48s21 48 48 48h416c27 0 48-21 48-48s-21-48-48-48z"/>
+        </svg>
+        <span>Programs</span>
+      </a>
+    </div>
+
+    <p>&copy; 2025 Naada Raja Yoga</p>
+  </footer>
+
+</body>
+</html>
