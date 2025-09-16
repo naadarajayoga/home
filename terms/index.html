@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Naada Raja Yoga</title>
+
+
+
+  <!-- Global Reset -->
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    html, body { height: 100%; }
+    body { line-height: 1.6; color: #333; background: #fefefe; }
+    img { max-width: 100%; display: block; }
+  </style>
+</head>
+<body>
+
+  <!-- ======================
+       HEADER
+       ====================== -->
+  <header>
+    <div class="branding">
+      <img src="Naada Raja Yoga Logo.png" alt="Naada Raja Yoga Logo">
+      <div class="branding-text">
+        <h1>Naada Raja Yoga</h1>
+        <p>Personalized Yoga Journey</p>
+      </div>
+    </div>
+  </header>
+
+  <style>
+    /* HEADER CSS */
+    header {
+      background: linear-gradient(135deg, #a8edea, #fed6e3);
+      padding: 25px 20px;
+    }
+    .branding {
+      display: flex; align-items: center; justify-content: center; gap: 15px;
+      max-width: 1000px; margin: 0 auto;
+    }
+    .branding img { width: 90px; height: auto; }
+    .branding-text { display: flex; flex-direction: column; align-items: flex-start; }
+    .branding h1 {
+      font-size: 2rem; font-weight: 700;
+      background: linear-gradient(135deg, #008080, #800080);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .branding p { font-size: 1.05rem; color: #333; }
+  </style>
+  <!-- No JS needed for header -->
+
+<!-- ======================
+     privacy policy 
+     ====================== -->
+
+<section class="privacy-policy" style="max-width:800px;margin:40px auto 30px auto;padding:32px 24px;background:#fff;border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,0.07);">
+  <h2 style="font-size:1.7rem;margin-bottom:18px;color:#008080;">Privacy Policy</h2>
+  <p>At Naada Raja Yoga, we value your privacy and are committed to protecting your personal information. This Privacy Policy outlines how we collect, use, and safeguard your data.</p>
+  <h3 style="margin-top:24px;color:#333;font-size:1.2rem;">Information We Collect</h3>
+  <ul style="margin-left:20px;margin-bottom:16px;">
+    <li>Contact details you choose to share with us (e.g., via email, contact form, or messaging platforms).</li>
+    <li>Information about how you reach us (e.g., through Facebook, email, or other platforms).</li>
+    <li>Payment details are securely processed by third-party providers such as PayPal and are never stored by us.</li>
+  </ul>
+  <h3 style="color:#333;font-size:1.2rem;">How We Use Information</h3>
+  <ul style="margin-left:20px;margin-bottom:16px;">
+    <li>Providing and improving our yoga classes and services.</li>
+    <li>Communicating with you regarding classes, updates, or support.</li>
+    <li>Maintaining transaction records where applicable.</li>
+  </ul>
+  <h3 style="color:#333;font-size:1.2rem;">Data Sharing</h3>
+  <p>We do not sell, rent, or trade your personal data. Information may only be shared when legally required or with trusted third-party services (e.g., payment processors) to complete transactions.</p>
+  <h3 style="color:#333;font-size:1.2rem;">Security</h3>
+  <p>We take reasonable measures to protect your information. However, no online method of transmission is 100% secure, and we cannot guarantee absolute security.</p>
+  <h3 style="color:#333;font-size:1.2rem;">Your Rights</h3>
+  <ul style="margin-left:20px;margin-bottom:16px;">
+    <li>Request access to the information we hold about you.</li>
+    <li>Request corrections or deletion of your data.</li>
+    <li>Withdraw consent for future communications.</li>
+  </ul>
+  <h3 style="color:#333;font-size:1.2rem;">Changes to this Policy</h3>
+  <p>We may update this Privacy Policy from time to time. Updates will be posted on this page with a revised effective date.</p>
+  <h3 style="color:#333;font-size:1.2rem;">Contact Us</h3>
+  <p>If you have any questions about this Privacy Policy, please reach out via our <a href="https://naadaraja.com/contact" style="color:#008080;text-decoration:underline;">Contact Page</a>.</p>
+</section>
+
+  
+  
+<!-- ======================
+     FLOATING CONTACT BUTTONS
+     ====================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Floating Contact Buttons</title>
+  <style>
+    /* Wrapper handles slide up/down */
+    .floating-wrapper {
+      position: fixed;
+      bottom: 15px; left: 15px;
+      transition: transform 0.5s ease;
+    }
+    .floating-wrapper.collapsed {
+      transform: translateY(calc(100% - 35px));
+    }
+
+    /* Inner wrapper handles floating animation */
+    .floating-inner {
+      animation: floatGroup 4s ease-in-out infinite;
+    }
+
+    @keyframes floatGroup {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); } /* stronger motion */
+    }
+
+    /* Group structure */
+    .floating-group {
+      display: flex; flex-direction: column;
+      gap: 10px;
+    }
+
+    /* CONTACT BUTTONS */
+    .fixed-contact {
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .fixed-contact a {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 14px; border-radius: 999px; font-weight: 700;
+      text-decoration: none; color: #fff;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    }
+    .whatsapp { background: #25D366; }
+    .instagram {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    }
+    .email { background: #D44638; }
+    .icon { width: 22px; height: 22px; display:inline-block; }
+
+    /* TOGGLE BUTTON */
+    .toggle-contact {
+      width: 40px; height: 40px; 
+      background: rgb(55,148,161);
+      border-radius: 50%; 
+      display:flex; align-items:center; justify-content:center;
+      cursor:pointer; 
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .toggle-contact:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+    .toggle-contact svg {
+      width: 28px; height: 28px;  
+      fill: #FFFFFF;
+      transition: transform 0.3s;
+    }
+    .toggle-contact.up svg { transform: rotate(180deg); }
+  </style>
+</head>
+<body>
+
+<div class="floating-wrapper collapsed" id="floatingWrapper">
+  <div class="floating-inner">
+    <div class="floating-group" id="floatingGroup">
+      <!-- Toggle Button -->
+      <div class="toggle-contact up" id="toggleBtn" onclick="toggleContacts()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 15.5l-7-7h14l-7 7z"/>
+        </svg>
+      </div>
+
+      <!-- Contact Buttons -->
+      <div class="fixed-contact" id="contactButtons">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/919539342026" target="_blank" class="whatsapp">
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <g>
+                <path
+                  d="M128 16
+                    a112 112 0 0 1 0 224
+                    c-21 0-40-5-57-14l-38 10 10-37
+                    c-11-18-17-39-17-61
+                    a112 112 0 0 1 112-122z"
+                  fill="#25D366" stroke="#FFFFFF" stroke-width="12" stroke-linejoin="round"/>
+                <path fill="#FFF" d="M190.6 161.2c-3.1-1.5-18.4-9.1-21.3-10.2-2.9-1.1-5-1.5-7.1 1.6-2.1 3.1-8.1 10.2-9.9 12.3-1.8 2.1-3.6 2.3-6.7.8-3.1-1.5-13.1-4.8-25-15.1-9.2-8.2-15.4-18.3-17.2-21.4-1.8-3.1-.2-4.8 1.4-6.3 1.5-1.5 3.1-3.6 4.6-5.4 1.5-1.8 2-3.1 3.1-5.2 1-2.1.5-4-0.3-5.5-.8-1.5-7.1-17.1-9.7-23.5-2.6-6.2-5.2-5.4-7.1-5.5-1.8-.1-3.9-.1-6-.1s-5.5.8-8.4 4c-2.9 3.1-11 10.8-11 26.3s11.3 30.5 12.9 32.6c1.5 2.1 22.1 33.7 53.6 47.3 31.5 13.6 31.5 9.1 37.2 8.6 5.7-.5 18.4-7.5 21-14.7 2.6-7.2 2.6-13.4 1.8-14.7-.7-1.2-2.7-2-5.8-3.5z"/>
+              </g>
+            </svg>
+          </span>
+          +91 95393 42026
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/naada.raja.yoga/" target="_blank" class="instagram">
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <defs>
+                <linearGradient id="instaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f58529"/>
+                  <stop offset="30%" stop-color="#dd2a7b"/>
+                  <stop offset="60%" stop-color="#8134af"/>
+                  <stop offset="100%" stop-color="#515bd4"/>
+                </linearGradient>
+              </defs>
+              <g>
+                <rect x="20" y="20" width="216" height="216" rx="48" fill="url(#instaGradient)" stroke="#fff" stroke-width="8"/>
+                <circle cx="128" cy="128" r="48" fill="none" stroke="#fff" stroke-width="12"/>
+                <circle cx="176" cy="80" r="10" fill="#fff"/>
+              </g>
+            </svg>
+          </span>
+          @naada.raja.yoga
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:yoga@naadaraja.com" target="_blank" class="email">
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path fill="#fff" d="M502.3 190.8L327.4 338c-15.9 13.1-39.1 13.1-55 0L9.7 190.8C3.9 186.5 0 179.3 0 171.6V400c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V171.6c0-7.7-3.9-14.9-9.7-18.8zM464 64H48C21.5 64 0 85.5 0 112v25.6l224 184c15.9 13.1 39.1 13.1 55 0l224-184V112c0-26.5-21.5-48-48-48z"/>
+            </svg>
+          </span>
+          yoga@naadaraja.com
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleContacts() {
+    const wrapper = document.getElementById('floatingWrapper');
+    const toggleBtn = document.getElementById('toggleBtn');
+    
+    wrapper.classList.toggle('collapsed');
+    toggleBtn.classList.toggle('up');
+  }
+</script>
+
+</body>
+</html>
+
+
+  <!-- ======================
+       FOOTER
+====================== -->
+<footer>
+  <div class="footer-links">
+    <!-- Home -->
+    <a href="https://naadaraja.com" title="Home">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+        <path d="M541 229.16l-61-52.06V56c0-13.25-10.75-24-24-24h-72c-13.25 
+        0-24 10.75-24 24v24l-103.64-88.39c-12.28-10.48-30.32-10.48-42.6 
+        0L35 229.16c-10.3 8.8-11.4 24.1-2.6 34.4l10.6 12.4c8.8 
+        10.3 24.1 11.4 34.4 2.6L96 234.6V456c0 13.3 10.7 24 
+        24 24h112c13.3 0 24-10.7 
+        24-24V344h64v112c0 13.3 10.7 24 24 
+        24h112c13.3 0 24-10.7 
+        24-24V234.6l18.6 16.56c10.3 8.8 
+        25.6 7.7 34.4-2.6l10.6-12.4c8.8-10.3 
+        7.7-25.6-2.6-34.4z"/>
+      </svg>
+      Home
+    </a>
+
+    <!-- Programs -->
+    <a href="https://naadaraja.com/programs" title="Programs">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+        <path d="M128 0c-17.7 0-32 14.3-32 32V480c0 17.7 
+        14.3 32 32 32H512c17.7 0 32-14.3 
+        32-32V32c0-17.7-14.3-32-32-32H128zm80 
+        96h224c8.8 0 16 7.2 
+        16 16s-7.2 16-16 16H208c-8.8 0-16-7.2-16-16s7.2-16 
+        16-16zm0 96h224c8.8 0 16 7.2 
+        16 16s-7.2 16-16 16H208c-8.8 0-16-7.2-16-16s7.2-16 
+        16-16zm0 96h224c8.8 0 16 7.2 
+        16 16s-7.2 16-16 16H208c-8.8 0-16-7.2-16-16s7.2-16 
+        16-16z"/>
+      </svg>
+      Programs
+    </a>
+
+    <!-- Contact -->
+    <a href="https://naadaraja.com/contact" title="Contact">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path d="M502.3 190.8c3.9-12.4-3.1-25.8-15.5-29.7L327.4 
+        94.5c-12.4-3.9-25.8 3.1-29.7 15.5l-19.7 
+        62.4c-3.9 12.4 3.1 25.8 15.5 
+        29.7l71.6 22.4c-16.3 46.7-52.6 83-99.3 
+        99.3l-22.4-71.6c-3.9-12.4-17.3-19.4-29.7-15.5l-62.4 
+        19.7c-12.4 3.9-19.4 17.3-15.5 
+        29.7l66.7 212.1c3.9 12.4 17.3 19.4 
+        29.7 15.5l212.1-66.7c12.4-3.9 
+        19.4-17.3 15.5-29.7l-19.7-62.4c-3.9-12.4-17.3-19.4-29.7-15.5l-71.6 
+        22.4c-10.1-29-10.1-61 0-90l71.6 
+        22.4c12.4 3.9 25.8-3.1 29.7-15.5l19.7-62.4z"/>
+      </svg>
+      Contacts
+    </a>
+
+    <!-- Terms and Conditions -->
+    <a href="https://naadaraja.com/terms" title="Terms and Conditions">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path d="M64 0C28.7 0 0 28.7 0 64V448c0 
+        35.3 28.7 64 64 64H384c35.3 0 
+        64-28.7 64-64V128L320 0H64zM256 
+        64v96h96v288H96V64H256z"/>
+      </svg>
+      Terms and Conditions
+    </a>
+
+    <!-- Cancellations and Refunds -->
+    <a href="https://naadaraja.com/refunds" title="Cancellations and Refunds">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path d="M256 8C119 8 8 119 8 256s111 248 
+        248 248 248-111 248-248S393 8 256 
+        8zm0 48c110.5 0 200 89.5 200 
+        200s-89.5 200-200 
+        200S56 366.5 56 256 
+        145.5 56 256 56zm93.1 
+        128.9c-12.5-12.5-32.8-12.5-45.3 
+        0L224 264.7V176c0-17.7-14.3-32-32-32s-32 
+        14.3-32 32v160c0 17.7 14.3 32 
+        32 32h160c17.7 0 32-14.3 
+        32-32s-14.3-32-32-32H247.3l79.8-79.8c12.5-12.5 
+        12.5-32.8 0-45.3z"/>
+      </svg>
+      Cancellations and Refunds
+    </a>
+
+    <!-- Privacy Policy -->
+    <a href="https://naadaraja.com/privacy" title="Privacy Policy">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path d="M224 0C100.3 0 0 100.3 0 
+        224c0 97.2 69.6 178.6 160 198.4V512h128v-89.6c90.4-19.8 
+        160-101.2 160-198.4C448 100.3 347.7 
+        0 224 0zm0 128a64 64 0 110 128 
+        64 64 0 010-128z"/>
+      </svg>
+      Privacy Policy
+    </a>
+  </div>
+</footer>
+
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;         /* full viewport height */
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer {
+    margin-top: auto;          /* push to bottom */
+    background: #111;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s ease;
+  }
+
+  .footer-links a:hover {
+    color: #f39c12;
+  }
+
+  .footer-links svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+  }
+</style>
+
