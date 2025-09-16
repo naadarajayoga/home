@@ -102,6 +102,9 @@
   <!-- No JS needed for about -->
 
 
+  <!-- ======================
+       REVIEWS
+       ====================== -->
   <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -357,44 +360,73 @@
   <!-- ======================
        SHORTS / YOUTUBE
        ====================== -->
-  <section id="shorts">
-    <div style="text-align:center; margin-bottom:14px;">
-      <a href="https://www.youtube.com/@NaadaRajaYoga" target="_blank" class="youtube-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-          <rect x="32" y="64" width="192" height="128" rx="28" fill="#FF0000" stroke="#fff" stroke-width="12"/>
-          <polygon points="108,96 172,128 108,160" fill="#fff"/>
-        </svg>
-        YouTube
-      </a>
-    </div>
-    <div class="shorts-carousel">
-      <div class="short"><iframe src="https://www.youtube.com/embed/SYvQXu5onF0" allowfullscreen></iframe></div>
-      <div class="short"><iframe src="https://www.youtube.com/embed/KwHA5qyFzXY" allowfullscreen></iframe></div>
-      <div class="short"><iframe src="https://www.youtube.com/embed/4JhofpR7DEY" allowfullscreen></iframe></div>
-      <div class="short"><iframe src="https://www.youtube.com/embed/niu5uo0cnfg" allowfullscreen></iframe></div>
-      <div class="short"><iframe src="https://www.youtube.com/embed/gO_dfy0N-sM" allowfullscreen></iframe></div>
-      <div class="short"><iframe src="https://www.youtube.com/embed/R5niWehGQD8" allowfullscreen></iframe></div>
-    </div>
-  </section>
+<section id="shorts">
+  <div class="btn-container">
+    <a href="https://www.youtube.com/@NaadaRajaYoga" target="_blank" class="youtube-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+        <rect x="32" y="64" width="192" height="128" rx="28" fill="#FF0000" stroke="#fff" stroke-width="12"/>
+        <polygon points="108,96 172,128 108,160" fill="#fff"/>
+      </svg>
+      YouTube
+    </a>
 
-  <style>
-    /* SHORTS CSS */
-    #shorts { padding: 20px; max-width: 1000px; margin: 0 auto; }
-    .shorts-carousel { display: flex; overflow-x: auto; gap: 15px; }
-    .short { flex: 0 0 auto; width: 200px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
-    .short iframe { width: 100%; aspect-ratio: 9 / 16; border: 0; }
-    
-    .youtube-btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: #FF0000; color: #fff; padding: 10px 18px;
-      border-radius: 30px; font-weight: 700; font-size: 1.05rem;
-      text-decoration: none;
-    }
-    .youtube-btn:hover { background: #cc0000; }
-    .youtube-btn svg { width: 22px; height: 22px; }
-    
-  </style>
-  <!-- No JS needed for shorts -->
+    <a href="https://programs.naadaraja.com" target="_blank" class="enroll-btn">
+      Enroll Now
+    </a>
+  </div>
+
+  <div class="shorts-carousel">
+    <div class="short"><iframe src="https://www.youtube.com/embed/SYvQXu5onF0" allowfullscreen></iframe></div>
+    <div class="short"><iframe src="https://www.youtube.com/embed/KwHA5qyFzXY" allowfullscreen></iframe></div>
+    <div class="short"><iframe src="https://www.youtube.com/embed/4JhofpR7DEY" allowfullscreen></iframe></div>
+    <div class="short"><iframe src="https://www.youtube.com/embed/niu5uo0cnfg" allowfullscreen></iframe></div>
+    <div class="short"><iframe src="https://www.youtube.com/embed/gO_dfy0N-sM" allowfullscreen></iframe></div>
+    <div class="short"><iframe src="https://www.youtube.com/embed/R5niWehGQD8" allowfullscreen></iframe></div>
+  </div>
+</section>
+
+<style>
+  /* SHORTS CSS */
+  #shorts { padding: 20px; max-width: 1000px; margin: 0 auto; }
+  .shorts-carousel { display: flex; overflow-x: auto; gap: 15px; }
+  .short { flex: 0 0 auto; width: 200px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+  .short iframe { width: 100%; aspect-ratio: 9 / 16; border: 0; }
+
+  /* Button container */
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;  /* ✅ safe gap between buttons */
+    margin-bottom: 14px;
+    flex-wrap: wrap; /* ✅ ensures stacking on mobile */
+  }
+
+  /* Shared button styles */
+  .youtube-btn, .enroll-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    white-space: nowrap;
+  }
+
+  /* YouTube button */
+  .youtube-btn { background: #FF0000; }
+  .youtube-btn:hover { background: #cc0000; }
+  .youtube-btn svg { width: 22px; height: 22px; }
+
+  /* Enroll button */
+  .enroll-btn { background: #0073e6; }
+  .enroll-btn:hover { background: #005bb5; }
+</style>
+
 
   
 <!-- ======================
