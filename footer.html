@@ -1,144 +1,152 @@
-  <!-- ======================
-       FOOTER
-====================== -->
-<footer>
-  <div class="footer-links">
-    <!-- Home -->
-    <a href="https://naadaraja.com" title="Home">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-        <path d="M541 229.16l-61-52.06V56c0-13.25-10.75-24-24-24h-72c-13.25 
-        0-24 10.75-24 24v24l-103.64-88.39c-12.28-10.48-30.32-10.48-42.6 
-        0L35 229.16c-10.3 8.8-11.4 24.1-2.6 34.4l10.6 12.4c8.8 
-        10.3 24.1 11.4 34.4 2.6L96 234.6V456c0 13.3 10.7 24 
-        24 24h112c13.3 0 24-10.7 
-        24-24V344h64v112c0 13.3 10.7 24 24 
-        24h112c13.3 0 24-10.7 
-        24-24V234.6l18.6 16.56c10.3 8.8 
-        25.6 7.7 34.4-2.6l10.6-12.4c8.8-10.3 
-        7.7-25.6-2.6-34.4z"/>
+<!-- ==========================
+     Peek footer (copy this)
+     ========================== -->
+<footer class="peek-footer" id="site-footer" aria-label="Site footer">
+  <!-- spacer (lets the page scroll far enough so hidden area can appear above the bar) -->
+  <div class="peek-footer__spacer" aria-hidden="true"></div>
+
+  <!-- Hidden content: appears when user scrolls to bottom -->
+  <div class="peek-footer__hidden" role="region" aria-label="Footer expanded links">
+    <nav class="footer-links" aria-label="Footer links">
+      <a href="https://naadaraja.com/privacy">Privacy Policy</a>
+      <a href="https://naadaraja.com/terms">Terms &amp; Conditions</a>
+      <a href="https://naadaraja.com/refund">Refund</a>
+      <a href="https://naadaraja.com/contact">contact</a>
+    </nav>
+  </div>
+
+  <!-- Always-visible bar at the bottom (first row) -->
+  <div class="peek-footer__bar" role="navigation" aria-label="Footer quick links">
+    <a class="bar-item" href="https://naadaraja.com/contact" aria-label="Contact">
+      <!-- phone / contact SVG -->
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M6.6 10.2a15.05 15.05 0 006.2 6.2l1.8-1.8a1 1 0 01.9-.24c1 .25 2 .38 3 .38a1 1 0 011 1v3a1 1 0 01-1 1C9.2 23 1 14.8 1 3a1 1 0 011-1h3a1 1 0 011 1c0 1.1.13 2.1.38 3a1 1 0 01-.24.9L6.6 10.2z"/>
       </svg>
-      Home
+      <span>Contact</span>
     </a>
 
-    <!-- Programs -->
-    <a href="https://naadaraja.com/programs" title="Programs">
+    <a class="bar-item" href="https://naadaraja.com" aria-label="Home">
+      <!-- home SVG -->
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3z"/>
+      </svg>
+      <span>Home</span>
+    </a>
+
+    <a class="bar-item" href="https://naadaraja.com/courses" aria-label="courses">
+      <!-- grid / programs SVG -->
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-        <path d="M128 0c-17.7 0-32 14.3-32 32V480c0 17.7 
-        14.3 32 32 32H512c17.7 0 32-14.3 
-        32-32V32c0-17.7-14.3-32-32-32H128zm80 
-        96h224c8.8 0 16 7.2 
-        16 16s-7.2 16-16 16H208c-8.8 0-16-7.2-16-16s7.2-16 
-        16-16zm0 96h224c8.8 0 16 7.2 
-        16 16s-7.2 16-16 16H208c-8.8 0-16-7.2-16-16s7.2-16 
-        16-16zm0 96h224c8.8 0 16 7.2 
-        16 16s-7.2 16-16 16H208c-8.8 0-16-7.2-16-16s7.2-16 
-        16-16z"/>
+        <path d="M320 96a64 64 0 1 0 0-128 64 64 0 1 0 0 128zM528 352h-56l-41-82c-6-12-19-18-32-14s-21 16-19 29l20 99H240l20-99c2-13-5-25-19-29s-26 2-32 14l-41 82H112c-27 0-48 21-48 48s21 48 48 48h416c27 0 48-21 48-48s-21-48-48-48z"/>
       </svg>
-      Programs
-    </a>
-
-    <!-- Contact -->
-    <a href="https://naadaraja.com/contact" title="Contact">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-        <path d="M502.3 190.8c3.9-12.4-3.1-25.8-15.5-29.7L327.4 
-        94.5c-12.4-3.9-25.8 3.1-29.7 15.5l-19.7 
-        62.4c-3.9 12.4 3.1 25.8 15.5 
-        29.7l71.6 22.4c-16.3 46.7-52.6 83-99.3 
-        99.3l-22.4-71.6c-3.9-12.4-17.3-19.4-29.7-15.5l-62.4 
-        19.7c-12.4 3.9-19.4 17.3-15.5 
-        29.7l66.7 212.1c3.9 12.4 17.3 19.4 
-        29.7 15.5l212.1-66.7c12.4-3.9 
-        19.4-17.3 15.5-29.7l-19.7-62.4c-3.9-12.4-17.3-19.4-29.7-15.5l-71.6 
-        22.4c-10.1-29-10.1-61 0-90l71.6 
-        22.4c12.4 3.9 25.8-3.1 29.7-15.5l19.7-62.4z"/>
-      </svg>
-      Contacts
-    </a>
-
-    <!-- Terms and Conditions -->
-    <a href="https://naadaraja.com/terms" title="Terms and Conditions">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-        <path d="M64 0C28.7 0 0 28.7 0 64V448c0 
-        35.3 28.7 64 64 64H384c35.3 0 
-        64-28.7 64-64V128L320 0H64zM256 
-        64v96h96v288H96V64H256z"/>
-      </svg>
-      Terms and Conditions
-    </a>
-
-    <!-- Cancellations and Refunds -->
-    <a href="https://naadaraja.com/refunds" title="Cancellations and Refunds">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-        <path d="M256 8C119 8 8 119 8 256s111 248 
-        248 248 248-111 248-248S393 8 256 
-        8zm0 48c110.5 0 200 89.5 200 
-        200s-89.5 200-200 
-        200S56 366.5 56 256 
-        145.5 56 256 56zm93.1 
-        128.9c-12.5-12.5-32.8-12.5-45.3 
-        0L224 264.7V176c0-17.7-14.3-32-32-32s-32 
-        14.3-32 32v160c0 17.7 14.3 32 
-        32 32h160c17.7 0 32-14.3 
-        32-32s-14.3-32-32-32H247.3l79.8-79.8c12.5-12.5 
-        12.5-32.8 0-45.3z"/>
-      </svg>
-      Cancellations and Refunds
-    </a>
-
-    <!-- Privacy Policy -->
-    <a href="https://naadaraja.com/privacy" title="Privacy Policy">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-        <path d="M224 0C100.3 0 0 100.3 0 
-        224c0 97.2 69.6 178.6 160 198.4V512h128v-89.6c90.4-19.8 
-        160-101.2 160-198.4C448 100.3 347.7 
-        0 224 0zm0 128a64 64 0 110 128 
-        64 64 0 010-128z"/>
-      </svg>
-      Privacy Policy
+      <span>courses</span>
     </a>
   </div>
 </footer>
 
 <style>
-  body {
-    margin: 0;
-    min-height: 100vh;         /* full viewport height */
-    display: flex;
-    flex-direction: column;
-  }
+/* Scoped footer variables */
+.peek-footer { --bar-h: 64px; --bg: #111; --bar-bg: #000; --text: #fff; --muted: #bdbdbd; --max-w: 1100px; }
 
-  footer {
-    margin-top: auto;          /* push to bottom */
-    background: #111;
-    padding: 20px;
-    text-align: center;
-  }
+/* Footer base */
+.peek-footer {
+  display:block;
+  width:100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  line-height:1.2;
+  position: relative;
+}
 
-  .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-  }
+/* invisible spacer to allow page to scroll to reveal hidden section above the fixed bar */
+.peek-footer__spacer {
+  height: var(--bar-h);
+  width: 100%;
+}
 
-  .footer-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: color 0.3s ease;
-  }
+/* Hidden content (revealed by scrolling down)
+   It is a normal block-level element at the end of the page.
+   Padding-bottom keeps the content comfortably above the fixed bar.
+*/
+.peek-footer__hidden {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 20px 18px;
+  padding-bottom: calc(var(--bar-h) + 28px);
+  text-align: center;
+  box-sizing: border-box;
+}
 
-  .footer-links a:hover {
-    color: #f39c12;
-  }
+/* Links in the hidden area */
+.footer-links {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-  .footer-links svg {
-    width: 18px;
-    height: 18px;
-    fill: currentColor;
-  }
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+  color: var(--text);
+  text-decoration: underline;
+  outline: none;
+}
+
+/* The always-visible bar (first row). Fixed to bottom of viewport. */
+.peek-footer__bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--bar-h);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  background: var(--bar-bg);
+  z-index: 9999;
+  box-shadow: 0 -6px 20px rgba(0,0,0,0.35);
+}
+
+/* items inside the bar */
+.peek-footer__bar .bar-item {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+/* center item in the bar */
+.peek-footer__bar .bar-item:nth-child(2) {
+  margin: 0 auto;
+}
+
+/* SVG icons - inherit text color */
+.peek-footer__bar svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  fill: currentColor;
+}
+
+/* small responsive adjustments */
+@media (max-width: 520px) {
+  .footer-links { gap: 12px; }
+  .peek-footer__bar { padding: 8px 12px; }
+  .peek-footer__bar .bar-item { font-size: 13px; gap: 8px; }
+}
 </style>
-
