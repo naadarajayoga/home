@@ -60,36 +60,201 @@
 
 
   <!-- ======================
-       CONTACT / PAYPAL
-       ====================== -->
-  <section id="contact">
-    <div class="offer-single">
-      <div id="paypal-container-UTBAB8G3VA98N"></div>
-    </div>
-  </section>
-
+     Courses Section
+     ====================== -->
+<section class="courses-section" id="courses">
   <style>
-    /* CONTACT / PAYPAL CSS */
-    .offer-single {
-      background: white; border-radius: 12px; padding: 28px; max-width: 520px;
-      margin: 30px auto; text-align: center; box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    /* Scoped styles for Courses section */
+    .courses-section{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 30px 18px 80px;
+      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color:#111;
+      background:#fff;
+    }
+    .courses-section .hero{
+      margin-bottom:20px;
+      padding:26px;
+      background:#fff;
+      border-radius:14px;
+      box-shadow:0 6px 18px rgba(14,20,18,0.06);
+    }
+    .courses-section .hero h2{
+      margin:0 0 8px;
+      font-size:24px;
+    }
+    .courses-section .hero p.lead{
+      margin:0 0 14px;
+      font-size:15px;
+      color:#333;
+    }
+    .courses-section .pill{
+      display:inline-flex;
+      gap:6px;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#f7fffb;
+      border:1px solid rgba(47,154,136,0.15);
+      font-size:13px;
+      color:#2f9a88;
+      margin-bottom:10px;
+    }
+    .courses-section .cards{
+      display:grid;
+      gap:18px;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      margin-top:20px;
+    }
+    .courses-section .card{
+      background:#fff;
+      border-radius:12px;
+      padding:18px;
+      box-shadow:0 6px 18px rgba(14,20,18,0.04);
+      border:1px solid rgba(0,0,0,0.03);
+    }
+    .courses-section .card h3{
+      margin:0 0 8px;
+      font-size:18px;
+    }
+    .courses-section .card p{
+      margin:0 0 12px;
+      color:#444;
+      font-size:14px;
+    }
+    .courses-section .card .meta{
+      font-size:13px;
+      color:#666;
+    }
+    .courses-section .price{
+      display:inline-block;
+      margin-top:6px;
+      font-weight:600;
+      color:#2f9a88;
+      font-size:15px;
+    }
+    .courses-section .panel{
+      margin-top:20px;
+      padding:16px;
+      border-radius:10px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,0.04);
+      box-shadow:0 6px 18px rgba(14,20,18,0.04);
+    }
+    .courses-section details summary{
+      cursor:pointer;
+      font-weight:600;
+      margin:6px 0;
+    }
+    /* Scoped PayPal button styling */
+    .courses-section .pp-HJ9CDW254V8Y2{
+      text-align:center;
+      border:none;
+      border-radius:1.5rem;
+      min-width:11.625rem;
+      padding:0 2rem;
+      height:2.625rem;
+      font-weight:bold;
+      background-color:#FFD140;
+      color:#000000;
+      font-family:"Helvetica Neue",Arial,sans-serif;
+      font-size:1rem;
+      line-height:1.25rem;
+      cursor:pointer;
     }
   </style>
 
-  <script>
-    // CONTACT / PAYPAL JS
-    paypal.HostedButtons({ hostedButtonId: "UTBAB8G3VA98N" })
-      .render("#paypal-container-UTBAB8G3VA98N");
-  </script>
+  <!-- Intro -->
+  <div class="hero">
+    <div class="pill">
+      <!-- Star icon -->
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2l3 6 7 1-5 4 2 7-6-4-6 4 2-7-5-4 7-1z"/>
+      </svg>
+      Personalized • Daily monitoring
+    </div>
+    <h2>One-on-one sessions tailored to you</h2>
+    <p class="lead">Choose highly personalized asana sessions, Yoga Nidra (Yogadidha), or both combined. Each session adapts to your capacity, with daily monitoring and modifications.</p>
+  </div>
 
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Floating Contact Buttons</title>
-</head>
-<body>
+  <!-- Packages -->
+  <div class="cards">
+    <!-- Asana -->
+    <article class="card">
+      <h3>One-on-one Asana Session</h3>
+      <p>Personalized asana practice adapted daily, safe and progressive for all levels.</p>
+      <div class="meta">Format: Live online • Flexible duration</div>
+      <div class="price">Custom plans available</div>
+      <!-- PayPal button -->
+      <form action="https://www.paypal.com/ncp/payment/HJ9CDW254V8Y2" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
+        <input class="pp-HJ9CDW254V8Y2" type="submit" value="Buy Now" />
+        <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
+        <section style="font-size:0.75rem;">Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
+      </form>
+    </article>
+
+    <!-- Yoga Nidra -->
+    <article class="card">
+      <h3>Yoga Nidra (Yogadidha)</h3>
+      <p>Guided lucid relaxation that nurtures creativity and clarity, benefits continue after practice.</p>
+      <div class="meta">Format: Guided Nidra • Gentle lying posture</div>
+      <div class="price">Session packages available</div>
+      <!-- PayPal button -->
+      <form action="https://www.paypal.com/ncp/payment/HJ9CDW254V8Y2" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
+        <input class="pp-HJ9CDW254V8Y2" type="submit" value="Buy Now" />
+        <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
+        <section style="font-size:0.75rem;">Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
+      </form>
+    </article>
+
+    <!-- Combined -->
+    <article class="card">
+      <h3>Combined: Asana + Yogadidha</h3>
+      <p>Tailored asana with Yoga Nidra to enhance both strength and creativity.</p>
+      <div class="meta">Format: Hybrid • Flexible schedule</div>
+      <div class="price">Contact to assemble a program</div>
+      <!-- PayPal button -->
+      <form action="https://www.paypal.com/ncp/payment/HJ9CDW254V8Y2" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
+        <input class="pp-HJ9CDW254V8Y2" type="submit" value="Buy Now" />
+        <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
+        <section style="font-size:0.75rem;">Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
+      </form>
+    </article>
+  </div>
+
+  <!-- How it works -->
+  <div class="panel">
+    <h3>How it works</h3>
+    <ol>
+      <li>Sign up via checkout embed</li>
+      <li>Initial assessment of your goals & capacity</li>
+      <li>Daily adaptive sessions</li>
+      <li>Ongoing monitoring & adjustments</li>
+      <li>Optional Yoga Nidra for creativity</li>
+    </ol>
+  </div>
+
+  <!-- FAQ -->
+  <div class="panel">
+    <h3>FAQ</h3>
+    <details>
+      <summary>Do I need prior experience?</summary>
+      <p>No. Sessions adapt to your level, beginner or advanced.</p>
+    </details>
+    <details>
+      <summary>Can I combine Asana and Yogadidha?</summary>
+      <p>Yes, you can choose either separately or both together.</p>
+    </details>
+    <details>
+      <summary>How do I pay?</summary>
+      <p>Secure checkout via PayPal button above.</p>
+    </details>
+  </div>
+</section>
+
+
+
 
 <!-- ======================
      FLOATING CONTACT BUTTONS
