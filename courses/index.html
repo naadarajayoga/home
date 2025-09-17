@@ -160,6 +160,49 @@
     }
     .courses-section .btn-buy:hover{ background-color:#ffcc00; }
 
+    /* How it works */
+    .courses-section .how-it-works{
+      margin-top:30px;
+      padding:20px;
+      border-radius:12px;
+      background:#f9fdfc;
+      border:1px solid rgba(0,0,0,0.05);
+      box-shadow:0 6px 18px rgba(14,20,18,0.04);
+    }
+    .courses-section .how-it-works h3{
+      margin-top:0;
+      font-size:20px;
+      margin-bottom:16px;
+      color:#2f2f2f;
+    }
+    .courses-section .steps{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .courses-section .step{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+    .courses-section .step-icon{
+      width:26px;
+      height:26px;
+      border-radius:50%;
+      background:#2f9a88;
+      color:#fff;
+      font-size:14px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-shrink:0;
+    }
+    .courses-section .step p{
+      margin:0;
+      font-size:14px;
+      color:#444;
+    }
+
     /* Modal */
     .courses-section .modal{
       position:fixed;
@@ -190,8 +233,7 @@
       flex-direction:column;
       gap:12px;
     }
-    .courses-section .btn-paypal,
-    .courses-section .btn-upi{
+    .courses-section .modal-buttons a{
       display:block;
       padding:0.75rem;
       border-radius:8px;
@@ -206,6 +248,13 @@
     .courses-section .btn-upi{
       background:#2f9a88;
       color:#fff;
+    }
+    .courses-section .small-text{
+      display:block;
+      font-size:12px;
+      font-weight:normal;
+      margin-top:4px;
+      color:#444;
     }
     .courses-section .btn-close{
       margin-top:14px;
@@ -231,7 +280,6 @@
 
   <!-- Packages -->
   <div class="cards">
-    <!-- Asana -->
     <article class="card">
       <div>
         <h3>One-on-one Asana Session</h3>
@@ -239,11 +287,10 @@
         <div class="note">Please contact us to confirm a time slot. A 10–15 day commitment is recommended for meaningful improvement.</div>
       </div>
       <div class="button-wrap">
-        <button class="btn-buy" data-package="Asana">Buy Now</button>
+        <button class="btn-buy">Buy Now</button>
       </div>
     </article>
 
-    <!-- Yoga Nidra -->
     <article class="card">
       <div>
         <h3>Yoga Nidra</h3>
@@ -251,11 +298,10 @@
         <div class="note">Please contact us to confirm a time slot. A 10–15 day commitment is recommended for meaningful improvement.</div>
       </div>
       <div class="button-wrap">
-        <button class="btn-buy" data-package="Yoga Nidra">Buy Now</button>
+        <button class="btn-buy">Buy Now</button>
       </div>
     </article>
 
-    <!-- Combined -->
     <article class="card">
       <div>
         <h3>Combined: Asana + Yoga Nidra</h3>
@@ -263,41 +309,30 @@
         <div class="note">Please contact us to confirm a time slot. A 10–15 day commitment is recommended for meaningful improvement.</div>
       </div>
       <div class="button-wrap">
-        <button class="btn-buy" data-package="Combined">Buy Now</button>
+        <button class="btn-buy">Buy Now</button>
       </div>
     </article>
   </div>
 
   <!-- How it works -->
-  <div class="panel">
+  <div class="how-it-works">
     <h3>How it works</h3>
-    <ol>
-      <li>Sign up via checkout button</li>
-      <li>Initial assessment of your goals & capacity</li>
-      <li>Daily adaptive sessions</li>
-      <li>Ongoing monitoring & adjustments</li>
-    </ol>
+    <div class="steps">
+      <div class="step"><div class="step-icon">1</div><p>Click “Buy Now” and choose your payment method (PayPal or UPI).</p></div>
+      <div class="step"><div class="step-icon">2</div><p>Get in touch to confirm your time slot.</p></div>
+      <div class="step"><div class="step-icon">3</div><p>We’ll do an initial assessment of your goals & capacity.</p></div>
+      <div class="step"><div class="step-icon">4</div><p>Daily adaptive sessions based on your needs.</p></div>
+      <div class="step"><div class="step-icon">5</div><p>Ongoing monitoring & adjustments for steady progress.</p></div>
+    </div>
   </div>
 
   <!-- FAQ -->
-  <div class="panel">
+  <div class="how-it-works" style="margin-top:20px;">
     <h3>FAQ</h3>
-    <details>
-      <summary>Do I need prior experience?</summary>
-      <p>No. Sessions adapt to your level, beginner or advanced.</p>
-    </details>
-    <details>
-      <summary>Can I combine Asana and Yoga Nidra?</summary>
-      <p>Yes, you can choose either separately or both together.</p>
-    </details>
-    <details>
-      <summary>How do I pay?</summary>
-      <p>Click “Buy Now” → choose PayPal or UPI.</p>
-    </details>
-    <details>
-      <summary>How long should I commit?</summary>
-      <p>Please contact us to confirm a time slot. A commitment of <strong>10–15 days</strong> is recommended to experience meaningful improvement.</p>
-    </details>
+    <details><summary>Do I need prior experience?</summary><p>No. Sessions adapt to your level, beginner or advanced.</p></details>
+    <details><summary>Can I combine Asana and Yoga Nidra?</summary><p>Yes, you can choose either separately or both together.</p></details>
+    <details><summary>How do I pay?</summary><p>Click “Buy Now” → choose PayPal or UPI.</p></details>
+    <details><summary>How long should I commit?</summary><p>Please contact us to confirm a time slot. A commitment of <strong>10–15 days</strong> is recommended to experience meaningful improvement.</p></details>
   </div>
 
   <!-- Payment Modal -->
@@ -305,8 +340,13 @@
     <div class="modal-content">
       <h3>Select Payment Method</h3>
       <div class="modal-buttons">
-        <a href="https://www.paypal.com/ncp/payment/HJ9CDW254V8Y2" target="_blank" class="btn-paypal">Pay with PayPal</a>
-        <a href="upi://pay?pa=yadukrishnanindia@upi&pn=Yadu%20Krishnan&cu=INR" class="btn-upi">Pay with UPI</a>
+        <a href="https://www.paypal.com/ncp/payment/HJ9CDW254V8Y2" target="_blank" class="btn-paypal">
+          PayPal and Cards
+          <span class="small-text">for international only</span>
+        </a>
+        <a href="upi://pay?pa=yadukrishnanindia@upi&pn=Yadu%20Krishnan&cu=INR" class="btn-upi">
+          UPI and GPay
+        </a> 
       </div>
       <button class="btn-close" id="closeModal">Cancel</button>
     </div>
