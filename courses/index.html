@@ -141,6 +141,27 @@
       justify-content:center; /* center horizontally */
       align-items:center;
     }
+    .courses-section .btn-paypal{
+      display:inline-block;
+      text-align:center;
+      border:none;
+      border-radius:1.5rem;
+      min-width:11.625rem;
+      padding:0.75rem 2rem;
+      font-weight:bold;
+      background-color:#FFD140;
+      color:#000000;
+      font-family:"Helvetica Neue",Arial,sans-serif;
+      font-size:1rem;
+      line-height:1.25rem;
+      cursor:pointer;
+      text-decoration:none;
+      box-shadow:0 4px 10px rgba(0,0,0,0.08);
+      transition: background 0.2s ease;
+    }
+    .courses-section .btn-paypal:hover{
+      background-color:#ffcc00;
+    }
     .courses-section .panel{
       margin-top:20px;
       padding:16px;
@@ -153,22 +174,6 @@
       cursor:pointer;
       font-weight:600;
       margin:6px 0;
-    }
-    /* Scoped PayPal button styling */
-    .courses-section .pp-HJ9CDW254V8Y2{
-      text-align:center;
-      border:none;
-      border-radius:1.5rem;
-      min-width:11.625rem;
-      padding:0 2rem;
-      height:2.625rem;
-      font-weight:bold;
-      background-color:#FFD140;
-      color:#000000;
-      font-family:"Helvetica Neue",Arial,sans-serif;
-      font-size:1rem;
-      line-height:1.25rem;
-      cursor:pointer;
     }
   </style>
 
@@ -195,12 +200,7 @@
         <div class="note">Please contact us to confirm a time slot. A 10–15 day commitment is recommended for meaningful improvement.</div>
       </div>
       <div class="button-wrap">
-        <!-- PayPal button -->
-        <form action="https://www.paypal.com/ncp/payment/HJ9CDW254V8Y2" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-          <input class="pp-HJ9CDW254V8Y2" type="submit" value="Buy Now" />
-          <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
-          <section style="font-size:0.75rem;">Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
-        </form>
+        <a href="https://www.paypal.com/ncp/payment/HJ9CDW254V8Y2" target="_blank" class="btn-paypal">Buy Now</a>
       </div>
     </article>
 
@@ -212,12 +212,7 @@
         <div class="note">Please contact us to confirm a time slot. A 10–15 day commitment is recommended for meaningful improvement.</div>
       </div>
       <div class="button-wrap">
-        <!-- PayPal button -->
-        <form action="https://www.paypal.com/ncp/payment/HJ9CDW254V8Y2" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-          <input class="pp-HJ9CDW254V8Y2" type="submit" value="Buy Now" />
-          <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
-          <section style="font-size:0.75rem;">Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
-        </form>
+        <a href="https://www.paypal.com/ncp/payment/HJ9CDW254V8Y2" target="_blank" class="btn-paypal">Buy Now</a>
       </div>
     </article>
 
@@ -229,12 +224,7 @@
         <div class="note">Please contact us to confirm a time slot. A 10–15 day commitment is recommended for meaningful improvement.</div>
       </div>
       <div class="button-wrap">
-        <!-- PayPal button -->
-        <form action="https://www.paypal.com/ncp/payment/HJ9CDW254V8Y2" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-          <input class="pp-HJ9CDW254V8Y2" type="submit" value="Buy Now" />
-          <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
-          <section style="font-size:0.75rem;">Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
-        </form>
+        <a href="https://www.paypal.com/ncp/payment/HJ9CDW254V8Y2" target="_blank" class="btn-paypal">Buy Now</a>
       </div>
     </article>
   </div>
@@ -243,7 +233,7 @@
   <div class="panel">
     <h3>How it works</h3>
     <ol>
-      <li>Sign up via checkout embed</li>
+      <li>Sign up via checkout button</li>
       <li>Initial assessment of your goals & capacity</li>
       <li>Daily adaptive sessions</li>
       <li>Ongoing monitoring & adjustments</li>
@@ -263,7 +253,7 @@
     </details>
     <details>
       <summary>How do I pay?</summary>
-      <p>Secure checkout via PayPal button above.</p>
+      <p>Secure checkout via the Buy Now button above.</p>
     </details>
     <details>
       <summary>How long should I commit?</summary>
