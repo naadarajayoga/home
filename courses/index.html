@@ -109,29 +109,37 @@
     .courses-section .card{
       background:#fff;
       border-radius:12px;
-      padding:18px;
+      padding:20px;
       box-shadow:0 6px 18px rgba(14,20,18,0.04);
-      border:1px solid rgba(0,0,0,0.03);
+      border:1px solid rgba(0,0,0,0.05);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
     }
     .courses-section .card h3{
-      margin:0 0 8px;
-      font-size:18px;
+      margin:0 0 10px;
+      font-size:19px;
+      color:#2f2f2f;
     }
     .courses-section .card p{
       margin:0 0 12px;
       color:#444;
       font-size:14px;
     }
-    .courses-section .card .meta{
+    .courses-section .note{
+      margin:12px 0;
+      padding:10px 12px;
+      background:#f7fffb;
+      border:1px solid rgba(47,154,136,0.15);
+      border-radius:8px;
       font-size:13px;
-      color:#666;
+      color:#2f2f2f;
     }
-    .courses-section .price{
-      display:inline-block;
-      margin-top:6px;
-      font-weight:600;
-      color:#2f9a88;
-      font-size:15px;
+    .courses-section .card .button-wrap{
+      margin-top:auto;
+      display:flex;
+      justify-content:center; /* center horizontally */
+      align-items:center;
     }
     .courses-section .panel{
       margin-top:20px;
@@ -181,44 +189,53 @@
   <div class="cards">
     <!-- Asana -->
     <article class="card">
-      <h3>One-on-one Asana Session</h3>
-      <p>Personalized asana practice adapted daily, safe and progressive for all levels.</p>
-      <div class="meta">Format: Live online • Flexible duration</div>
-      <div class="price">Custom plans available</div>
-      <!-- PayPal button -->
-      <form action="https://www.paypal.com/ncp/payment/HJ9CDW254V8Y2" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-        <input class="pp-HJ9CDW254V8Y2" type="submit" value="Buy Now" />
-        <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
-        <section style="font-size:0.75rem;">Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
-      </form>
+      <div>
+        <h3>One-on-one Asana Session</h3>
+        <p>Personalized asana practice adapted daily, safe and progressive for all levels.</p>
+        <div class="note">Please contact us to confirm a time slot. A 10–15 day commitment is recommended for meaningful improvement.</div>
+      </div>
+      <div class="button-wrap">
+        <!-- PayPal button -->
+        <form action="https://www.paypal.com/ncp/payment/HJ9CDW254V8Y2" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
+          <input class="pp-HJ9CDW254V8Y2" type="submit" value="Buy Now" />
+          <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
+          <section style="font-size:0.75rem;">Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
+        </form>
+      </div>
     </article>
 
     <!-- Yoga Nidra -->
     <article class="card">
-      <h3>Yoga Nidra</h3>
-      <p>Guided lucid relaxation that nurtures creativity and clarity, benefits continue after practice.</p>
-      <div class="meta">Format: Guided Nidra • Gentle lying posture</div>
-      <div class="price">Session packages available</div>
-      <!-- PayPal button -->
-      <form action="https://www.paypal.com/ncp/payment/HJ9CDW254V8Y2" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-        <input class="pp-HJ9CDW254V8Y2" type="submit" value="Buy Now" />
-        <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
-        <section style="font-size:0.75rem;">Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
-      </form>
+      <div>
+        <h3>Yoga Nidra</h3>
+        <p>Guided lucid relaxation that nurtures creativity and clarity, benefits continue after practice.</p>
+        <div class="note">Please contact us to confirm a time slot. A 10–15 day commitment is recommended for meaningful improvement.</div>
+      </div>
+      <div class="button-wrap">
+        <!-- PayPal button -->
+        <form action="https://www.paypal.com/ncp/payment/HJ9CDW254V8Y2" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
+          <input class="pp-HJ9CDW254V8Y2" type="submit" value="Buy Now" />
+          <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
+          <section style="font-size:0.75rem;">Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
+        </form>
+      </div>
     </article>
 
     <!-- Combined -->
     <article class="card">
-      <h3>Combined: Asana + Yoga Nidra</h3>
-      <p>Tailored asana with Yoga Nidra to enhance both strength and creativity.</p>
-      <div class="meta">Format: Hybrid • Flexible schedule</div>
-      <div class="price">Contact to assemble a program</div>
-      <!-- PayPal button -->
-      <form action="https://www.paypal.com/ncp/payment/HJ9CDW254V8Y2" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-        <input class="pp-HJ9CDW254V8Y2" type="submit" value="Buy Now" />
-        <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
-        <section style="font-size:0.75rem;">Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
-      </form>
+      <div>
+        <h3>Combined: Asana + Yoga Nidra</h3>
+        <p>Tailored asana with Yoga Nidra to enhance both strength and creativity.</p>
+        <div class="note">Please contact us to confirm a time slot. A 10–15 day commitment is recommended for meaningful improvement.</div>
+      </div>
+      <div class="button-wrap">
+        <!-- PayPal button -->
+        <form action="https://www.paypal.com/ncp/payment/HJ9CDW254V8Y2" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
+          <input class="pp-HJ9CDW254V8Y2" type="submit" value="Buy Now" />
+          <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
+          <section style="font-size:0.75rem;">Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
+        </form>
+      </div>
     </article>
   </div>
 
@@ -230,12 +247,7 @@
       <li>Initial assessment of your goals & capacity</li>
       <li>Daily adaptive sessions</li>
       <li>Ongoing monitoring & adjustments</li>
-      <li>Optional Yoga Nidra for creativity</li>
     </ol>
-    <p style="margin-top:12px; color:#444;">
-      Please contact us in advance to confirm a time slot.  
-      A commitment of <strong>10–15 days</strong> is recommended to experience meaningful improvement.
-    </p>
   </div>
 
   <!-- FAQ -->
@@ -252,6 +264,10 @@
     <details>
       <summary>How do I pay?</summary>
       <p>Secure checkout via PayPal button above.</p>
+    </details>
+    <details>
+      <summary>How long should I commit?</summary>
+      <p>Please contact us to confirm a time slot. A commitment of <strong>10–15 days</strong> is recommended to experience meaningful improvement.</p>
     </details>
   </div>
 </section>
