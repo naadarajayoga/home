@@ -20,8 +20,24 @@
     body { line-height: 1.6; color: #333; background: #fefefe; }
     img { max-width: 100%; display: block; }
   </style>
+</html>
+
+<head>
+  <!-- Web App Manifest -->
+<link rel="manifest" href="/manifest.json">
+
+<!-- Theme Color for the browser -->
+<meta name="theme-color" content="#000000">
 </head>
+
 <body>
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js")
+      .then(reg => console.log("Service Worker registered", reg))
+      .catch(err => console.error("Service Worker failed:", err));
+  }
+</script>
 
   <!-- ======================
        HEADER
