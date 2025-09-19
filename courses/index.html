@@ -361,7 +361,7 @@
     <span>Home</span>
   </a>
 
-  <a class="nav-item" href="https://naadaraja.com/courses" aria-label="Courses">
+  <a class="nav-item active" href="https://naadaraja.com/courses" aria-label="Courses">
     <!-- grid / programs SVG -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
       <path d="M320 96a64 64 0 1 0 0-128 64 64 0 1 0 0 128zM528 352h-56l-41-82c-6-12-19-18-32-14s-21 16-19 29l20 99H240l20-99c2-13-5-25-19-29s-26 2-32 14l-41 82H112c-27 0-48 21-48 48s21 48 48 48h416c27 0 48-21 48-48s-21-48-48-48z"/>
@@ -410,6 +410,10 @@
   height: 20px;
   display: block;
   fill: currentColor;
+}
+.bottom-navbar .nav-item.active {
+  color: #FFD700; /* gold highlight */
+  font-weight: 700;
 }
 
 @media (max-width: 520px) {
