@@ -127,10 +127,11 @@
   <!-- No JS needed for about -->
 
 
-  <!-- ======================
-       REVIEWS
-       ====================== -->
-  <!DOCTYPE html>
+<!-- ======================
+        REVIEWS
+====================== -->
+       
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -331,7 +332,7 @@
         </a>
       </div>
 
-      <!-- Review Item -->
+      <!-- Review Item 1 -->
       <div class="review-item">
         <div class="review-top">
           <a href="https://maps.app.goo.gl/Gtk5X1QE4C4MGiKf9" target="_blank">
@@ -340,7 +341,7 @@
           <div class="stars">★★★★★</div>
         </div>
 
-        <p class="review-text" id="review-text">
+        <p class="review-text" id="review-text-1">
           Yadu has been my yoga teacher for some time, and his lifelong dedication to yoga, 
           built through many years of continuous practice and teaching, is felt in every class. 
           His deep experience and strong foundation make him not only an excellent coach but 
@@ -350,7 +351,7 @@
           His teaching is gentle, clear, and motivating – practicing with Yadu has truly given me 
           back strength, balance, and joy in yoga.
         </p>
-        <span class="read-more" onclick="toggleReview(this)">Read more</span>
+        <span class="read-more" onclick="toggleReview(this, 'review-text-1')">Read more</span>
 
         <!-- Google multicolor SVG logo links to Google Search -->
         <a href="https://www.google.com/search?q=naada+raja+yoga" target="_blank" aria-label="View on Google">
@@ -362,12 +363,42 @@
           </svg>
         </a>
       </div>
+
+      <!-- Review Item 2 -->
+      <div class="review-item">
+        <div class="review-top">
+          <a href="https://share.google/rovKD07fRX7Bj9DkR" target="_blank">
+            <h4>Raji ks</h4>
+          </a>
+          <div class="stars">★★★★★</div>
+        </div>
+
+        <p class="review-text" id="review-text-2">
+          I thoroughly enjoyed the yoga session. The atmosphere was warm and welcoming, and the 
+          instructions were incredibly clear, helping me understand exactly what I could do. I’ve 
+          been practicing since 2008 and I eventually became a district champion. The session was 
+          well-tailored to my needs, and I felt that every part of my body was taken care of. 
+          Overall, it was a fantastic experience, and I would definitely recommend it.
+        </p>
+        <span class="read-more" onclick="toggleReview(this, 'review-text-2')">Read more</span>
+
+        <!-- Google multicolor SVG logo links to Google Search -->
+        <a href="https://www.google.com/search?q=naada+raja+yoga" target="_blank" aria-label="View on Google">
+          <svg class="google-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
+            <path fill="#4285F4" d="M488 261.8c0-17.7-1.5-35.6-4.6-52.8H248v99.9h135.6c-5.9 31.8-23.6 58.7-50.5 76.6v63.5h81.7c47.9-44.1 73.2-109.1 73.2-187.2z"/>
+            <path fill="#34A853" d="M248 492c68.4 0 125.9-22.7 167.9-61.5l-81.7-63.5c-22.7 15.2-51.8 24.3-86.2 24.3-66.2 0-122.3-44.7-142.4-104.9H20.1v65.9C62.6 429.3 148.2 492 248 492z"/>
+            <path fill="#FBBC05" d="M105.6 286.4c-5.1-15.2-8-31.5-8-48.4s2.9-33.2 8-48.4V123.7H20.1C7.2 152.7 0 186.1 0 221.6s7.2 68.9 20.1 97.9l85.5-65.1z"/>
+            <path fill="#EA4335" d="M248 97.6c37.2 0 70.7 12.8 97.1 37.8l72.6-72.6C373.9 24.3 316.4 0 248 0 148.2 0 62.6 62.7 20.1 155.2l85.5 65.1C125.7 142.3 181.8 97.6 248 97.6z"/>
+          </svg>
+        </a>
+      </div>
+
     </div>
   </section>
 
   <script>
-    function toggleReview(el) {
-      const reviewText = document.getElementById("review-text");
+    function toggleReview(el, id) {
+      const reviewText = document.getElementById(id);
       if (reviewText.classList.contains("expanded")) {
         reviewText.classList.remove("expanded");
         el.innerText = "Read more";
