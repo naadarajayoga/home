@@ -460,22 +460,22 @@
 
   <div class="shorts-carousel">
     <div class="short">
-      <iframe src="https://www.youtube.com/embed/SYvQXu5onF0?autoplay=0" allowfullscreen></iframe>
+      <div id="video-0"></div>
     </div>
     <div class="short">
-      <iframe src="https://www.youtube.com/embed/KwHA5qyFzXY?autoplay=0" allowfullscreen></iframe>
+      <div id="video-1"></div>
     </div>
     <div class="short">
-      <iframe src="https://www.youtube.com/embed/4JhofpR7DEY?autoplay=0" allowfullscreen></iframe>
+      <div id="video-2"></div>
     </div>
     <div class="short">
-      <iframe src="https://www.youtube.com/embed/niu5uo0cnfg?autoplay=0" allowfullscreen></iframe>
+      <div id="video-3"></div>
     </div>
     <div class="short">
-      <iframe src="https://www.youtube.com/embed/gO_dfy0N-sM?autoplay=0" allowfullscreen></iframe>
+      <iframe id="video-4" src="https://www.youtube.com/embed/gO_dfy0N-sM?autoplay=0&controls=1" allowfullscreen></iframe>
     </div>
     <div class="short">
-      <iframe src="https://www.youtube.com/embed/R5niWehGQD8?autoplay=0" allowfullscreen></iframe>
+      <iframe id="video-5" src="https://www.youtube.com/embed/R5niWehGQD8?autoplay=0&controls=1" allowfullscreen></iframe>
     </div>
   </div>
 
@@ -657,13 +657,39 @@
   }
 </style>
 
+<script src="https://www.youtube.com/iframe_api"></script>
 <script>
+  let players = [];
+
+  function onYouTubeIframeAPIReady() {
+    const videoIds = ['SYvQXu5onF0', 'KwHA5qyFzXY', '4JhofpR7DEY', 'niu5uo0cnfg', 'gO_dfy0N-sM', 'R5niWehGQD8'];
+    
+    videoIds.forEach((videoId, index) => {
+      const player = new YT.Player(`video-${index}`, {
+        height: '100%',
+        width: '100%',
+        videoId: videoId,
+        events: {
+          'onReady': (event) => {
+            setTimeout(() => {
+              event.target.playVideo();
+              setTimeout(() => {
+                event.target.pauseVideo();
+              }, 1000);
+            }, index * 200);
+          }
+        }
+      });
+      players.push(player);
+    });
+  }
+
   const carousel = document.querySelector('.shorts-carousel');
   const indicators = document.querySelectorAll('.indicator');
 
   carousel.addEventListener('scroll', () => {
     const scrollPosition = carousel.scrollLeft;
-    const cardWidth = 215; // 200px + 15px gap
+    const cardWidth = 215;
     const activeIndex = Math.round(scrollPosition / cardWidth);
     
     indicators.forEach((indicator, index) => {
