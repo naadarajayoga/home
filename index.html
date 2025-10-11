@@ -671,21 +671,203 @@
 </script>
 
 
-<!-- ==========================
-     Navbar (always visible)
-     ========================== -->
-<nav class="bottom-navbar" id="site-navbar" role="navigation" aria-label="Main navigation">
-  <a class="nav-item" href="https://naadaraja.com/contact" aria-label="Contact">
-    <!-- phone / contact SVG -->
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path d="M6.6 10.2a15.05 15.05 0 006.2 6.2l1.8-1.8a1 1 0 01.9-.24c1 .25 2 .38 3 .38a1 1 0 011 1v3a1 1 0 01-1 1C9.2 23 1 14.8 1 3a1 1 0 011-1h3a1 1 0 011 1c0 1.1.13 2.1.38 3a1 1 0 01-.24.9L6.6 10.2z"/>
-    </svg>
-    <span>Contact</span>
-  </a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bottom Navbar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <a class="nav-item active" href="https://naadaraja.com" aria-label="Home">
-    <!-- home SVG -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: #f5f5f5;
+      padding-bottom: 80px;
+      min-height: 100vh;
+    }
+
+    /* ==========================
+       Navbar CSS Variables
+       ========================== */
+    .bottom-navbar {
+      /* Layout */
+      --bar-h: 55px;
+      --gap: 40px;
+      --gap-small: 20px;
+      
+      /* Colors */
+      --bg: #2C3E50;
+      --text: #fff;
+      --text-hover: #FFD700;
+      --text-active: #FFD700;
+      
+      /* Typography */
+      --font-size: 15px;
+      --font-size-small: 13px;
+      --font-weight: 600;
+      --font-weight-active: 700;
+      
+      /* Icons & Spacing */
+      --icon-size: 20px;
+      --icon-size-small: 18px;
+      --nav-item-gap: 10px;
+      --nav-item-gap-small: 8px;
+      --touch-padding: 8px;
+      
+      /* Transitions */
+      --transition: all 0.2s ease;
+      
+      /* Position */
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: var(--bar-h);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--gap);
+      background: var(--bg);
+      color: var(--text);
+      z-index: 9999;
+    }
+
+    /* Navbar Items */
+    .bottom-navbar .nav-item {
+      display: inline-flex;
+      gap: var(--nav-item-gap);
+      align-items: center;
+      justify-content: center;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: var(--font-weight);
+      font-size: var(--font-size);
+      white-space: nowrap;
+      padding: var(--touch-padding);
+      border-radius: 6px;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    /* Hover Effect */
+    .bottom-navbar .nav-item:hover {
+      color: var(--text-hover);
+      background-color: rgba(255, 215, 0, 0.1);
+    }
+
+    /* Active State */
+    .bottom-navbar .nav-item.active {
+      color: var(--text-active);
+      font-weight: var(--font-weight-active);
+      background-color: rgba(255, 215, 0, 0.15);
+    }
+
+    /* SVG Styling */
+    .bottom-navbar svg {
+      width: var(--icon-size);
+      height: var(--icon-size);
+      display: block;
+      fill: currentColor;
+      transition: var(--transition);
+    }
+
+    /* Tooltip for Mobile */
+    .bottom-navbar .nav-item::after {
+      content: attr(data-label);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-8px);
+      background: rgba(0, 0, 0, 0.9);
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+      pointer-events: none;
+      z-index: 10000;
+    }
+
+    /* Show Tooltip on Hover */
+    .bottom-navbar .nav-item:hover::after {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 520px) {
+      .bottom-navbar {
+        --gap: var(--gap-small);
+        padding: 8px 12px;
+        justify-content: space-between;
+      }
+
+      .bottom-navbar .nav-item {
+        --font-size: var(--font-size-small);
+        --icon-size: var(--icon-size-small);
+        gap: var(--nav-item-gap-small);
+      }
+
+      /* Hide text labels on mobile, show only on tooltip */
+      .bottom-navbar .nav-item span {
+        display: none;
+      }
+
+      .bottom-navbar .nav-item::after {
+        display: block;
+      }
+    }
+
+    /* Focus State for Accessibility */
+    .bottom-navbar .nav-item:focus-visible {
+      outline: 2px solid var(--text-hover);
+      outline-offset: 2px;
+    }
+
+    /* Demo Content */
+    .demo-content {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .demo-content h1 {
+      margin-bottom: 20px;
+      color: #2C3E50;
+    }
+
+    .demo-content p {
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="bottom-navbar" id="site-navbar" role="navigation" aria-label="Main navigation">
+    <a class="nav-item" href="https://naadaraja.com/contact" data-label="Contact" aria-label="Contact">
+      <!-- phone / contact SVG -->
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M6.6 10.2a15.05 15.05 0 006.2 6.2l1.8-1.8a1 1 0 01.9-.24c1 .25 2 .38 3 .38a1 1 0 011 1v3a1 1 0 01-1 1C9.2 23 1 14.8 1 3a1 1 0 011-1h3a1 1 0 011 1c0 1.1.13 2.1.38 3a1 1 0 01-.24.9L6.6 10.2z"/>
+      </svg>
+      <span>Contact</span>
+    </a>
+
+    <a class="nav-item active" href="https://naadaraja.com" data-label="Home" aria-label="Home" aria-current="page">
+      <!-- home SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" aria-hidden="true" focusable="false">
         <path d="M541 229.16l-61-52.06V56c0-13.25-10.75-24-24-24h-72c-13.25 
         0-24 10.75-24 24v24L314.4 43c-15.9-13.6-39.3-13.6-55.2 
         0L35 229.2c-9.9 8.4-11.1 23.3-2.7 33.2s23.3 11.1 33.2 
@@ -693,72 +875,38 @@
         0 56-25.1 56-56V232l30.6 26c9.9 8.4 24.8 7.1 33.2-2.7 
         8.4-9.9 7.1-24.8-2.7-33.2z"/>
       </svg>
-    <span>Home</span>
-  </a>
+      <span>Home</span>
+    </a>
 
-  <a class="nav-item" href="https://naadaraja.com/courses" aria-label="Courses">
-    <!-- grid / programs SVG -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-      <path d="M320 96a64 64 0 1 0 0-128 64 64 0 1 0 0 128zM528 352h-56l-41-82c-6-12-19-18-32-14s-21 16-19 29l20 99H240l20-99c2-13-5-25-19-29s-26 2-32 14l-41 82H112c-27 0-48 21-48 48s21 48 48 48h416c27 0 48-21 48-48s-21-48-48-48z"/>
-    </svg>
-    <span>Courses</span>
-  </a>
-</nav>
+    <a class="nav-item" href="https://naadaraja.com/courses" data-label="Courses" aria-label="Courses">
+      <!-- grid / programs SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" aria-hidden="true" focusable="false">
+        <path d="M320 96a64 64 0 1 0 0-128 64 64 0 1 0 0 128zM528 352h-56l-41-82c-6-12-19-18-32-14s-21 16-19 29l20 99H240l20-99c2-13-5-25-19-29s-26 2-32 14l-41 82H112c-27 0-48 21-48 48s21 48 48 48h416c27 0 48-21 48-48s-21-48-48-48z"/>
+      </svg>
+      <span>Courses</span>
+    </a>
+  </nav>
 
-<style>
-
-
-
-/* ==========================
-   Navbar CSS
-   ========================== */
-.bottom-navbar {
-  --bar-h: 55px;
-  --bg: #2C3E50;
-  --text: #fff;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: var(--bar-h);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px; /* spacing between items */
-  background: var(--bg);
-  color: var(--text);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  z-index: 9999;
-}
-
-.bottom-navbar .nav-item {
-  display: inline-flex;
-  gap: 10px;
-  align-items: center;
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
-  white-space: nowrap;
-}
-
-.bottom-navbar svg {
-  width: 20px;
-  height: 20px;
-  display: block;
-  fill: currentColor;
-}
-.bottom-navbar .nav-item.active {
-  color: #FFD700; /* gold highlight */
-  font-weight: 700;
-}
-
-@media (max-width: 520px) {
-  .bottom-navbar { padding: 8px 12px; gap: 20px; justify-content: space-between; }
-  .bottom-navbar .nav-item { font-size: 13px; gap: 8px; }
-}
-</style>
-
+  <!-- Demo Content -->
+  <div class="demo-content">
+    <h1>Improved Bottom Navbar</h1>
+    <p><strong>✨ New Features:</strong></p>
+    <ul style="margin-left: 20px; margin-bottom: 20px;">
+      <li>Hover effects with smooth color transitions and subtle background highlight</li>
+      <li>Mobile-friendly tooltips that appear on hover (replacing text labels on small screens)</li>
+      <li>CSS variables for all magic numbers (colors, sizes, spacing, transitions)</li>
+      <li>Enhanced accessibility with focus states and aria-current attribute</li>
+      <li>Better touch targets with padding</li>
+    </ul>
+    <p><strong>Try it out:</strong></p>
+    <ul style="margin-left: 20px;">
+      <li>Hover over navbar items to see the interactive effects</li>
+      <li>On mobile (resize to under 520px), notice text labels hide and tooltips appear on hover</li>
+      <li>Press Tab to navigate and see the focus indicator</li>
+    </ul>
+  </div>
+</body>
+</html>
 
 
 <!-- ==========================
