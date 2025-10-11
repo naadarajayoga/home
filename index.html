@@ -36,10 +36,6 @@
   ------------------>
   <meta name="google-site-verification" content="S88cprs1l7mpUIybcZRL_3RjfPz3cZdoxuslnUlnRMI" />
   
-  <!----------------- 
-  linking AMP version
-   ------------------>
-  
 
   <!-------
   Manifest 
@@ -444,9 +440,7 @@
 </html>
 
 
-<!-- ======================
-     SHORTS / YOUTUBE
-     ====================== -->
+<!-- SHORTS / YOUTUBE -->
 <section id="shorts">
   <div class="btn-container">
     <a href="https://www.youtube.com/@NaadaRajaYoga" target="_blank" class="youtube-btn">
@@ -456,7 +450,6 @@
       </svg>
       YouTube
     </a>
-
     <a href="https://naadaraja.com/courses" target="_blank" class="enroll-btn">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
         <path d="M320 96a64 64 0 1 0 0-128 64 64 0 1 0 0 128zM528 352h-56l-41-82c-6-12-19-18-32-14s-21 16-19 29l20 99H240l20-99c2-13-5-25-19-29s-26 2-32 14l-41 82H112c-27 0-48 21-48 48s21 48 48 48h416c27 0 48-21 48-48s-21-48-48-48z"/>
@@ -466,34 +459,118 @@
   </div>
 
   <div class="shorts-carousel">
-    <div class="short"><iframe src="https://www.youtube.com/embed/SYvQXu5onF0" allowfullscreen></iframe></div>
-    <div class="short"><iframe src="https://www.youtube.com/embed/KwHA5qyFzXY" allowfullscreen></iframe></div>
-    <div class="short"><iframe src="https://www.youtube.com/embed/4JhofpR7DEY" allowfullscreen></iframe></div>
-    <div class="short"><iframe src="https://www.youtube.com/embed/niu5uo0cnfg" allowfullscreen></iframe></div>
-    <div class="short"><iframe src="https://www.youtube.com/embed/gO_dfy0N-sM" allowfullscreen></iframe></div>
-    <div class="short"><iframe src="https://www.youtube.com/embed/R5niWehGQD8" allowfullscreen></iframe></div>
+    <div class="short">
+      <iframe src="https://www.youtube.com/embed/SYvQXu5onF0?autoplay=0" allowfullscreen></iframe>
+    </div>
+    <div class="short">
+      <iframe src="https://www.youtube.com/embed/KwHA5qyFzXY?autoplay=0" allowfullscreen></iframe>
+    </div>
+    <div class="short">
+      <iframe src="https://www.youtube.com/embed/4JhofpR7DEY?autoplay=0" allowfullscreen></iframe>
+    </div>
+    <div class="short">
+      <iframe src="https://www.youtube.com/embed/niu5uo0cnfg?autoplay=0" allowfullscreen></iframe>
+    </div>
+    <div class="short">
+      <iframe src="https://www.youtube.com/embed/gO_dfy0N-sM?autoplay=0" allowfullscreen></iframe>
+    </div>
+    <div class="short">
+      <iframe src="https://www.youtube.com/embed/R5niWehGQD8?autoplay=0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- Carousel Indicators -->
+  <div class="carousel-indicators">
+    <span class="indicator active" data-index="0"></span>
+    <span class="indicator" data-index="1"></span>
+    <span class="indicator" data-index="2"></span>
+    <span class="indicator" data-index="3"></span>
+    <span class="indicator" data-index="4"></span>
+    <span class="indicator" data-index="5"></span>
   </div>
 </section>
 
 <style>
   /* SHORTS CSS */
-  #shorts { padding: 20px; max-width: 1000px; margin: 0 auto; }
-  .shorts-carousel { display: flex; overflow-x: auto; gap: 15px; }
-  .short { flex: 0 0 auto; width: 200px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
-  .short iframe { width: 100%; aspect-ratio: 9 / 16; border: 0; }
+  #shorts {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .shorts-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    scroll-behavior: smooth;
+  }
+
+  .short {
+    flex: 0 0 auto;
+    width: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  .short:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  }
+
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+  }
+
+  .short iframe {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    border: 0;
+  }
+
+  .play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s ease;
+    opacity: 0;
+  }
+
+  .short:hover .play-overlay {
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 1;
+  }
+
+  .play-overlay svg {
+    width: 48px;
+    height: 48px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  }
 
   /* Button container */
   .btn-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 70px;  /* ✅ safe gap between buttons */
+    gap: 70px;
     margin-bottom: 14px;
-    flex-wrap: wrap; /* ✅ ensures stacking on mobile */
+    flex-wrap: wrap;
   }
 
   /* Shared button styles */
-  .youtube-btn, .enroll-btn {
+  .youtube-btn,
+  .enroll-btn {
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -503,21 +580,95 @@
     font-weight: 700;
     font-size: 1.05rem;
     text-decoration: none;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
     white-space: nowrap;
   }
 
   /* YouTube button */
-  .youtube-btn { background: #FF0000; }
-  .youtube-btn:hover { background: #cc0000; }
-  .youtube-btn svg { width: 22px; height: 22px; }
+  .youtube-btn {
+    background: #FF0000;
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+  }
+
+  .youtube-btn:hover {
+    background: #cc0000;
+    box-shadow: 0 6px 16px rgba(255, 0, 0, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .youtube-btn svg {
+    width: 22px;
+    height: 22px;
+  }
 
   /* Enroll button */
-  .enroll-btn { background: #003ecf; }
-  .enroll-btn:hover { background: #002a99; }
-  .enroll-btn svg { width: 22px; height: 22px; fill: #fff; }  /* ✅ size + white fill */
+  .enroll-btn {
+    background: #003ecf;
+    box-shadow: 0 4px 12px rgba(0, 62, 207, 0.3);
+  }
+
+  .enroll-btn:hover {
+    background: #002a99;
+    box-shadow: 0 6px 16px rgba(0, 62, 207, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .enroll-btn svg {
+    width: 22px;
+    height: 22px;
+    fill: #fff;
+  }
+
+  /* Carousel Indicators */
+  .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .indicator.active {
+    background: #FF0000;
+    width: 28px;
+    border-radius: 5px;
+  }
+
+  .indicator:hover {
+    background: #999;
+  }
 </style>
 
+<script>
+  const carousel = document.querySelector('.shorts-carousel');
+  const indicators = document.querySelectorAll('.indicator');
+
+  carousel.addEventListener('scroll', () => {
+    const scrollPosition = carousel.scrollLeft;
+    const cardWidth = 215; // 200px + 15px gap
+    const activeIndex = Math.round(scrollPosition / cardWidth);
+    
+    indicators.forEach((indicator, index) => {
+      indicator.classList.toggle('active', index === activeIndex);
+    });
+  });
+
+  indicators.forEach(indicator => {
+    indicator.addEventListener('click', () => {
+      const index = parseInt(indicator.dataset.index);
+      const cardWidth = 215;
+      carousel.scrollLeft = index * cardWidth;
+    });
+  });
+</script>
 
 
 <!-- ==========================
