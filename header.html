@@ -1,5 +1,5 @@
 <!-- ======================
-     HEADER (Logo Left + Centered Group + Artistic Text)
+     HEADER (Artistic + Narrow Responsive)
      ====================== -->
 <header>
   <div class="branding">
@@ -17,7 +17,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
 
 <style>
-  /* GLOBAL RESET */
+  /* GLOBAL RESET + HEADER */
   * {
     margin: 0;
     padding: 0;
@@ -45,8 +45,6 @@
     background: #ffffff;
     padding: 20px;
     border-bottom: 1px solid #eee;
-    display: flex;
-    justify-content: center;
   }
 
   .branding {
@@ -54,21 +52,20 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
-    max-width: 1000px;
-    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    flex-wrap: wrap;
   }
 
   .branding img {
     width: 80px;
     height: auto;
-    flex-shrink: 0;
   }
 
   .branding-text {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
+    align-items: flex-start;
   }
 
   .branding h1 {
@@ -78,6 +75,7 @@
     letter-spacing: 0.5px;
     color: #111;
     text-shadow: 0px 1px 4px rgba(0,0,0,0.08);
+    white-space: nowrap; /* prevents awkward line breaks */
   }
 
   .branding p {
@@ -90,45 +88,37 @@
 
   /* RESPONSIVE DESIGN */
   @media (max-width: 700px) {
-    header {
-      padding: 15px;
-    }
-
     .branding {
-      justify-content: center;
-      gap: 10px;
       flex-direction: column;
-    }
-
-    .branding img {
-      width: 65px;
+      gap: 8px;
     }
 
     .branding-text {
+      align-items: center;
       text-align: center;
     }
 
     .branding h1 {
-      font-size: 1.7rem;
-      line-height: 1.2;
+      font-size: 1.8rem;
+      white-space: normal; /* allows line break if too long on small screens */
     }
 
     .branding p {
-      font-size: 0.95rem;
+      font-size: 1rem;
     }
   }
 
   @media (max-width: 400px) {
     .branding img {
-      width: 60px;
+      width: 70px;
     }
 
     .branding h1 {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
     }
 
     .branding p {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
   }
 </style>
