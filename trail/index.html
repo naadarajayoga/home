@@ -335,12 +335,11 @@
 </head>
 <body>
 
-  <!-- ======================
-       Header (keeps pale green/blue look)
-       ====================== -->
+<!----------------------
+Header (loaded from common file) 
+------------------------------>
  <div id="header">
   <script>
-  // Load header.html from the root folder into #header div
   document.addEventListener("DOMContentLoaded", function() {
     fetch("/header.html") // Root folder path
       .then(response => {
@@ -357,30 +356,8 @@
       });
   });
 </script>
-
  </div>
 
- 
-       <header class="site-header" role="banner">
-    <div class="container">
-      <div class="brand">
-        <!-- SVG logo (kept inline as requested) -->
-        <div class="logo" aria-hidden="true">
-          <!-- lotus / padmasana style mark -->
-          <svg width="40" height="40" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect width="64" height="64" rx="10" fill="transparent"/>
-            <path d="M32 44c6-8 12-12 14-19-7.5 1-12 7-14 12-2-5-6-11-14-12 2 7 8 11 14 19z" fill="#2f9a88" opacity="0.95"/>
-            <circle cx="32" cy="22" r="4" fill="#fff"/>
-          </svg>
-        </div>
-
-        <div>
-          <h1>Naada Raja Yoga</h1>
-          <p>Personalized one-on-one yoga & Yogadidha</p>
-        </div>
-      </div>
-    </div>
-  </header>
 
 
   <!-- ======================
