@@ -492,6 +492,7 @@ Header (loaded from common file)
   .shorts-carousel {
     display: flex;
     overflow-x: auto;
+    overflow-y: hidden;
     gap: 15px;
     scroll-behavior: smooth;
   }
@@ -612,7 +613,7 @@ Header (loaded from common file)
 
   /* Carousel Indicators */
   .carousel-indicators {
-    display: flex;
+    display: none;
     justify-content: center;
     gap: 8px;
     margin-top: 20px;
@@ -635,6 +636,23 @@ Header (loaded from common file)
 
   .indicator:hover {
     background: #999;
+  }
+
+  /* Show indicators on mobile only */
+  @media (max-width: 768px) {
+    .carousel-indicators {
+      display: flex;
+    }
+
+    /* Hide scrollbar on mobile */
+    .shorts-carousel {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .shorts-carousel::-webkit-scrollbar {
+      display: none;
+    }
   }
 </style>
 
@@ -660,7 +678,6 @@ Header (loaded from common file)
     });
   });
 </script>
-
 
 
 <!-- ==========================
