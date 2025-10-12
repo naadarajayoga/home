@@ -338,7 +338,30 @@
   <!-- ======================
        Header (keeps pale green/blue look)
        ====================== -->
-  <header class="site-header" role="banner">
+ <div id="header">
+  <script>
+  // Load header.html from the root folder into #header div
+  document.addEventListener("DOMContentLoaded", function() {
+    fetch("/header.html") // Root folder path
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Header failed to load: " + response.status);
+        }
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      })
+      .catch(error => {
+        console.error("Error loading header:", error);
+      });
+  });
+</script>
+
+ </div>
+
+ 
+       <header class="site-header" role="banner">
     <div class="container">
       <div class="brand">
         <!-- SVG logo (kept inline as requested) -->
