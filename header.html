@@ -1,5 +1,5 @@
 <!-- ======================
-     HEADER (aligned with About Section)
+     HEADER (with Global Reset)
      ====================== -->
 <header>
   <div class="branding">
@@ -37,13 +37,8 @@
 
   /* HEADER */
   header {
-    background: linear-gradient(135deg, #ffffff, #ffffff);
+    background: linear-gradient(135deg, #ffffffe2, #ffffff);
     padding: 25px 20px;
-    border: 2px solid rgba(0, 128, 128, 0.4);
-    border-radius: 12px;
-    margin: 20px auto;
-    max-width: 900px; /* ✅ Matches the About section */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   }
 
   .branding {
@@ -51,7 +46,8 @@
     align-items: center;
     justify-content: center;
     gap: 15px;
-    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   .branding img {
@@ -76,19 +72,5 @@
   .branding p {
     font-size: 1.05rem;
     color: #333;
-  }
-
-  @media (max-width: 768px) {
-    header {
-      text-align: center;
-    }
-
-    .branding {
-      flex-direction: column;
-    }
-
-    .branding-text {
-      align-items: center;
-    }
   }
 </style>
