@@ -1,5 +1,5 @@
 <!-- ======================
-     HEADER (Aligned with About Section)
+     HEADER (Desktop Border, Mobile Clean)
      ====================== -->
 <header>
   <div class="branding">
@@ -39,11 +39,12 @@
   header {
     background: linear-gradient(135deg, #ffffff, #ffffff);
     padding: 25px 20px;
-    border: 2px solid rgba(0, 128, 128, 0.4); /* Teal border */
+    border: 2px solid rgba(0, 0, 0, 0.5); /* ⚫ Blackish border (visible on desktop) */
     border-radius: 12px;
     margin: 20px auto;
-    max-width: 900px; /* ✅ Matches About section width */
+    max-width: 900px; /* Matches About section width */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
   }
 
   .branding {
@@ -79,8 +80,13 @@
     color: #333;
   }
 
-  /* ✅ Keeps the same mobile layout as before */
+  /* ✅ Mobile view - border removed, layout unchanged */
   @media (max-width: 768px) {
+    header {
+      border: none; /* ❌ No border on mobile */
+      box-shadow: none;
+    }
+
     .branding {
       flex-direction: column;
       text-align: center;
