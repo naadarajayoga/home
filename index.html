@@ -440,17 +440,17 @@
 </html>
 
 
-<!-- SHORTS / YOUTUBE -->
+<!-- SHORTS / YOUTUBE SESSION (drop this into your page) -->
 <section id="shorts">
   <div class="btn-container">
-    <a href="https://www.youtube.com/@NaadaRajaYoga" target="_blank" class="youtube-btn">
+    <a href="https://www.youtube.com/@NaadaRajaYoga" target="_blank" class="youtube-btn" rel="noopener noreferrer">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
         <rect x="32" y="64" width="192" height="128" rx="28" fill="#FF0000" stroke="#fff" stroke-width="12"/>
         <polygon points="108,96 172,128 108,160" fill="#fff"/>
       </svg>
       YouTube
     </a>
-    <a href="https://naadaraja.com/courses" class="enroll-btn">
+    <a href="https://naadaraja.com/courses" class="enroll-btn" rel="noopener noreferrer">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
         <path d="M320 96a64 64 0 1 0 0-128 64 64 0 1 0 0 128zM528 352h-56l-41-82c-6-12-19-18-32-14s-21 16-19 29l20 99H240l20-99c2-13-5-25-19-29s-26 2-32 14l-41 82H112c-27 0-48 21-48 48s21 48 48 48h416c27 0 48-21 48-48s-21-48-48-48z"/>
       </svg>
@@ -458,44 +458,45 @@
     </a>
   </div>
 
-  <div class="shorts-carousel">
-    <div class="short">
-      <div id="video-0"></div>
+  <div class="shorts-carousel" role="list">
+    <div class="short" role="listitem">
+      <div id="video-0" class="player-container"></div>
     </div>
-    <div class="short">
-      <div id="video-1"></div>
+    <div class="short" role="listitem">
+      <div id="video-1" class="player-container"></div>
     </div>
-    <div class="short">
-      <div id="video-2"></div>
+    <div class="short" role="listitem">
+      <div id="video-2" class="player-container"></div>
     </div>
-    <div class="short">
-      <div id="video-3"></div>
+    <div class="short" role="listitem">
+      <div id="video-3" class="player-container"></div>
     </div>
-    <div class="short">
-      <iframe id="video-4" src="https://www.youtube.com/embed/gO_dfy0N-sM?autoplay=0&controls=1" allowfullscreen></iframe>
+    <div class="short" role="listitem">
+      <div id="video-4" class="player-container"></div>
     </div>
-    <div class="short">
-      <iframe id="video-5" src="https://www.youtube.com/embed/R5niWehGQD8?autoplay=0&controls=1" allowfullscreen></iframe>
+    <div class="short" role="listitem">
+      <div id="video-5" class="player-container"></div>
     </div>
   </div>
 
   <!-- Carousel Indicators -->
-  <div class="carousel-indicators">
-    <span class="indicator active" data-index="0"></span>
-    <span class="indicator" data-index="1"></span>
-    <span class="indicator" data-index="2"></span>
-    <span class="indicator" data-index="3"></span>
-    <span class="indicator" data-index="4"></span>
-    <span class="indicator" data-index="5"></span>
+  <div class="carousel-indicators" aria-hidden="false">
+    <button class="indicator active" data-index="0" aria-label="Go to video 1"></button>
+    <button class="indicator" data-index="1" aria-label="Go to video 2"></button>
+    <button class="indicator" data-index="2" aria-label="Go to video 3"></button>
+    <button class="indicator" data-index="3" aria-label="Go to video 4"></button>
+    <button class="indicator" data-index="4" aria-label="Go to video 5"></button>
+    <button class="indicator" data-index="5" aria-label="Go to video 6"></button>
   </div>
 </section>
 
 <style>
-  /* SHORTS CSS */
+  /* SHORTS CSS (session-only) */
   #shorts {
     padding: 20px;
     max-width: 1000px;
     margin: 0 auto;
+    box-sizing: border-box;
   }
 
   .shorts-carousel {
@@ -503,42 +504,10 @@
     overflow-x: auto;
     gap: 15px;
     scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
     scrollbar-width: none;
   }
-
-  .shorts-carousel::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Desktop: Show scrollbar and hide indicators */
-  @media (min-width: 768px) {
-    .shorts-carousel {
-      scrollbar-width: auto;
-    }
-
-    .shorts-carousel::-webkit-scrollbar {
-      display: block;
-      height: 8px;
-    }
-
-    .shorts-carousel::-webkit-scrollbar-track {
-      background: #f1f1f1;
-      border-radius: 10px;
-    }
-
-    .shorts-carousel::-webkit-scrollbar-thumb {
-      background: #888;
-      border-radius: 10px;
-    }
-
-    .shorts-carousel::-webkit-scrollbar-thumb:hover {
-      background: #555;
-    }
-
-    .carousel-indicators {
-      display: none;
-    }
-  }
+  .shorts-carousel::-webkit-scrollbar { display: none; }
 
   .short {
     flex: 0 0 auto;
@@ -548,6 +517,7 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    position: relative; /* for overlay */
   }
 
   .short:hover {
@@ -555,10 +525,44 @@
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
   }
 
+  .player-container,
   .short iframe {
     width: 100%;
     aspect-ratio: 9 / 16;
     border: 0;
+    display: block;
+    pointer-events: auto;
+    touch-action: manipulation;
+    background: #000; /* fallback thumbnail bg */
+  }
+
+  /* Play overlay (captures user gesture reliably) */
+  .play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+    cursor: pointer;
+    background: rgba(0,0,0,0.0); /* transparent but receives taps */
+  }
+  .play-overlay .big-play {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    font-size: 22px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+  }
+
+  @media (max-width: 767px) {
+    .short { width: 220px; }
+    .play-overlay .big-play { width: 64px; height: 64px; font-size: 26px; }
   }
 
   /* Button container */
@@ -571,7 +575,6 @@
     flex-wrap: wrap;
   }
 
-  /* Shared button styles */
   .youtube-btn,
   .enroll-btn {
     display: inline-flex;
@@ -587,40 +590,17 @@
     white-space: nowrap;
   }
 
-  /* YouTube button */
   .youtube-btn {
     background: #FF0000;
     box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
   }
+  .youtube-btn:hover { background: #cc0000; transform: translateY(-2px); }
 
-  .youtube-btn:hover {
-    background: #cc0000;
-    box-shadow: 0 6px 16px rgba(255, 0, 0, 0.4);
-    transform: translateY(-2px);
-  }
-
-  .youtube-btn svg {
-    width: 22px;
-    height: 22px;
-  }
-
-  /* Enroll button */
   .enroll-btn {
     background: #003ecf;
     box-shadow: 0 4px 12px rgba(0, 62, 207, 0.3);
   }
-
-  .enroll-btn:hover {
-    background: #002a99;
-    box-shadow: 0 6px 16px rgba(0, 62, 207, 0.4);
-    transform: translateY(-2px);
-  }
-
-  .enroll-btn svg {
-    width: 22px;
-    height: 22px;
-    fill: #fff;
-  }
+  .enroll-btn:hover { background: #002a99; transform: translateY(-2px); }
 
   /* Carousel Indicators */
   .carousel-indicators {
@@ -629,12 +609,8 @@
     gap: 8px;
     margin-top: 20px;
   }
-
-  /* Show indicators on mobile */
   @media (max-width: 767px) {
-    .carousel-indicators {
-      display: flex;
-    }
+    .carousel-indicators { display: flex; }
   }
 
   .indicator {
@@ -643,68 +619,142 @@
     border-radius: 50%;
     background: #ccc;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
+    border: 0;
+    padding: 0;
   }
-
   .indicator.active {
     background: #FF0000;
     width: 28px;
     border-radius: 5px;
   }
-
-  .indicator:hover {
-    background: #999;
-  }
+  .indicator:hover { background: #999; }
 </style>
 
+<!-- YouTube API and session script (session-only) -->
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
-  let players = [];
-
-  function onYouTubeIframeAPIReady() {
+  (function () {
+    // video IDs for the players (6 videos)
     const videoIds = ['SYvQXu5onF0', 'KwHA5qyFzXY', '4JhofpR7DEY', 'niu5uo0cnfg', 'gO_dfy0N-sM', 'R5niWehGQD8'];
-    
-    videoIds.forEach((videoId, index) => {
-      const player = new YT.Player(`video-${index}`, {
+    let players = [];
+
+    // Called automatically by YouTube API when it's ready
+    window.onYouTubeIframeAPIReady = function() {
+      videoIds.forEach((videoId, index) => setupPlayer(videoId, index));
+    };
+
+    function setupPlayer(videoId, index) {
+      const containerId = `video-${index}`;
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      // create overlay play button (user gesture)
+      const overlay = document.createElement('button');
+      overlay.className = 'play-overlay';
+      overlay.setAttribute('aria-label', 'Play video');
+      overlay.innerHTML = '<span class="big-play">▶</span>';
+      overlay.style.border = 'none';
+      overlay.style.background = 'transparent';
+      overlay.tabIndex = 0;
+
+      // append overlay to the .short (parent of container)
+      const parentShort = container.parentElement;
+      parentShort.appendChild(overlay);
+
+      // create player but do NOT autoplay
+      const player = new YT.Player(containerId, {
         height: '100%',
         width: '100%',
         videoId: videoId,
+        playerVars: {
+          controls: 1,
+          rel: 0,
+          modestbranding: 1,
+          playsinline: 1,
+          fs: 1
+        },
         events: {
-          'onReady': (event) => {
-            setTimeout(() => {
-              event.target.playVideo();
-              setTimeout(() => {
-                event.target.pauseVideo();
-              }, 1000);
-            }, index * 200);
+          onReady: function (e) {
+            // nothing auto-playing here — wait for user gesture via overlay
+          },
+          onStateChange: function (e) {
+            // hide overlay when playing
+            if (e.data === YT.PlayerState.PLAYING) {
+              overlay.style.display = 'none';
+            }
+            // show overlay again on pause or end (optional)
+            if (e.data === YT.PlayerState.PAUSED || e.data === YT.PlayerState.ENDED) {
+              overlay.style.display = '';
+            }
           }
         }
       });
+
+      // overlay click (user gesture) -> start playback
+      overlay.addEventListener('click', () => {
+        try {
+          player.playVideo();
+        } catch (err) {
+          // fallback: replace with iframe embed (ensures mobile plays)
+          const fallback = document.createElement('iframe');
+          fallback.setAttribute('allow', 'autoplay; fullscreen; encrypted-media; accelerometer; picture-in-picture');
+          fallback.setAttribute('allowfullscreen', '');
+          fallback.src = `https://www.youtube.com/embed/${videoId}?controls=1&playsinline=1&rel=0&modestbranding=1`;
+          fallback.style.width = '100%';
+          fallback.style.height = '100%';
+          container.replaceWith(fallback);
+          overlay.style.display = 'none';
+        }
+      });
+
+      // keyboard support: Enter/Space to play
+      overlay.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Enter' || ev.key === ' ') {
+          ev.preventDefault();
+          overlay.click();
+        }
+      });
+
       players.push(player);
-    });
-  }
+    }
 
-  const carousel = document.querySelector('.shorts-carousel');
-  const indicators = document.querySelectorAll('.indicator');
+    // Indicator and carousel sync
+    const carousel = document.querySelector('.shorts-carousel');
+    const indicators = document.querySelectorAll('.indicator');
 
-  carousel.addEventListener('scroll', () => {
-    const scrollPosition = carousel.scrollLeft;
-    const cardWidth = 215;
-    const activeIndex = Math.round(scrollPosition / cardWidth);
-    
-    indicators.forEach((indicator, index) => {
-      indicator.classList.toggle('active', index === activeIndex);
-    });
-  });
+    function updateActiveIndicator() {
+      if (!carousel) return;
+      const scrollPosition = carousel.scrollLeft;
+      const shortEl = document.querySelector('.short');
+      if (!shortEl) return;
+      const cardWidth = shortEl.offsetWidth + parseInt(getComputedStyle(carousel).gap || 15);
+      const activeIndex = Math.round(scrollPosition / cardWidth);
+      indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === activeIndex);
+      });
+    }
 
-  indicators.forEach(indicator => {
-    indicator.addEventListener('click', () => {
-      const index = parseInt(indicator.dataset.index);
-      const cardWidth = 215;
-      carousel.scrollLeft = index * cardWidth;
+    if (carousel) {
+      carousel.addEventListener('scroll', updateActiveIndicator, { passive: true });
+      // initial call in case not scrolled
+      setTimeout(updateActiveIndicator, 50);
+    }
+
+    indicators.forEach(indicator => {
+      indicator.addEventListener('click', () => {
+        const index = parseInt(indicator.dataset.index, 10);
+        const shortEl = document.querySelector('.short');
+        if (!shortEl || !carousel) return;
+        const cardWidth = shortEl.offsetWidth + parseInt(getComputedStyle(carousel).gap || 15);
+        carousel.scrollLeft = index * cardWidth;
+        // update immediately for faster UI feedback
+        indicators.forEach((ind, i) => ind.classList.toggle('active', i === index));
+      });
     });
-  });
+  })();
 </script>
+
 
 
 <!-- ==========================
