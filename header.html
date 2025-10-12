@@ -1,199 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Naada Raja Yoga</title>
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Lora:wght@400;600&display=swap" rel="stylesheet">
-  
-  <style>
-    /* GLOBAL RESET */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-    }
-
-    body {
-      line-height: 1.6;
-      color: #2c2c2c;
-      background: linear-gradient(135deg, #fafaf8 0%, #f5f3f0 100%);
-      font-family: 'Lora', serif;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    /* HEADER */
-    header {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 254, 252, 0.95) 100%);
-      padding: 28px 20px;
-      border-bottom: 2px solid rgba(120, 81, 169, 0.12);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Subtle decorative elements */
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 200%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(120, 81, 169, 0.2), transparent);
-      animation: shimmer 4s ease-in-out infinite;
-    }
-
-    @keyframes shimmer {
-      0%, 100% { left: -100%; }
-      50% { left: 0%; }
-    }
-
-    .branding {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-      max-width: 900px;
-      width: 100%;
-      position: relative;
-      z-index: 1;
-    }
-
-    .branding img {
-      width: 90px;
-      height: auto;
-      flex-shrink: 0;
-      filter: drop-shadow(0 4px 8px rgba(120, 81, 169, 0.15));
-      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    .branding img:hover {
-      transform: scale(1.05) rotateZ(2deg);
-    }
-
-    .branding-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: left;
-    }
-
-    .branding h1 {
-      font-family: 'Marcellus', serif;
-      font-size: 2.4rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      color: #1a1a1a;
-      margin-bottom: 4px;
-      background: linear-gradient(135deg, #2c2c2c 0%, #654a8f 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-shadow: 0px 2px 4px rgba(0,0,0,0.05);
-    }
-
-    .branding p {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      color: #7a6b8f;
-      font-style: italic;
-      letter-spacing: 0.6px;
-      font-weight: 400;
-      transition: color 0.3s ease;
-    }
-
-    .branding:hover p {
-      color: #654a8f;
-    }
-
-    /* RESPONSIVE DESIGN */
-    @media (max-width: 768px) {
-      header {
-        padding: 24px 16px;
-      }
-
-      .branding {
-        gap: 14px;
-      }
-
-      .branding img {
-        width: 75px;
-      }
-
-      .branding h1 {
-        font-size: 2rem;
-        letter-spacing: 0.8px;
-      }
-
-      .branding p {
-        font-size: 1rem;
-      }
-    }
-
-    @media (max-width: 600px) {
-      header {
-        padding: 20px 12px;
-      }
-
-      .branding {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
-      }
-
-      .branding img {
-        width: 70px;
-      }
-
-      .branding-text {
-        text-align: center;
-        align-items: center;
-      }
-
-      .branding h1 {
-        font-size: 1.7rem;
-        line-height: 1.3;
-      }
-
-      .branding p {
-        font-size: 0.95rem;
-      }
-    }
-
-    @media (max-width: 400px) {
-      header {
-        padding: 16px 10px;
-      }
-
-      .branding img {
-        width: 65px;
-      }
-
-      .branding h1 {
-        font-size: 1.5rem;
-      }
-
-      .branding p {
-        font-size: 0.9rem;
-      }
-    }
-  </style>
-</head>
-<body>
-
-<!-- HEADER -->
+<!-- ======================
+     HEADER (Logo Left + Centered Group + Artistic Text)
+     ====================== -->
 <header>
   <div class="branding">
     <img src="/images/Naada Raja Yoga Logo.png" alt="Naada Raja Yoga Logo">
@@ -204,5 +11,124 @@
   </div>
 </header>
 
-</body>
-</html>
+<!-- ======================
+     STYLES
+     ====================== -->
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+  /* GLOBAL RESET */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    line-height: 1.6;
+    color: #333;
+    background: #ffffff;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  /* HEADER */
+  header {
+    background: #ffffff;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: center; /* centers the group horizontally */
+  }
+
+  .branding {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    max-width: 1000px;
+    width: 100%;
+  }
+
+  .branding img {
+    width: 80px;
+    height: auto;
+    flex-shrink: 0;
+  }
+
+  .branding-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .branding h1 {
+    font-family: 'Marcellus', serif; /* Elegant narrow serif */
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #111;
+    text-shadow: 0px 1px 4px rgba(0,0,0,0.08);
+  }
+
+  .branding p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: #555;
+    font-style: italic;
+    letter-spacing: 0.4px;
+  }
+
+  /* RESPONSIVE DESIGN */
+  @media (max-width: 700px) {
+    header {
+      padding: 15px;
+    }
+
+    .branding {
+      justify-content: center; /* centers the group even on mobile */
+      gap: 10px;
+    }
+
+    .branding img {
+      width: 65px;
+    }
+
+    .branding-text {
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .branding h1 {
+      font-size: 1.7rem;
+      line-height: 1.2;
+    }
+
+    .branding p {
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .branding img {
+      width: 60px;
+    }
+
+    .branding h1 {
+      font-size: 1.5rem;
+    }
+
+    .branding p {
+      font-size: 0.9rem;
+    }
+  }
+</style>
