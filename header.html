@@ -1,5 +1,5 @@
 <!-- ======================
-     HEADER (Artistic Style)
+     HEADER (Artistic + Narrow Responsive)
      ====================== -->
 <header>
   <div class="branding">
@@ -14,7 +14,7 @@
 <!-- ======================
      STYLES
      ====================== -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
 
 <style>
   /* GLOBAL RESET + HEADER */
@@ -43,7 +43,7 @@
   /* HEADER */
   header {
     background: #ffffff;
-    padding: 25px 20px;
+    padding: 20px;
     border-bottom: 1px solid #eee;
   }
 
@@ -51,13 +51,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
-    max-width: 1000px;
+    gap: 12px;
+    max-width: 900px;
     margin: 0 auto;
+    flex-wrap: wrap;
   }
 
   .branding img {
-    width: 90px;
+    width: 80px;
     height: auto;
   }
 
@@ -68,40 +69,56 @@
   }
 
   .branding h1 {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 2.6rem;
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-family: 'Marcellus', serif; /* Elegant narrow serif */
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
     color: #111;
-    text-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+    text-shadow: 0px 1px 4px rgba(0,0,0,0.08);
+    white-space: nowrap; /* prevents awkward line breaks */
   }
 
   .branding p {
     font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: #555;
     font-style: italic;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
   }
 
-  /* RESPONSIVE ADJUSTMENTS */
-  @media (max-width: 600px) {
+  /* RESPONSIVE DESIGN */
+  @media (max-width: 700px) {
     .branding {
       flex-direction: column;
-      text-align: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     .branding-text {
       align-items: center;
+      text-align: center;
     }
 
     .branding h1 {
-      font-size: 2rem;
+      font-size: 1.8rem;
+      white-space: normal; /* allows line break if too long on small screens */
     }
 
     .branding p {
       font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .branding img {
+      width: 70px;
+    }
+
+    .branding h1 {
+      font-size: 1.6rem;
+    }
+
+    .branding p {
+      font-size: 0.95rem;
     }
   }
 </style>
