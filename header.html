@@ -1,5 +1,5 @@
 <!-- ======================
-     HEADER (Aligned with About Section)
+     HEADER (aligned with About Section)
      ====================== -->
 <header>
   <div class="branding">
@@ -39,10 +39,10 @@
   header {
     background: linear-gradient(135deg, #ffffff, #ffffff);
     padding: 25px 20px;
-    border: 2px solid rgba(0, 128, 128, 0.4); /* Teal border */
+    border: 2px solid rgba(0, 128, 128, 0.4);
     border-radius: 12px;
     margin: 20px auto;
-    max-width: 900px; /* ✅ Matches About section width */
+    max-width: 900px; /* ✅ Matches the About section */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   }
 
@@ -51,8 +51,7 @@
     align-items: center;
     justify-content: center;
     gap: 15px;
-    max-width: 100%;
-    margin: 0 auto;
+    flex-wrap: wrap;
   }
 
   .branding img {
@@ -79,19 +78,16 @@
     color: #333;
   }
 
-  /* ✅ Keeps the same mobile layout as before */
   @media (max-width: 768px) {
-    .branding {
-      flex-direction: column;
+    header {
       text-align: center;
     }
 
-    .branding img {
-      margin: 0 auto;
+    .branding {
+      flex-direction: column;
     }
 
     .branding-text {
-      text-align: center;
       align-items: center;
     }
   }
