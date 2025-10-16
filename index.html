@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -13,15 +13,14 @@
   <!-------------------------------
   Open Graph / WhatsApp / Facebook 
   ------------------------------->
-  <meta property="og:title" content="" />
+  <meta property="og:title" content="Naada Raja Yoga" />
   <meta property="og:description" content="Explore our journey with glimpses on YouTube and Instagram, and enjoy personalized daily progress with our online classes" />
   <meta property="og:image" content="https://naadaraja.com/images/og-image.jpg" />
-  <meta property="og:url" content="" />
+  <meta property="og:url" content="https://naadaraja.com" />
   <meta property="og:type" content="website" />
   <meta property="og:logo" content="/favicon.ico/512.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-
 
   <!----------------------------------------- 
   Twitter Card (for Twitter & some messengers) 
@@ -36,7 +35,6 @@
   ------------------>
   <meta name="google-site-verification" content="W0zqaLuExgFbg_t58wQ8JXb9fGRj9A6i-bqKTtTx2_A" />
   <meta name="google-site-verification" content="S88cprs1l7mpUIybcZRL_3RjfPz3cZdoxuslnUlnRMI" />
-  
 
   <!-------
   Manifest 
@@ -67,964 +65,391 @@
   <meta name="msapplication-TileImage" content="/favicon.ico/144.png">
   <meta name="msapplication-TileColor" content="#ffffff">
 
-
-
-
-  <!-- Global Reset -->
+  <!-- Keep global CSS to an absolute minimum so we don't affect your containers -->
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-    html, body { height: 100%; }
-    body { line-height: 1.6; color: #333; background: #fefefe; }
-    img { max-width: 100%; display: block; }
-  </style>
- 
-<!----------------------
-Header (loaded from common file) 
------------------------------->
- <div id="header">
-  <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    fetch("/header.html") // Root folder path
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("Header failed to load: " + response.status);
-        }
-        return response.text();
-      })
-      .then(data => {
-        document.getElementById("header").innerHTML = data;
-      })
-      .catch(error => {
-        console.error("Error loading header:", error);
-      });
-  });
-</script>
- </div>
-
- 
-  <!-- ======================
-       ABOUT
-       ====================== -->
-
-  <section class="about-section">
-    <div class="about-container">
-      <img src="me.jpg" alt="Yoga Teacher">
-      <div class="about-text">
-        <p>
-          I have been teaching yoga for over a decade, helping students across the world discover
-          flexibility, strength, and inner balance. My sessions are fully personalized,
-          adapting to each individual’s needs and progress.
-        </p>
-        <p>
-          Through daily guidance and monitoring, I ensure steady improvement and a
-          holistic approach to well-being. My goal is to make yoga a sustainable
-          and transformative practice in your life.
-        </p>
-        <p>
-          In addition to my independent teaching, I have also worked in Arvada hospitals, including two years at PNNM
-          Ayurveda College Cheruthuruthi, where I taught yoga to BAMS students, integrating yogic practices into their medical education.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <style>
-    /* ABOUT CSS */
-    .about-section { padding: 20px; }
-    .about-container { display: flex; flex-wrap: wrap; align-items: center; gap: 30px; max-width: 900px; margin: 0 auto; }
-    .about-container img {
-      width: 200px; border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    }
-    .about-text { flex: 1; min-width: 250px; }
-    .about-text p { margin-bottom: 18px; font-size: 1.05rem; color: #444; line-height: 1.8; }
-    @media (max-width: 768px) {
-      .about-container { flex-direction: column; text-align: center; }
-      .about-container img { margin: 0 auto; }
-      .about-text { text-align: center; }
-    }
-  </style>
-
-<!-- ======================
-        REVIEWS
-====================== -->
-       
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reviews Section</title>
-  <style>
-    .reviews-section {
-      font-family: Arial, sans-serif;
-      background: #fff;
-      padding: 20px;
-      max-width:1000px;
-      margin: 0 auto;
-    }
-
-    .reviews-section h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .review-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-      text-align: left;
-    }
-
-    /* 🔹 Header Layout */
-    .review-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 12px;
-      flex-wrap: nowrap; /* keep button on the right */
-    }
-
-    .title-rating {
-      display: flex;
-      align-items: center;
-      gap: 6px; /* tighter spacing */
-      flex-shrink: 1;
-      flex-wrap: wrap;
-    }
-
-    .title-link {
-      text-decoration: none;
-      color: #000;
-      font-size: 20px; /* stays the same on all screens */
-      font-weight: bold;
-      line-height: 1.2;
-      white-space: nowrap; /* prevents breaking */
-    }
-
-    .rating-link {
-      display: flex;
-      align-items: center;
-      gap: 2px;
-      text-decoration: none;
-    }
-
-    .single-star {
-      color: #FFD700;
-      font-size: 18px;
-      line-height: 1;
-    }
-
-    .rating-value {
-      font-size: 15px;
-      font-weight: bold;
-      color: #000;
-    }
-
-    /* 🔹 Pill-Shaped Button */
-    .leave-review-btn {
-      background: #0056ff;
-      color: #fff;
-      padding: 6px 18px;
-      border-radius: 999px; /* pill shape */
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 13px;
-      transition: background 0.2s;
-      white-space: nowrap;
-    }
-
-    .leave-review-btn:hover {
-      background: #003ecf;
-    }
-
-    /* 🔹 Mobile adjustments */
-    @media (max-width: 480px) {
-      .title-rating {
-        gap: 4px;
-      }
-      .rating-link .single-star {
-        font-size: 16px;
-      }
-      .rating-link .rating-value {
-        font-size: 14px;
-      }
-    }
-
-    /* 🔹 Review Item */
-    .review-item {
-      border: 1px solid #eee;
-      border-radius: 10px;
-      padding: 15px;
-      margin-bottom: 15px;
-      background: #fff;
-      position: relative;
-    }
-
-    .review-top {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 8px;
-    }
-
-    .review-item h4 {
-      margin: 0;
-      font-size: 16px;
-      font-weight: bold;
-      color: #000;
-    }
-
-    .review-top .stars {
-      color: #FFD700;
-      font-size: 18px;
-      line-height: 1;
-    }
-
-    .reviews-section a {
-      text-decoration: none !important;
-    }
-
-    .review-text {
-      font-size: 14px;
-      color: #333;
-      line-height: 1.4;
-      overflow: hidden;
-      display: -webkit-box;
-      -webkit-line-clamp: 2; /* default to 4 lines */
-      -webkit-box-orient: vertical;
-    }
-
-    .review-text.expanded {
-      -webkit-line-clamp: unset;
-      display: block;
-    }
-
-    .read-more {
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      display: inline-block;
-      margin-top: 5px;
-    }
-
-    .google-icon {
-      width: 24px;
-      height: 24px;
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-
-    .google-icon:hover {
-      transform: scale(1.1);
-    }
+    /* Only the absolute minimum baseline so injected containers behave predictably.
+       Do NOT add padding/margins/fonts here — containers provide their own CSS. */
+    html,body { height:100%; margin:0; }
+    img { max-width:100%; display:block; }
+    main#app { min-height:100vh; box-sizing:border-box; }
+    /* small util loader */
+    .naada-loader { padding:0px; text-align:center; color:#666; }
   </style>
 </head>
 <body>
 
-  <section class="reviews-section">
-    <h2>Reviews</h2>
+  <!-- HEADER (static chrome) -->
+  <div id="header-slot"></div>
 
-    <div class="review-card">
-      <div class="review-header">
-        <!-- Title + rating inline -->
-        <div class="title-rating">
-          <a href="https://www.google.com/search?q=naada+raja+yoga" target="_blank" class="title-link">
-            Naada Raja Yoga
-          </a>
-          <a href="https://www.google.com/search?q=naada+raja+yoga" target="_blank" class="rating-link">
-            <span class="single-star">★</span>
-            <span class="rating-value">5.0</span>
-          </a>
+  <!-- Main application area:
+       dynamic-wrapper only provides bottom room for the peek-footer so footer is visible above the fixed navbar.
+       This wrapper DOES NOT alter child styles (containers keep full control).
+  -->
+  <main id="app">
+    <div id="dynamic-wrapper" style="padding-bottom:100px;">
+      <!-- fetched container element will be injected here -->
+      <div id="container" aria-live="polite"></div>
+    </div>
+  </main>
+
+  <!-- FOOTER and NAVBAR slots (injected from templates below) -->
+  <div id="footer-slot"></div>
+  <div id="navbar-slot"></div>
+
+  <!-- ===========================
+       Templates for Header / Footer / Navbar (each with their own CSS)
+       Feel free to replace these blocks with your exact header/footer/navbar markup.
+       =========================== -->
+
+  <!-- Header template -->
+  <template id="tmpl-header">
+    <style>
+      header { background:#ffffff; padding:20px; border-bottom:1px solid #eee; display:flex; justify-content:center; box-sizing:border-box; }
+      .branding { display:flex; align-items:center; justify-content:center; gap:12px; max-width:1000px; width:100%; }
+      .branding img { width:80px; height:auto; flex-shrink:0; }
+      .branding-text { display:flex; flex-direction:column; justify-content:center; text-align:center; }
+      .branding h1 { margin:0; font-family: "Marcellus", serif; font-size:2.2rem; color:#111; }
+      .branding p { margin:0; font-family: "Playfair Display", serif; font-style:italic; color:#555; }
+      @media (max-width:700px) { .branding img { width:65px; } .branding h1 { font-size:1.7rem; } }
+    </style>
+
+    <header role="banner" aria-label="Site header">
+      <div class="branding">
+        <img src="/images/Naada Raja Yoga Logo.png" alt="Naada Raja Yoga Logo">
+        <div class="branding-text">
+          <h1>Naada Raja Yoga</h1>
+          <p>Personalized Yoga Journey</p>
         </div>
-
-        <!-- Pill-shaped Rate Us button -->
-        <a href="https://g.page/r/CcV52-DSDxqlEAE/review" target="_blank" class="leave-review-btn">
-          Rate Us
-        </a>
       </div>
+    </header>
+  </template>
 
-      <!-- Review Item 1 -->
-      <div class="review-item">
-        <div class="review-top">
-          <a href="https://maps.app.goo.gl/Gtk5X1QE4C4MGiKf9" target="_blank">
-            <h4>Uta Cheruti</h4>
-          </a>
-          <div class="stars">★★★★★</div>
-        </div>
+  <!-- Footer template -->
+  <template id="tmpl-footer">
+    <style>
+      .peek-footer{ --bar-h:64px; --bg:#fff; --text:#000; --muted:#bdbdbd; --max-w:1100px; display:block; width:100%; background:var(--bg); color:var(--text); font-family:system-ui; line-height:1.2; box-sizing:border-box; }
+      .peek-footer__spacer{ height:4px; width:100%; }
+      .peek-footer__hidden{ max-width:var(--max-w); margin:0 auto; padding:10px 18px; padding-bottom:calc(var(--bar-h) + 2px); text-align:center; box-sizing:border-box; }
+      .footer-links{ display:flex; gap:16px; justify-content:center; align-items:center; flex-wrap:wrap; }
+      .footer-links a{ color:var(--muted); text-decoration:none; font-size:14px; padding:4px 6px; border-radius:6px; }
+      .footer-links a:hover{ color:var(--text); text-decoration:underline; }
+      @media (max-width:520px) { .footer-links { gap:10px; } }
+    </style>
 
-        <p class="review-text" id="review-text-1">
-          Yadu has been my yoga teacher for some time, and his lifelong dedication to yoga, 
-          built through many years of continuous practice and teaching, is felt in every class. 
-          His deep experience and strong foundation make him not only an excellent coach but 
-          also someone who shares the spiritual side of yoga in a calm and authentic way. 
-          Living with MS and physical limitations, I deeply value how he adapts the exercises 
-          to my needs, brings in new ideas, and repeats key practices so I can build step by step. 
-          His teaching is gentle, clear, and motivating – practicing with Yadu has truly given me 
-          back strength, balance, and joy in yoga.
-        </p>
-        <span class="read-more" onclick="toggleReview(this, 'review-text-1')">Read more</span>
-
-        <!-- Google multicolor SVG logo links to Google Search -->
-        <a href="https://www.google.com/search?q=naada+raja+yoga" target="_blank" aria-label="View on Google">
-          <svg class="google-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
-            <path fill="#4285F4" d="M488 261.8c0-17.7-1.5-35.6-4.6-52.8H248v99.9h135.6c-5.9 31.8-23.6 58.7-50.5 76.6v63.5h81.7c47.9-44.1 73.2-109.1 73.2-187.2z"/>
-            <path fill="#34A853" d="M248 492c68.4 0 125.9-22.7 167.9-61.5l-81.7-63.5c-22.7 15.2-51.8 24.3-86.2 24.3-66.2 0-122.3-44.7-142.4-104.9H20.1v65.9C62.6 429.3 148.2 492 248 492z"/>
-            <path fill="#FBBC05" d="M105.6 286.4c-5.1-15.2-8-31.5-8-48.4s2.9-33.2 8-48.4V123.7H20.1C7.2 152.7 0 186.1 0 221.6s7.2 68.9 20.1 97.9l85.5-65.1z"/>
-            <path fill="#EA4335" d="M248 97.6c37.2 0 70.7 12.8 97.1 37.8l72.6-72.6C373.9 24.3 316.4 0 248 0 148.2 0 62.6 62.7 20.1 155.2l85.5 65.1C125.7 142.3 181.8 97.6 248 97.6z"/>
-          </svg>
-        </a>
+    <footer class="peek-footer" id="site-footer" aria-label="Site footer">
+      <div class="peek-footer__spacer" aria-hidden="true"></div>
+      <div class="peek-footer__hidden" role="region" aria-label="Footer expanded links">
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="#/privacy" data-container="privacy">Privacy Policy</a>
+          <a href="#/terms" data-container="terms">Terms &amp; Conditions</a>
+          <a href="#/refund" data-container="refund">Refund Policy</a>
+        </nav>
       </div>
+    </footer>
+  </template>
 
-      <!-- Review Item 2 -->
-      <div class="review-item">
-        <div class="review-top">
-          <a href="https://share.google/rovKD07fRX7Bj9DkR" target="_blank">
-            <h4>Raji ks</h4>
-          </a>
-          <div class="stars">★★★★★</div>
-        </div>
-
-        <p class="review-text" id="review-text-2">
-          I thoroughly enjoyed the yoga session. The atmosphere was warm and welcoming, and the 
-          instructions were incredibly clear, helping me understand exactly what I could do. I’ve 
-          been practicing since 2008 and I eventually became a district champion. The session was 
-          well-tailored to my needs, and I felt that every part of my body was taken care of. 
-          Overall, it was a fantastic experience, and I would definitely recommend it.
-        </p>
-        <span class="read-more" onclick="toggleReview(this, 'review-text-2')">Read more</span>
-
-        <!-- Google multicolor SVG logo links to Google Search -->
-        <a href="https://www.google.com/search?q=naada+raja+yoga" target="_blank" aria-label="View on Google">
-          <svg class="google-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
-            <path fill="#4285F4" d="M488 261.8c0-17.7-1.5-35.6-4.6-52.8H248v99.9h135.6c-5.9 31.8-23.6 58.7-50.5 76.6v63.5h81.7c47.9-44.1 73.2-109.1 73.2-187.2z"/>
-            <path fill="#34A853" d="M248 492c68.4 0 125.9-22.7 167.9-61.5l-81.7-63.5c-22.7 15.2-51.8 24.3-86.2 24.3-66.2 0-122.3-44.7-142.4-104.9H20.1v65.9C62.6 429.3 148.2 492 248 492z"/>
-            <path fill="#FBBC05" d="M105.6 286.4c-5.1-15.2-8-31.5-8-48.4s2.9-33.2 8-48.4V123.7H20.1C7.2 152.7 0 186.1 0 221.6s7.2 68.9 20.1 97.9l85.5-65.1z"/>
-            <path fill="#EA4335" d="M248 97.6c37.2 0 70.7 12.8 97.1 37.8l72.6-72.6C373.9 24.3 316.4 0 248 0 148.2 0 62.6 62.7 20.1 155.2l85.5 65.1C125.7 142.3 181.8 97.6 248 97.6z"/>
-          </svg>
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <script>
-    function toggleReview(el, id) {
-      const reviewText = document.getElementById(id);
-      if (reviewText.classList.contains("expanded")) {
-        reviewText.classList.remove("expanded");
-        el.innerText = "Read more";
-      } else {
-        reviewText.classList.add("expanded");
-        el.innerText = "Read less";
-      }
-    }
-  </script>
-
-</body>
-</html>
-
-
-<!-------------------- 
-YOUTUBE SHORTS SECTION 
---------------------->
-<section id="shorts">
-  <div class="shorts-carousel">
-    <div class="short" data-video-id="SYvQXu5onF0">
-      <iframe src="https://www.youtube.com/embed/SYvQXu5onF0?enablejsapi=1&playsinline=1&rel=0&modestbranding=1&autoplay=0" allowfullscreen></iframe>
-    </div>
-    <div class="short" data-video-id="KwHA5qyFzXY">
-      <iframe src="https://www.youtube.com/embed/KwHA5qyFzXY?enablejsapi=1&playsinline=1&rel=0&modestbranding=1&autoplay=0" allowfullscreen></iframe>
-    </div>
-    <div class="short" data-video-id="4JhofpR7DEY">
-      <iframe src="https://www.youtube.com/embed/4JhofpR7DEY?enablejsapi=1&playsinline=1&rel=0&modestbranding=1&autoplay=0" allowfullscreen></iframe>
-    </div>
-    <div class="short" data-video-id="niu5uo0cnfg">
-      <iframe src="https://www.youtube.com/embed/niu5uo0cnfg?enablejsapi=1&playsinline=1&rel=0&modestbranding=1&autoplay=0" allowfullscreen></iframe>
-    </div>
-    <div class="short" data-video-id="gO_dfy0N-sM">
-      <iframe src="https://www.youtube.com/embed/gO_dfy0N-sM?enablejsapi=1&playsinline=1&rel=0&modestbranding=1&autoplay=0" allowfullscreen></iframe>
-    </div>
-    <div class="short" data-video-id="R5niWehGQD8">
-      <iframe src="https://www.youtube.com/embed/R5niWehGQD8?enablejsapi=1&playsinline=1&rel=0&modestbranding=1&autoplay=0" allowfullscreen></iframe>
-    </div>
-  </div>
-
-  <div class="carousel-indicators">
-    <span class="indicator active" data-index="0"></span>
-    <span class="indicator" data-index="1"></span>
-    <span class="indicator" data-index="2"></span>
-    <span class="indicator" data-index="3"></span>
-    <span class="indicator" data-index="4"></span>
-    <span class="indicator" data-index="5"></span>
-  </div>
-
-  <style>
-    #shorts {
-      padding: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .shorts-carousel {
-      display: flex;
-      overflow-x: auto;
-      overflow-y: hidden;
-      gap: 15px;
-      scroll-behavior: smooth;
-    }
-
-    .short {
-      flex: 0 0 auto;
-      width: 200px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-
-    .short:hover {
-      transform: translateY(-8px) scale(1.05);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-    }
-
-    .short iframe {
-      width: 100%;
-      aspect-ratio: 9 / 16;
-      border: 0;
-    }
-
-    .carousel-indicators {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 20px;
-    }
-
-    .indicator {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #ccc;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .indicator.active {
-      background: #FF0000;
-      width: 28px;
-      border-radius: 5px;
-    }
-
-    .indicator:hover {
-      background: #999;
-    }
-
-    @media (max-width: 768px) {
-      #shorts {
-        padding: 0;
-        max-width: 100%;
-        margin: 0;
-        position: relative;
-      }
-
-      .shorts-carousel {
-        gap: 0;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .short {
-        flex: 0 0 100%;
-        width: 100vw;
-        border-radius: 0;
-        box-shadow: none;
-        transition: none;
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
-      }
-
-      .short:hover {
-        transform: none;
-        box-shadow: none;
-      }
-
-      .short iframe {
-        width: 100%;
-        height: 50vh;
-      }
-
-      .carousel-indicators {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
+  <!-- Navbar template (IMPORTANT: keep button order Contact → Home → Courses) -->
+  <template id="tmpl-navbar">
+    <style>
+      .bottom-navbar {
+        --bar-h: 65px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: var(--bar-h);
         display: flex;
         justify-content: center;
-        gap: 8px;
-        z-index: 100;
-        background: rgba(0, 0, 0, 0.3);
-        padding: 8px 12px;
-        border-radius: 20px;
+        align-items: center;
+        gap: 40px;
+        background: linear-gradient(135deg,#2c3e50 0%,#34495e 100%);
+        color: #ecf0f1;
+        z-index: 9999;
         backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255,255,255,0.08);
+        box-sizing: border-box;
+      }
+      .bottom-navbar .nav-item { display:inline-flex; flex-direction:column; align-items:center; gap:4px; padding:8px 12px; border-radius:12px; color:inherit; text-decoration:none; cursor:pointer; font-weight:600; }
+      .bottom-navbar .nav-item.active { color: #f39c12; }
+      .bottom-navbar svg { width:24px; height:24px; fill: currentColor; }
+      @media (max-width:520px) { .bottom-navbar { gap:10px; justify-content:space-around; } .bottom-navbar svg { width:22px; height:22px; } }
+    </style>
+
+    <nav class="bottom-navbar" id="site-navbar" role="navigation" aria-label="Main navigation">
+      <!-- KEEP ORDER: Contact → Home → Courses -->
+      <a class="nav-item" href="#/contact" data-container="contact" aria-label="Contact">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.2a15.05 15.05 0 006.2 6.2l1.8-1.8a1 1 0 01.9-.24c1 .25 2 .38 3 .38a1 1 0 011 1v3a1 1 0 01-1 1C9.2 23 1 14.8 1 3a1 1 0 011-1h3a1 1 0 011 1c0 1.1.13 2.1.38 3a1 1 0 01-.24.9L6.6 10.2z"/></svg>
+        <span>Contact</span>
+      </a>
+
+      <a class="nav-item" href="#/home" data-container="home" aria-label="Home">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" aria-hidden="true"><path d="M541 229.16l-61-52.06V56c0-13.25-10.75-24-24-24h-72c-13.25 0-24 10.75-24 24v24L314.4 43c-15.9-13.6-39.3-13.6-55.2 0L35 229.2c-9.9 8.4-11.1 23.3-2.7 33.2s23.3 11.1 33.2 2.7L96 232.1V456c0 30.9 25.1 56 56 56h96V360h80v152h96c30.9 0 56-25.1 56-56V232l30.6 26c9.9 8.4 24.8 7.1 33.2-2.7 8.4-9.9 7.1-24.8-2.7-33.2z"/></svg>
+        <span>Home</span>
+      </a>
+
+      <a class="nav-item" href="#/courses" data-container="courses" aria-label="Courses">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" aria-hidden="true"><path d="M320 96a64 64 0 1 0 0-128 64 64 0 1 0 0 128zM528 352h-56l-41-82c-6-12-19-18-32-14s-21 16-19 29l20 99H240l20-99c2-13-5-25-19-29s-26 2-32 14l-41 82H112c-27 0-48 21-48 48s21 48 48 48h416c27 0 48-21 48-48s-21-48-48-48z"/></svg>
+        <span>Courses</span>
+      </a>
+    </nav>
+  </template>
+
+  <!-- ===========================
+       Loader / Router / Fetch + Prefetch
+       - loads external container files that include their own CSS & JS
+       - extracts a single element whose id ends with "-container" and injects it
+       - executes inline scripts and loads external scripts
+       - prefetches other containers in background after first load
+       - hash routing keeps chrome visible on reload
+       =========================== -->
+  <script>
+  (function () {
+    // Map route keys to external files (adjust paths if your files are at different locations)
+    const containers = {
+      home:    '/home.html',
+      contact: '/contact.html',
+      courses: '/courses.html',
+      privacy: '/privacy.html',
+      terms:   '/terms.html',
+      refund:  '/refund.html'
+    };
+
+    const headerSlot = document.getElementById('header-slot');
+    const footerSlot = document.getElementById('footer-slot');
+    const navbarSlot = document.getElementById('navbar-slot');
+    const containerMount = document.getElementById('container');
+    const dynamicWrapper = document.getElementById('dynamic-wrapper');
+
+    // In-memory cache for fetched HTML
+    const cache = {};
+
+    // Inject the header/footer/navbar templates (they contain their own CSS)
+    function injectStatic(templateId, slot) {
+      const tpl = document.getElementById(templateId);
+      if (!tpl) return;
+      const clone = tpl.content.cloneNode(true);
+      slot.appendChild(clone);
+
+      // No need to execute scripts in header/footer/navbar templates here (they are CSS only in this example).
+      // If you add <script> inside templates, and want them executed, handle similar to container scripts.
+    }
+
+    // Minimal loader UI
+    function showLoader() {
+      containerMount.innerHTML = '<div class="naada-loader">Loading…</div>';
+    }
+
+    // Fetch container HTML (with caching)
+    async function fetchContainer(key) {
+      if (!containers[key]) throw new Error('Unknown container: ' + key);
+      if (cache[key]) return cache[key];
+      const res = await fetch(containers[key], { cache: 'no-store' });
+      if (!res.ok) throw new Error('Failed to fetch ' + containers[key] + ' (' + res.status + ')');
+      const text = await res.text();
+      cache[key] = text;
+      return text;
+    }
+
+    // Parse HTML and extract the root element whose id ends with "-container"
+    function extractContainerElement(html) {
+      const tmp = document.createElement('template');
+      tmp.innerHTML = html;
+      // prefer first element with id ending '-container'
+      const root = Array.from(tmp.content.children).find(el => el.id && el.id.endsWith('-container'));
+      if (root) return root;
+      // fallback: return entire content fragment
+      return tmp.content;
+    }
+
+    // Execute scripts found inside a node (inline and external), in order
+    function runScriptsSequential(parentNode) {
+      const scripts = Array.from(parentNode.querySelectorAll('script'));
+      // Remove scripts from DOM here to avoid duplication when executing
+      scripts.forEach(s => s.parentNode && s.parentNode.removeChild(s));
+
+      // Run them sequentially
+      return scripts.reduce((p, script) => {
+        return p.then(() => new Promise(resolve => {
+          const ns = document.createElement('script');
+          // copy attributes
+          for (let i = 0; i < script.attributes.length; i++) {
+            const a = script.attributes[i];
+            ns.setAttribute(a.name, a.value);
+          }
+          if (script.src) {
+            ns.src = script.src;
+            ns.onload = resolve;
+            ns.onerror = () => { console.error('Script load failed:', script.src); resolve(); };
+            document.head.appendChild(ns);
+          } else {
+            ns.text = script.textContent;
+            document.head.appendChild(ns);
+            // inline executed immediately
+            document.head.removeChild(ns);
+            resolve();
+          }
+        }));
+      }, Promise.resolve());
+    }
+
+    // Inject the container node into the page and run its scripts
+    async function mountContainerNode(node) {
+      // Clear existing
+      while (containerMount.firstChild) containerMount.removeChild(containerMount.firstChild);
+
+      // If node is a DocumentFragment return it directly; if Element, append it.
+      if (node.nodeType === Node.DOCUMENT_FRAGMENT_NODE) {
+        containerMount.appendChild(node);
+      } else {
+        containerMount.appendChild(node.cloneNode(true));
       }
 
-      .indicator {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.6);
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
+      // After content appended, find and run any scripts inside the mounted subtree
+      await runScriptsSequential(containerMount);
 
-      .indicator.active {
-        background: #FFFFFF;
-        width: 8px;
-        border-radius: 50%;
-      }
+      // scroll to top of dynamic wrapper
+      dynamicWrapper.scrollIntoView({ behavior: 'auto' });
+    }
 
-      .indicator:hover {
-        background: rgba(255, 255, 255, 0.8);
-      }
-
-      .shorts-carousel {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-
-      .shorts-carousel::-webkit-scrollbar {
-        display: none;
+    // Load route (key) into page
+    async function loadRoute(key, pushHash = true) {
+      if (!containers[key]) key = 'home';
+      // highlight nav
+      updateActiveNav(key);
+      showLoader();
+      try {
+        const html = await fetchContainer(key);
+        const node = extractContainerElement(html);
+        await mountContainerNode(node);
+        if (pushHash) {
+          const newHash = '#/' + key;
+          if (location.hash !== newHash) location.hash = newHash;
+        }
+      } catch (err) {
+        console.error(err);
+        containerMount.innerHTML = '<div class="naada-loader">Could not load content — please try again later.</div>';
       }
     }
-  </style>
 
-  <script>
-    // YouTube Shorts Carousel Controller
-    // Manages playback, auto-advance, visibility detection, and user pause state
-
-    const ShortsCarousel = (() => {
-      const carousel = document.querySelector('#shorts .shorts-carousel');
-      const shorts = document.querySelectorAll('#shorts .short');
-      const indicators = document.querySelectorAll('#shorts .carousel-indicators .indicator');
-      
-      // State management
-      let currentPlayingIndex = -1;
-      const playerStates = new Map(); // Maps iframe index to {player, userPaused, muted}
-      const userPausedFlags = new Map(); // Maps index to boolean
-      let scrollTimeout;
-      let isScrolling = false;
-
-      // Initialize YouTube IFrame API and players
-      const initPlayers = () => {
-        shorts.forEach((short, idx) => {
-          const iframe = short.querySelector('iframe');
-          if (!iframe) return;
-
-          // Create a wrapper for the YouTube player
-          const player = {
-            iframe,
-            index: idx,
-            state: -1, // -1: unstarted, 0: ended, 1: playing, 2: paused, 3: buffering, 5: cued
-            muted: true,
-            userPaused: false
-          };
-
-          playerStates.set(idx, player);
-          userPausedFlags.set(idx, false);
-
-          // Inject YT player API methods via postMessage
-          listenToPlayerEvents(iframe, idx);
-        });
-
-        loadYouTubeAPI();
-      };
-
-      // Load YouTube IFrame API
-      const loadYouTubeAPI = () => {
-        if (window.YT && window.YT.Player) {
-          initializeYTPlayers();
-        } else {
-          const script = document.createElement('script');
-          script.src = 'https://www.youtube.com/iframe_api';
-          document.head.appendChild(script);
-          window.onYouTubeIframeAPIReady = initializeYTPlayers;
+    // Prefetch list of keys (non-blocking)
+    function prefetch(list) {
+      list.forEach(k => {
+        if (!cache[k] && containers[k]) {
+          fetch(containers[k], { cache: 'no-store' })
+            .then(res => { if (res.ok) return res.text(); throw new Error('prefetch failed ' + k); })
+            .then(txt => cache[k] = txt)
+            .catch(() => { /* ignore prefetch errors */ });
         }
-      };
+      });
+    }
 
-      // Initialize YouTube Player instances for API control
-      const initializeYTPlayers = () => {
-        shorts.forEach((short, idx) => {
-          const iframe = short.querySelector('iframe');
-          if (!iframe) return;
+    // Update active nav item visuals
+    function updateActiveNav(activeKey) {
+      const nav = document.getElementById('site-navbar');
+      if (!nav) return;
+      nav.querySelectorAll('.nav-item').forEach(a => {
+        const key = a.dataset && a.dataset.container;
+        if (key === activeKey) a.classList.add('active'); else a.classList.remove('active');
+      });
+    }
 
-          try {
-            const ytPlayer = new window.YT.Player(iframe, {
-              events: {
-                'onReady': (event) => onPlayerReady(event, idx),
-                'onStateChange': (event) => onPlayerStateChange(event, idx),
-                'onError': (event) => onPlayerError(event, idx)
-              }
-            });
-            const state = playerStates.get(idx);
-            if (state) state.ytPlayer = ytPlayer;
-          } catch (e) {
-            console.warn(`Failed to init YT player at index ${idx}:`, e);
+    // Map hash (#/home etc.) to route key
+    function routeFromHash(hash) {
+      const key = (hash || location.hash || '#/home').replace(/^#\/?/, '');
+      return containers[key] ? key : 'home';
+    }
+
+    // Initialize chrome & handlers
+    function init() {
+      // inject header/footer/navbar from templates
+      injectStatic('tmpl-header', headerSlot);
+      injectStatic('tmpl-footer', footerSlot);
+      injectStatic('tmpl-navbar', navbarSlot);
+
+      // intercept clicks on navbar and footer
+      const navbar = document.getElementById('site-navbar');
+      if (navbar) {
+        navbar.addEventListener('click', (ev) => {
+          const a = ev.target.closest('.nav-item');
+          if (!a) return;
+          ev.preventDefault();
+          const key = a.dataset && a.dataset.container;
+          if (key) {
+            loadRoute(key, true);
+            // prefetch others
+            prefetch(Object.keys(containers).filter(k => k !== key));
           }
         });
-      };
-
-      const onPlayerReady = (event, idx) => {
-        // Player is ready; unmute for sound
-        try {
-          event.target.unMute();
-        } catch (e) {
-          console.warn(`Could not unmute player ${idx}:`, e);
-        }
-      };
-
-      const onPlayerStateChange = (event, idx) => {
-        // event.data: -1=unstarted, 0=ended, 1=playing, 2=paused, 3=buffering, 5=video cued
-        const state = playerStates.get(idx);
-        if (!state) return;
-
-        state.state = event.data;
-
-        // Video ended: advance to next
-        if (event.data === 0) {
-          handleVideoEnded(idx);
-        }
-
-        // User interacted with player (may unmute on play)
-        if (event.data === 1) {
-          currentPlayingIndex = idx;
-          pauseOthers(idx);
-        }
-      };
-
-      const onPlayerError = (event, idx) => {
-        console.warn(`Player error at index ${idx}:`, event.data);
-        // Skip to next on error
-        const nextIdx = idx + 1;
-        if (nextIdx < shorts.length) {
-          scrollToCard(nextIdx);
-          playCard(nextIdx);
-        }
-      };
-
-      // Handle video ended: scroll to next and autoplay
-      const handleVideoEnded = (idx) => {
-        const nextIdx = idx + 1;
-        if (nextIdx < shorts.length) {
-          scrollToCard(nextIdx);
-          setTimeout(() => {
-            playCard(nextIdx, true); // autoplay=true, muted
-          }, 100);
-        }
-      };
-
-      // Pause all players except the given index
-      const pauseOthers = (exceptIdx) => {
-        playerStates.forEach((state, idx) => {
-          if (idx !== exceptIdx && state.ytPlayer) {
-            try {
-              if (!userPausedFlags.get(idx)) {
-                state.ytPlayer.pauseVideo();
-              }
-            } catch (e) {
-              console.warn(`Could not pause player ${idx}:`, e);
-            }
-          }
-        });
-      };
-
-      // Play a specific card by index
-      const playCard = (idx, autoplay = false) => {
-        const state = playerStates.get(idx);
-        if (!state || !state.ytPlayer) return;
-
-        try {
-          state.ytPlayer.unMute();
-          state.muted = false;
-          state.ytPlayer.playVideo();
-          currentPlayingIndex = idx;
-          userPausedFlags.set(idx, false);
-          pauseOthers(idx);
-        } catch (e) {
-          console.warn(`Could not play player ${idx}:`, e);
-        }
-      };
-
-      // Pause a specific card by index (user action)
-      const pauseCard = (idx) => {
-        const state = playerStates.get(idx);
-        if (!state || !state.ytPlayer) return;
-
-        try {
-          state.ytPlayer.pauseVideo();
-          userPausedFlags.set(idx, true); // Mark as user-paused
-        } catch (e) {
-          console.warn(`Could not pause player ${idx}:`, e);
-        }
-      };
-
-      // Scroll carousel to center a card
-      const scrollToCard = (idx) => {
-        const short = shorts[idx];
-        if (!short) return;
-
-        short.scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest',
-          inline: 'center'
-        });
-      };
-
-      // Detect which card is most centered/visible
-      const findCenteredCard = () => {
-        const carouselRect = carousel.getBoundingClientRect();
-        const carouselCenter = carouselRect.left + carouselRect.width / 2;
-        let closestIdx = 0;
-        let closestDistance = Infinity;
-
-        shorts.forEach((short, idx) => {
-          const rect = short.getBoundingClientRect();
-          const shortCenter = rect.left + rect.width / 2;
-          const distance = Math.abs(shortCenter - carouselCenter);
-
-          if (distance < closestDistance) {
-            closestDistance = distance;
-            closestIdx = idx;
-          }
-        });
-
-        return closestIdx;
-      };
-
-      // Handle scroll end: play centered card if visible
-      const handleScrollEnd = () => {
-        const centeredIdx = findCenteredCard();
-        const state = playerStates.get(centeredIdx);
-
-        // Only auto-play if user hasn't manually paused this card
-        if (state && !userPausedFlags.get(centeredIdx)) {
-          playCard(centeredIdx);
-        }
-
-        updateIndicators(centeredIdx);
-        isScrolling = false;
-      };
-
-      // Debounced scroll detection
-      const handleScroll = () => {
-        isScrolling = true;
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(handleScrollEnd, 150);
-      };
-
-      // Update indicator highlighting
-      const updateIndicators = (idx) => {
-        indicators.forEach((indicator, i) => {
-          indicator.classList.toggle('active', i === idx);
-        });
-      };
-
-      // Listen for player events via postMessage
-      const listenToPlayerEvents = (iframe, idx) => {
-        window.addEventListener('message', (event) => {
-          if (event.source !== iframe.contentWindow) return;
-
-          try {
-            const data = JSON.parse(event.data);
-            if (data.event === 'onStateChange') {
-              onPlayerStateChange({ data: data.info, target: { getPlayerState: () => data.info } }, idx);
-            }
-          } catch (e) {
-            // Ignore parse errors
-          }
-        });
-      };
-
-      // Indicator click handling
-      const initIndicators = () => {
-        indicators.forEach((indicator) => {
-          indicator.addEventListener('click', () => {
-            const idx = parseInt(indicator.dataset.index);
-            scrollToCard(idx);
-            setTimeout(() => {
-              playCard(idx);
-              updateIndicators(idx);
-            }, 100);
-          });
-        });
-      };
-
-      // Detect visibility changes using IntersectionObserver to pause unseen videos
-      const initVisibilityObserver = () => {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            const short = entry.target;
-            const idx = Array.from(shorts).indexOf(short);
-            const state = playerStates.get(idx);
-
-            if (!state || !state.ytPlayer) return;
-
-            // If card is not visible and not user-paused, pause it
-            if (!entry.isIntersecting && !userPausedFlags.get(idx)) {
-              try {
-                state.ytPlayer.pauseVideo();
-              } catch (e) {
-                console.warn(`Could not pause off-screen player ${idx}:`, e);
-              }
-            }
-          });
-        }, { threshold: 0.5 });
-
-        shorts.forEach((short) => observer.observe(short));
-        return observer;
-      };
-
-      // Main initialization
-      const init = () => {
-        initPlayers();
-        initIndicators();
-        carousel.addEventListener('scroll', handleScroll);
-        initVisibilityObserver();
-
-        // Play first card on load
-        setTimeout(() => {
-          playCard(0);
-          updateIndicators(0);
-        }, 500);
-      };
-
-      // Start on DOM ready
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-      } else {
-        init();
       }
 
-      return { carousel, shorts, indicators };
-    })();
-  </script>
-</section>
+      const footer = document.getElementById('site-footer');
+      if (footer) {
+        footer.addEventListener('click', (ev) => {
+          const a = ev.target.closest('[data-container]');
+          if (!a) return;
+          ev.preventDefault();
+          const key = a.dataset && a.dataset.container;
+          if (key) {
+            loadRoute(key, true);
+            prefetch(Object.keys(containers).filter(k => k !== key));
+          }
+        });
+      }
 
+      // handle initial route from hash
+      const initial = routeFromHash(location.hash);
+      loadRoute(initial, false).then(() => {
+        // after first load, prefetch all other containers
+        prefetch(Object.keys(containers).filter(k => k !== initial));
+      });
 
-<!----------------------
-navbar (loaded from common file)
------------------------------->
-<div id="navbar-container">
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    fetch("/navbar.html")
-      .then(response => {
-        if (!response.ok) throw new Error("Failed to load navbar");
-        return response.text();
-      })
-      .then(data => {
-        document.getElementById("navbar-container").innerHTML = data;
+      // respond to manual hash changes/back-forward
+      window.addEventListener('hashchange', () => {
+        const key = routeFromHash(location.hash);
+        loadRoute(key, false);
+      });
 
-        // Always highlight the Home button
-        const homeLink = document.querySelector('.bottom-navbar .nav-item[href="https://naadaraja.com"]');
-        if (homeLink) {
-          homeLink.classList.add('active');
+      // delegate links inside container: if an <a href="/privacy"> or href="#/privacy" is clicked, intercept and load
+      document.addEventListener('click', (ev) => {
+        const a = ev.target.closest('a');
+        if (!a) return;
+        // preserve external links or special targets
+        if (a.target === '_blank' || a.hasAttribute('download')) return;
+        const href = a.getAttribute('href');
+        if (!href) return;
+        // if hash route
+        if (href.startsWith('#/')) {
+          const key = href.replace(/^#\/?/, '');
+          if (containers[key]) {
+            ev.preventDefault();
+            loadRoute(key, true);
+            prefetch(Object.keys(containers).filter(k => k !== key));
+          }
+          return;
         }
-      })
-      .catch(err => console.error("Navbar load error:", err));
-  });
+        // if same-origin path like "/privacy" -> route key "privacy"
+        try {
+          const url = new URL(href, location.href);
+          if (url.origin === location.origin) {
+            const pathKey = url.pathname.replace(/^\/+|\/+$/g, '') || 'home';
+            if (containers[pathKey]) {
+              ev.preventDefault();
+              loadRoute(pathKey, true);
+              prefetch(Object.keys(containers).filter(k => k !== pathKey));
+            }
+          }
+        } catch (e) {
+          // ignore
+        }
+      });
+    }
+
+    // expose for debugging
+    window.__naada = { loadRoute, fetchContainer, cache };
+
+    // start
+    document.addEventListener('DOMContentLoaded', init);
+  })();
   </script>
-</div>
-
-
-
-<!-- ==========================
-     Peek Footer (scroll reveal, ultra-compact)
-     ========================== -->
-<footer class="peek-footer" id="site-footer" aria-label="Site footer">
-  <!-- tiny spacer: just enough to allow reveal -->
-  <div class="peek-footer__spacer" aria-hidden="true"></div>
-
-  <!-- Hidden content: revealed when scrolling -->
-  <div class="peek-footer__hidden" role="region" aria-label="Footer expanded links">
-    <nav class="footer-links" aria-label="Footer links">
-      <a href="https://naadaraja.com/privacy">Privacy Policy</a>
-      <a href="https://naadaraja.com/terms">Terms &amp; Conditions</a>
-      <a href="https://naadaraja.com/refund">Refund Policy</a>
-    </nav>
-  </div>
-</footer>
-
-<style>
-/* ==========================
-   Footer CSS (ultra-compact)
-   ========================== */
-.peek-footer {
-  --bar-h: 64px; /* navbar height */
-  --bg: #ffffff;
-  --text: #000000;
-  --muted: #bdbdbd;
-  --max-w: 1100px;
-  display: block;
-  width: 100%;
-  background: var(--bg);
-  color: var(--text);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  line-height: 1.2;
-  position: relative;
-}
-
-/* minimal spacer */
-.peek-footer__spacer {
-  height: 4px; /* minimal scroll allowance */
-  width: 100%;
-}
-
-.peek-footer__hidden {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 10px 18px; /* slightly tighter */
-  padding-bottom: calc(var(--bar-h) + 2px); /* clears navbar, almost no gap */
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.footer-links {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.footer-links a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 14px;
-  padding: 4px 6px; /* slightly tighter link padding */
-  border-radius: 6px;
-}
-
-.footer-links a:hover,
-.footer-links a:focus {
-  color: var(--text);
-  text-decoration: underline;
-  outline: none;
-}
-
-@media (max-width: 520px) {
-  .footer-links { gap: 10px; }
-}
-</style>
-
-
-
+</body>
+</html>

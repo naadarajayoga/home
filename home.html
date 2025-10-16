@@ -1,0 +1,919 @@
+<!-----------------------
+Home Container
+------------------------>
+
+<div id="home-container" class="home-container">
+    <!-- ======================
+      ABOUT
+      ====================== -->
+
+<section class="about-section">
+  <div class="about-container">
+    <img src="me.jpg" alt="Yoga Teacher">
+    <div class="about-text">
+      <p>
+        I have been teaching yoga for over a decade, helping students across the world discover
+        flexibility, strength, and inner balance. My sessions are fully personalized,
+        adapting to each individual’s needs and progress.
+      </p>
+      <p>
+        Through daily guidance and monitoring, I ensure steady improvement and a
+        holistic approach to well-being. My goal is to make yoga a sustainable
+        and transformative practice in your life.
+      </p>
+      <p>
+        In addition to my independent teaching, I have also worked in Arvada hospitals, including two years at PNNM
+        Ayurveda College Cheruthuruthi, where I taught yoga to BAMS students, integrating yogic practices into their medical education.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ABOUT CSS */
+  .about-section { padding: 20px; }
+  .about-container { display: flex; flex-wrap: wrap; align-items: center; gap: 30px; max-width: 900px; margin: 0 auto; }
+  .about-container img {
+    width: 200px; border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  }
+  .about-text { flex: 1; min-width: 250px; }
+  .about-text p { margin-bottom: 18px; font-size: 1.05rem; color: #444; line-height: 1.8; }
+  @media (max-width: 768px) {
+    .about-container { flex-direction: column; text-align: center; }
+    .about-container img { margin: 0 auto; }
+    .about-text { text-align: center; }
+  }
+</style>
+
+<!-- ======================
+        REVIEWS SECTION
+====================== -->
+
+<style>
+  .reviews-section {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    padding: 20px;
+    max-width:1000px;
+    margin: 0 auto;
+  }
+
+  .reviews-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .review-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  /* 🔹 Header Layout */
+  .review-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    flex-wrap: nowrap; /* keep button on the right */
+  }
+
+  .title-rating {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* tighter spacing */
+    flex-shrink: 1;
+    flex-wrap: wrap;
+  }
+
+  .title-link {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px; /* stays the same on all screens */
+    font-weight: bold;
+    line-height: 1.2;
+    white-space: nowrap; /* prevents breaking */
+  }
+
+  .rating-link {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    text-decoration: none;
+  }
+
+  .single-star {
+    color: #FFD700;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .rating-value {
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+  }
+
+  /* 🔹 Pill-Shaped Button */
+  .leave-review-btn {
+    background: #0056ff;
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 999px; /* pill shape */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+
+  .leave-review-btn:hover {
+    background: #003ecf;
+  }
+
+  /* 🔹 Mobile adjustments */
+  @media (max-width: 480px) {
+    .title-rating {
+      gap: 4px;
+    }
+    .rating-link .single-star {
+      font-size: 16px;
+    }
+    .rating-link .rating-value {
+      font-size: 14px;
+    }
+  }
+
+  /* 🔹 Review Item */
+  .review-item {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #fff;
+    position: relative;
+  }
+
+  .review-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .review-item h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+  }
+
+  .review-top .stars {
+    color: #FFD700;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .reviews-section a {
+    text-decoration: none !important;
+  }
+
+  .review-text {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.4;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* default to 4 lines */
+    -webkit-box-orient: vertical;
+  }
+
+  .review-text.expanded {
+    -webkit-line-clamp: unset;
+    display: block;
+  }
+
+  .read-more {
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 5px;
+  }
+
+  .google-icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .google-icon:hover {
+    transform: scale(1.1);
+  }
+</style>
+
+<section class="reviews-section">
+  <h2>Reviews</h2>
+
+  <div class="review-card">
+    <div class="review-header">
+      <!-- Title + rating inline -->
+      <div class="title-rating">
+        <a href="https://www.google.com/search?q=naada+raja+yoga" target="_blank" class="title-link">
+          Naada Raja Yoga
+        </a>
+        <a href="https://www.google.com/search?q=naada+raja+yoga" target="_blank" class="rating-link">
+          <span class="single-star">★</span>
+          <span class="rating-value">5.0</span>
+        </a>
+      </div>
+
+      <!-- Pill-shaped Rate Us button -->
+      <a href="https://g.page/r/CcV52-DSDxqlEAE/review" target="_blank" class="leave-review-btn">
+        Rate Us
+      </a>
+    </div>
+
+    <!-- Review Item 1 -->
+    <div class="review-item">
+      <div class="review-top">
+        <a href="https://maps.app.goo.gl/Gtk5X1QE4C4MGiKf9" target="_blank">
+          <h4>Uta Cheruti</h4>
+        </a>
+        <div class="stars">★★★★★</div>
+      </div>
+
+      <p class="review-text" id="review-text-1">
+        Yadu has been my yoga teacher for some time, and his lifelong dedication to yoga, 
+        built through many years of continuous practice and teaching, is felt in every class. 
+        His deep experience and strong foundation make him not only an excellent coach but 
+        also someone who shares the spiritual side of yoga in a calm and authentic way. 
+        Living with MS and physical limitations, I deeply value how he adapts the exercises 
+        to my needs, brings in new ideas, and repeats key practices so I can build step by step. 
+        His teaching is gentle, clear, and motivating – practicing with Yadu has truly given me 
+        back strength, balance, and joy in yoga.
+      </p>
+      <span class="read-more" onclick="toggleReview(this, 'review-text-1')">Read more</span>
+
+      <!-- Google multicolor SVG logo links to Google Search -->
+      <a href="https://www.google.com/search?q=naada+raja+yoga" target="_blank" aria-label="View on Google">
+        <svg class="google-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
+          <path fill="#4285F4" d="M488 261.8c0-17.7-1.5-35.6-4.6-52.8H248v99.9h135.6c-5.9 31.8-23.6 58.7-50.5 76.6v63.5h81.7c47.9-44.1 73.2-109.1 73.2-187.2z"/>
+          <path fill="#34A853" d="M248 492c68.4 0 125.9-22.7 167.9-61.5l-81.7-63.5c-22.7 15.2-51.8 24.3-86.2 24.3-66.2 0-122.3-44.7-142.4-104.9H20.1v65.9C62.6 429.3 148.2 492 248 492z"/>
+          <path fill="#FBBC05" d="M105.6 286.4c-5.1-15.2-8-31.5-8-48.4s2.9-33.2 8-48.4V123.7H20.1C7.2 152.7 0 186.1 0 221.6s7.2 68.9 20.1 97.9l85.5-65.1z"/>
+          <path fill="#EA4335" d="M248 97.6c37.2 0 70.7 12.8 97.1 37.8l72.6-72.6C373.9 24.3 316.4 0 248 0 148.2 0 62.6 62.7 20.1 155.2l85.5 65.1C125.7 142.3 181.8 97.6 248 97.6z"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Review Item 2 -->
+    <div class="review-item">
+      <div class="review-top">
+        <a href="https://share.google/rovKD07fRX7Bj9DkR" target="_blank">
+          <h4>Raji ks</h4>
+        </a>
+        <div class="stars">★★★★★</div>
+      </div>
+
+      <p class="review-text" id="review-text-2">
+        I thoroughly enjoyed the yoga session. The atmosphere was warm and welcoming, and the 
+        instructions were incredibly clear, helping me understand exactly what I could do. I've 
+        been practicing since 2008 and I eventually became a district champion. The session was 
+        well-tailored to my needs, and I felt that every part of my body was taken care of. 
+        Overall, it was a fantastic experience, and I would definitely recommend it.
+      </p>
+      <span class="read-more" onclick="toggleReview(this, 'review-text-2')">Read more</span>
+
+      <!-- Google multicolor SVG logo links to Google Search -->
+      <a href="https://www.google.com/search?q=naada+raja+yoga" target="_blank" aria-label="View on Google">
+        <svg class="google-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
+          <path fill="#4285F4" d="M488 261.8c0-17.7-1.5-35.6-4.6-52.8H248v99.9h135.6c-5.9 31.8-23.6 58.7-50.5 76.6v63.5h81.7c47.9-44.1 73.2-109.1 73.2-187.2z"/>
+          <path fill="#34A853" d="M248 492c68.4 0 125.9-22.7 167.9-61.5l-81.7-63.5c-22.7 15.2-51.8 24.3-86.2 24.3-66.2 0-122.3-44.7-142.4-104.9H20.1v65.9C62.6 429.3 148.2 492 248 492z"/>
+          <path fill="#FBBC05" d="M105.6 286.4c-5.1-15.2-8-31.5-8-48.4s2.9-33.2 8-48.4V123.7H20.1C7.2 152.7 0 186.1 0 221.6s7.2 68.9 20.1 97.9l85.5-65.1z"/>
+          <path fill="#EA4335" d="M248 97.6c37.2 0 70.7 12.8 97.1 37.8l72.6-72.6C373.9 24.3 316.4 0 248 0 148.2 0 62.6 62.7 20.1 155.2l85.5 65.1C125.7 142.3 181.8 97.6 248 97.6z"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function toggleReview(el, id) {
+    const reviewText = document.getElementById(id);
+    if (reviewText.classList.contains("expanded")) {
+      reviewText.classList.remove("expanded");
+      el.innerText = "Read more";
+    } else {
+      reviewText.classList.add("expanded");
+      el.innerText = "Read less";
+    }
+  }
+</script>
+
+
+
+<!-------------
+BUTTONS SECTION 
+-------------->
+<section id="buttons">
+  <div class="btn-container">
+    <a href="https://www.youtube.com/@NaadaRajaYoga" target="_blank" class="youtube-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+        <rect x="32" y="64" width="192" height="128" rx="28" fill="#FF0000" stroke="#fff" stroke-width="12"/>
+        <polygon points="108,96 172,128 108,160" fill="#fff"/>
+      </svg>
+      YouTube
+    </a>
+    <a href="https://naadaraja.com/courses" target="_blank" class="enroll-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+        <path d="M320 96a64 64 0 1 0 0-128 64 64 0 1 0 0 128zM528 352h-56l-41-82c-6-12-19-18-32-14s-21 16-19 29l20 99H240l20-99c2-13-5-25-19-29s-26 2-32 14l-41 82H112c-27 0-48 21-48 48s21 48 48 48h416c27 0 48-21 48-48s-21-48-48-48z"/>
+      </svg>
+      Courses
+    </a>
+  </div>
+
+  <style>
+    /* BUTTONS SECTION CSS */
+    #buttons {
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 70px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* Shared button styles */
+    .youtube-btn,
+    .enroll-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    /* YouTube button */
+    .youtube-btn {
+      background: #FF0000;
+      box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+    }
+
+    .youtube-btn:hover {
+      background: #cc0000;
+      box-shadow: 0 6px 16px rgba(255, 0, 0, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .youtube-btn svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    /* Enroll button */
+    .enroll-btn {
+      background: #003ecf;
+      box-shadow: 0 4px 12px rgba(0, 62, 207, 0.3);
+    }
+
+    .enroll-btn:hover {
+      background: #002a99;
+      box-shadow: 0 6px 16px rgba(0, 62, 207, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .enroll-btn svg {
+      width: 22px;
+      height: 22px;
+      fill: #fff;
+    }
+  </style>
+</section>
+
+
+
+<!-------------------- 
+YOUTUBE SHORTS SECTION 
+--------------------->
+<section id="shorts">
+  <div class="shorts-carousel">
+    <div class="short" data-video-id="SYvQXu5onF0">
+      <iframe src="https://www.youtube.com/embed/SYvQXu5onF0?enablejsapi=1&playsinline=1&rel=0&modestbranding=1&autoplay=0" allowfullscreen></iframe>
+    </div>
+    <div class="short" data-video-id="KwHA5qyFzXY">
+      <iframe src="https://www.youtube.com/embed/KwHA5qyFzXY?enablejsapi=1&playsinline=1&rel=0&modestbranding=1&autoplay=0" allowfullscreen></iframe>
+    </div>
+    <div class="short" data-video-id="4JhofpR7DEY">
+      <iframe src="https://www.youtube.com/embed/4JhofpR7DEY?enablejsapi=1&playsinline=1&rel=0&modestbranding=1&autoplay=0" allowfullscreen></iframe>
+    </div>
+    <div class="short" data-video-id="niu5uo0cnfg">
+      <iframe src="https://www.youtube.com/embed/niu5uo0cnfg?enablejsapi=1&playsinline=1&rel=0&modestbranding=1&autoplay=0" allowfullscreen></iframe>
+    </div>
+    <div class="short" data-video-id="gO_dfy0N-sM">
+      <iframe src="https://www.youtube.com/embed/gO_dfy0N-sM?enablejsapi=1&playsinline=1&rel=0&modestbranding=1&autoplay=0" allowfullscreen></iframe>
+    </div>
+    <div class="short" data-video-id="R5niWehGQD8">
+      <iframe src="https://www.youtube.com/embed/R5niWehGQD8?enablejsapi=1&playsinline=1&rel=0&modestbranding=1&autoplay=0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="carousel-indicators">
+    <span class="indicator active" data-index="0"></span>
+    <span class="indicator" data-index="1"></span>
+    <span class="indicator" data-index="2"></span>
+    <span class="indicator" data-index="3"></span>
+    <span class="indicator" data-index="4"></span>
+    <span class="indicator" data-index="5"></span>
+  </div>
+
+  <style>
+    #shorts {
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .shorts-carousel {
+      display: flex;
+      overflow-x: auto;
+      overflow-y: hidden;
+      gap: 15px;
+      scroll-behavior: smooth;
+    }
+
+    .short {
+      flex: 0 0 auto;
+      width: 200px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .short:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .short iframe {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      border: 0;
+    }
+
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .indicator.active {
+      background: #FF0000;
+      width: 28px;
+      border-radius: 5px;
+    }
+
+    .indicator:hover {
+      background: #999;
+    }
+
+    @media (max-width: 768px) {
+      #shorts {
+        padding: 0;
+        max-width: 100%;
+        margin: 0;
+        position: relative;
+      }
+
+      .shorts-carousel {
+        gap: 0;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .short {
+        flex: 0 0 100%;
+        width: 100vw;
+        border-radius: 0;
+        box-shadow: none;
+        transition: none;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+      }
+
+      .short:hover {
+        transform: none;
+        box-shadow: none;
+      }
+
+      .short iframe {
+        width: 100%;
+        height: 50vh;
+      }
+
+      .carousel-indicators {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        z-index: 100;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 8px 12px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+      }
+
+      .indicator {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.6);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .indicator.active {
+        background: #FFFFFF;
+        width: 8px;
+        border-radius: 50%;
+      }
+
+      .indicator:hover {
+        background: rgba(255, 255, 255, 0.8);
+      }
+
+      .shorts-carousel {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .shorts-carousel::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  </style>
+
+  <script>
+    // YouTube Shorts Carousel Controller
+    // Manages playback, auto-advance, visibility detection, and user pause state
+
+    const ShortsCarousel = (() => {
+      const carousel = document.querySelector('#shorts .shorts-carousel');
+      const shorts = document.querySelectorAll('#shorts .short');
+      const indicators = document.querySelectorAll('#shorts .carousel-indicators .indicator');
+      
+      // State management
+      let currentPlayingIndex = -1;
+      const playerStates = new Map(); // Maps iframe index to {player, userPaused, muted}
+      const userPausedFlags = new Map(); // Maps index to boolean
+      let scrollTimeout;
+      let isScrolling = false;
+
+      // Initialize YouTube IFrame API and players
+      const initPlayers = () => {
+        shorts.forEach((short, idx) => {
+          const iframe = short.querySelector('iframe');
+          if (!iframe) return;
+
+          // Create a wrapper for the YouTube player
+          const player = {
+            iframe,
+            index: idx,
+            state: -1, // -1: unstarted, 0: ended, 1: playing, 2: paused, 3: buffering, 5: cued
+            muted: true,
+            userPaused: false
+          };
+
+          playerStates.set(idx, player);
+          userPausedFlags.set(idx, false);
+
+          // Inject YT player API methods via postMessage
+          listenToPlayerEvents(iframe, idx);
+        });
+
+        loadYouTubeAPI();
+      };
+
+      // Load YouTube IFrame API
+      const loadYouTubeAPI = () => {
+        if (window.YT && window.YT.Player) {
+          initializeYTPlayers();
+        } else {
+          const script = document.createElement('script');
+          script.src = 'https://www.youtube.com/iframe_api';
+          document.head.appendChild(script);
+          window.onYouTubeIframeAPIReady = initializeYTPlayers;
+        }
+      };
+
+      // Initialize YouTube Player instances for API control
+      const initializeYTPlayers = () => {
+        shorts.forEach((short, idx) => {
+          const iframe = short.querySelector('iframe');
+          if (!iframe) return;
+
+          try {
+            const ytPlayer = new window.YT.Player(iframe, {
+              events: {
+                'onReady': (event) => onPlayerReady(event, idx),
+                'onStateChange': (event) => onPlayerStateChange(event, idx),
+                'onError': (event) => onPlayerError(event, idx)
+              }
+            });
+            const state = playerStates.get(idx);
+            if (state) state.ytPlayer = ytPlayer;
+          } catch (e) {
+            console.warn(`Failed to init YT player at index ${idx}:`, e);
+          }
+        });
+      };
+
+      const onPlayerReady = (event, idx) => {
+        // Player is ready; unmute for sound
+        try {
+          event.target.unMute();
+        } catch (e) {
+          console.warn(`Could not unmute player ${idx}:`, e);
+        }
+      };
+
+      const onPlayerStateChange = (event, idx) => {
+        // event.data: -1=unstarted, 0=ended, 1=playing, 2=paused, 3=buffering, 5=video cued
+        const state = playerStates.get(idx);
+        if (!state) return;
+
+        state.state = event.data;
+
+        // Video ended: advance to next
+        if (event.data === 0) {
+          handleVideoEnded(idx);
+        }
+
+        // User interacted with player (may unmute on play)
+        if (event.data === 1) {
+          currentPlayingIndex = idx;
+          pauseOthers(idx);
+        }
+      };
+
+      const onPlayerError = (event, idx) => {
+        console.warn(`Player error at index ${idx}:`, event.data);
+        // Skip to next on error
+        const nextIdx = idx + 1;
+        if (nextIdx < shorts.length) {
+          scrollToCard(nextIdx);
+          playCard(nextIdx);
+        }
+      };
+
+      // Handle video ended: scroll to next and autoplay
+      const handleVideoEnded = (idx) => {
+        const nextIdx = idx + 1;
+        if (nextIdx < shorts.length) {
+          scrollToCard(nextIdx);
+          setTimeout(() => {
+            playCard(nextIdx, true); // autoplay=true, muted
+          }, 100);
+        }
+      };
+
+      // Pause all players except the given index
+      const pauseOthers = (exceptIdx) => {
+        playerStates.forEach((state, idx) => {
+          if (idx !== exceptIdx && state.ytPlayer) {
+            try {
+              if (!userPausedFlags.get(idx)) {
+                state.ytPlayer.pauseVideo();
+              }
+            } catch (e) {
+              console.warn(`Could not pause player ${idx}:`, e);
+            }
+          }
+        });
+      };
+
+      // Play a specific card by index
+      const playCard = (idx, autoplay = false) => {
+        const state = playerStates.get(idx);
+        if (!state || !state.ytPlayer) return;
+
+        try {
+          state.ytPlayer.unMute();
+          state.muted = false;
+          state.ytPlayer.playVideo();
+          currentPlayingIndex = idx;
+          userPausedFlags.set(idx, false);
+          pauseOthers(idx);
+        } catch (e) {
+          console.warn(`Could not play player ${idx}:`, e);
+        }
+      };
+
+      // Pause a specific card by index (user action)
+      const pauseCard = (idx) => {
+        const state = playerStates.get(idx);
+        if (!state || !state.ytPlayer) return;
+
+        try {
+          state.ytPlayer.pauseVideo();
+          userPausedFlags.set(idx, true); // Mark as user-paused
+        } catch (e) {
+          console.warn(`Could not pause player ${idx}:`, e);
+        }
+      };
+
+      // Scroll carousel to center a card
+      const scrollToCard = (idx) => {
+        const short = shorts[idx];
+        if (!short) return;
+
+        short.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'center'
+        });
+      };
+
+      // Detect which card is most centered/visible
+      const findCenteredCard = () => {
+        const carouselRect = carousel.getBoundingClientRect();
+        const carouselCenter = carouselRect.left + carouselRect.width / 2;
+        let closestIdx = 0;
+        let closestDistance = Infinity;
+
+        shorts.forEach((short, idx) => {
+          const rect = short.getBoundingClientRect();
+          const shortCenter = rect.left + rect.width / 2;
+          const distance = Math.abs(shortCenter - carouselCenter);
+
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestIdx = idx;
+          }
+        });
+
+        return closestIdx;
+      };
+
+      // Handle scroll end: play centered card if visible
+      const handleScrollEnd = () => {
+        const centeredIdx = findCenteredCard();
+        const state = playerStates.get(centeredIdx);
+
+        // Only auto-play if user hasn't manually paused this card
+        if (state && !userPausedFlags.get(centeredIdx)) {
+          playCard(centeredIdx);
+        }
+
+        updateIndicators(centeredIdx);
+        isScrolling = false;
+      };
+
+      // Debounced scroll detection
+      const handleScroll = () => {
+        isScrolling = true;
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(handleScrollEnd, 150);
+      };
+
+      // Update indicator highlighting
+      const updateIndicators = (idx) => {
+        indicators.forEach((indicator, i) => {
+          indicator.classList.toggle('active', i === idx);
+        });
+      };
+
+      // Listen for player events via postMessage
+      const listenToPlayerEvents = (iframe, idx) => {
+        window.addEventListener('message', (event) => {
+          if (event.source !== iframe.contentWindow) return;
+
+          try {
+            const data = JSON.parse(event.data);
+            if (data.event === 'onStateChange') {
+              onPlayerStateChange({ data: data.info, target: { getPlayerState: () => data.info } }, idx);
+            }
+          } catch (e) {
+            // Ignore parse errors
+          }
+        });
+      };
+
+      // Indicator click handling
+      const initIndicators = () => {
+        indicators.forEach((indicator) => {
+          indicator.addEventListener('click', () => {
+            const idx = parseInt(indicator.dataset.index);
+            scrollToCard(idx);
+            setTimeout(() => {
+              playCard(idx);
+              updateIndicators(idx);
+            }, 100);
+          });
+        });
+      };
+
+      // Detect visibility changes using IntersectionObserver to pause unseen videos
+      const initVisibilityObserver = () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            const short = entry.target;
+            const idx = Array.from(shorts).indexOf(short);
+            const state = playerStates.get(idx);
+
+            if (!state || !state.ytPlayer) return;
+
+            // If card is not visible and not user-paused, pause it
+            if (!entry.isIntersecting && !userPausedFlags.get(idx)) {
+              try {
+                state.ytPlayer.pauseVideo();
+              } catch (e) {
+                console.warn(`Could not pause off-screen player ${idx}:`, e);
+              }
+            }
+          });
+        }, { threshold: 0.5 });
+
+        shorts.forEach((short) => observer.observe(short));
+        return observer;
+      };
+
+      // Main initialization
+      const init = () => {
+        initPlayers();
+        initIndicators();
+        carousel.addEventListener('scroll', handleScroll);
+        initVisibilityObserver();
+
+        // Play first card on load
+        setTimeout(() => {
+          playCard(0);
+          updateIndicators(0);
+        }, 500);
+      };
+
+      // Start on DOM ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+
+      return { carousel, shorts, indicators };
+    })();
+  </script>
+</section>
+
+  
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
