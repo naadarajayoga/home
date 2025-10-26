@@ -104,13 +104,26 @@
   <!-- Header template -->
   <template id="tmpl-header">
     <style>
-      header { background:#ffffff; padding:20px; border-bottom:1px solid #eee; display:flex; justify-content:center; box-sizing:border-box; }
+      header { background:#ffffff; padding:20px 20px 35px; border-bottom:1px solid #eee; display:flex; justify-content:center; box-sizing:border-box; position:relative; }
       .branding { display:flex; align-items:center; justify-content:center; gap:12px; max-width:1000px; width:100%; }
       .branding img { width:80px; height:auto; flex-shrink:0; }
       .branding-text { display:flex; flex-direction:column; justify-content:center; text-align:center; }
       .branding h1 { margin:0; font-family: "Marcellus", serif; font-size:2.2rem; color:#111; }
       .branding p { margin:0; font-family: "Playfair Display", serif; font-style:italic; color:#555; }
-      @media (max-width:700px) { .branding img { width:65px; } .branding h1 { font-size:1.7rem; } }
+      .social-icons { position:absolute; right:20px; bottom:8px; display:flex; gap:10px; }
+      .social-icons a { color:#666; transition:color 0.3s; }
+      .social-icons a:hover { color:#000; }
+      .social-icons svg { width:20px; height:20px; }
+      .social-icons a[href*="instagram"]:hover { color:#E4405F; }
+      .social-icons a[href*="whatsapp"]:hover { color:#25D366; }
+      .social-icons a[href*="mailto"]:hover { color:#EA4335; }
+      .social-icons a[href*="youtube"]:hover { color:#FF0000; }
+      @media (max-width:700px) { 
+        .branding img { width:65px; } 
+        .branding h1 { font-size:1.7rem; } 
+        .social-icons { right:10px; bottom:6px; }
+        .social-icons svg { width:18px; height:18px; }
+      }
     </style>
 
     <header role="banner" aria-label="Site header">
@@ -120,6 +133,20 @@
           <h1>Naada Raja Yoga</h1>
           <p>Personalized Yoga Journey</p>
         </div>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/naada.raja.yoga/" target="_blank" aria-label="Follow us on Instagram">
+          <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.509.5.902 1.105 1.153 1.772.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772c-.5.509-1.105.902-1.772 1.153-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.247-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z"/></svg>
+        </a>
+        <a href="https://wa.me/9539342026" target="_blank" aria-label="Contact us on WhatsApp">
+          <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+        </a>
+        <a href="mailto:yoga@naadaraja.com" aria-label="Email us">
+          <svg viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@NaadaRajaYoga" target="_blank" aria-label="Watch us on YouTube">
+          <svg viewBox="0 0 24 24"><path fill="currentColor" d="M21.582 7.15c-.239-2.012-.978-3.008-2.842-3.14-2.465-.176-7.74-.176-7.74-.176s-5.275 0-7.74.176c-1.864.132-2.603 1.128-2.842 3.14-.176 1.863-.176 5.75-.176 5.75s0 3.887.176 5.75c.239 2.012.978 3.008 2.842 3.14 2.465.176 7.74.176 7.74.176s5.275 0 7.74-.176c1.864-.132 2.603-1.128 2.842-3.14.176-1.863.176-5.75.176-5.75s0-3.887-.176-5.75z"/><path fill="currentColor" d="M10 14.85v-7l6 3.5-6 3.5z" style="fill:#fff"/></svg>
+        </a>
       </div>
     </header>
   </template>
