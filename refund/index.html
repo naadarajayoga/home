@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+
+  <title>Naada Raja Yoga</title>
+
+
+
+    <!-- Favicon (ICO for legacy browsers) -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico/favicon.ico">
+
+  <!-- PNG favicons -->
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico/16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico/32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.ico/48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.ico/192x.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.ico/512.png">
+
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico/180.png">
+
+  <!-- Manifest -->
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Global Reset -->
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    html, body { height: 100%; }
+    body { line-height: 1.6; color: #333; background: #fefefe; }
+    img { max-width: 100%; display: block; }
+  </style>
+</head>
+<body>
+
+<!----------------------
+Header (loaded from common file) 
+------------------------------>
+ <div id="header">
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    fetch("/header.html") // Root folder path
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Header failed to load: " + response.status);
+        }
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      })
+      .catch(error => {
+        console.error("Error loading header:", error);
+      });
+  });
+</script>
+ </div>
+
+<!-- ======================
+     Refund Policy 
+     ====================== -->
+
+<section class="refund-policy">
+  <h2>Refund Policy</h2>
+  <p>At Naada Raja Yoga, we aim to keep things clear and fair for everyone. Generally, all purchases are non-refundable. However, we understand that exceptional circumstances can arise on your end as well. If a unique situation comes up, we’re open to considering exceptions on a case-by-case basis. If we ever need to cancel a session and can’t provide an alternative, we’ll do our best to find a fair solution together.</p>
+
+  <h3>Timeframe Flexibility</h3>
+  <p>For your convenience, we offer a bit of flexibility in completing your sessions. For example, a 5-day session can be completed within 7 days. This flexibility will be shown right before you purchase, so you know the timeframe. The reason is that our teachers reserve specific time slots for you in advance, and they plan their schedules around these sessions. This means that if a session is scheduled from 6 to 7 a.m. and you arrive late, the session will still end at the planned time, as the teacher’s availability is arranged ahead of time.</p>
+
+  <h3>Responsibility of Participants</h3>
+  <p>Please just make sure you can attend the classes you sign up for, and have the right internet connection and equipment ready for online sessions. This way, everything runs smoothly for everyone!</p>
+</section>
+
+<style>
+  .refund-policy {
+    max-width: 700px;
+    margin: 40px auto 30px auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 32px 28px;
+    color: #333;
+  }
+  .refund-policy h2 {
+    font-size: 2rem;
+    margin-bottom: 18px;
+    color: #800080;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: left;
+  }
+  .refund-policy h3 {
+    font-size: 1.15rem;
+    margin-top: 22px;
+    margin-bottom: 7px;
+    color: #008080;
+    font-weight: 600;
+  }
+  .refund-policy p {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    line-height: 1.7;
+  }
+</style>
+  
+  
+<!----------------------
+navbar (loaded from common file)
+------------------------------>
+
+<div id="navbar-container">
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    fetch("/navbar.html")
+      .then(response => {
+        if (!response.ok) throw new Error("Failed to load navbar");
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById("navbar-container").innerHTML = data;
+      })
+      .catch(err => console.error("Navbar load error:", err));
+  });
+  </script>
+</div>
+
+<!-- ==========================
+     Peek Footer (scroll reveal, ultra-compact)
+     ========================== -->
+<footer class="peek-footer" id="site-footer" aria-label="Site footer">
+  <!-- tiny spacer: just enough to allow reveal -->
+  <div class="peek-footer__spacer" aria-hidden="true"></div>
+
+  <!-- Hidden content: revealed when scrolling -->
+  <div class="peek-footer__hidden" role="region" aria-label="Footer expanded links">
+    <nav class="footer-links" aria-label="Footer links">
+      <a href="https://naadaraja.com/privacy">Privacy Policy</a>
+      <a href="https://naadaraja.com/terms">Terms &amp; Conditions</a>
+      <a href="https://naadaraja.com/refund">Refund Policy</a>
+    </nav>
+  </div>
+</footer>
+
+<style>
+/* ==========================
+   Footer CSS (ultra-compact)
+   ========================== */
+.peek-footer {
+  --bar-h: 64px; /* navbar height */
+  --bg: #ffffff;
+  --text: #000000;
+  --muted: #bdbdbd;
+  --max-w: 1100px;
+  display: block;
+  width: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  line-height: 1.2;
+  position: relative;
+}
+
+/* minimal spacer */
+.peek-footer__spacer {
+  height: 4px; /* minimal scroll allowance */
+  width: 100%;
+}
+
+.peek-footer__hidden {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 10px 18px; /* slightly tighter */
+  padding-bottom: calc(var(--bar-h) + 2px); /* clears navbar, almost no gap */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  padding: 4px 6px; /* slightly tighter link padding */
+  border-radius: 6px;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+  color: var(--text);
+  text-decoration: underline;
+  outline: none;
+}
+
+@media (max-width: 520px) {
+  .footer-links { gap: 10px; }
+}
+</style>
+
+<script>
+// ==========================
+// Footer JavaScript
+// ==========================
+// No JS needed for peek footer in current version
+</script>
